@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Preguntas referencia sobre el protocolo HTTP</h1></header>
+    <hr>
+    <nav><h2>Seccion de referencia de interes</h2></nav>
+    <ul>
+        <li><a href="https://www.arimetrics.com/glosario-digital/http-2" target="_blank">Arimetrics</a></li>
+        <li><a href="https://www.azion.com/es/blog/que-es-http-y-como-funciona/" target="_blank">Azion</a></li>
+        <li><a href="https://www.webempresa.com/blog/http-que-es-y-como-funciona.html" target="_blank">webempresa</a></li>
+    </ul>
+    <hr>
+    <h2>Seccion de preguntas sobre HTTP</h2>
+    <hr>
+    <ol>
+        <li><strong>¿Sobre que protocolo binario está montado el protocolo HTTP?</strong></li>
+        <p>HTTP está montado sobre TCP que es un protocolo que se encarga de controlar y asegurar que todo el envío de datos llegue a su destino. Para establecer una conexión, el protocolo TCP genera un saludo de tres vías entre el cliente y el servidor. A su vez, TCP está montado sobre el protocolo IP.</p>
+        <li><strong>Cuáles son los clientes http y los servidores http mas utilizados</strong></li>
+        <p>Los principales clientes son Google, Mozilla y Microsoft.</p>
+        <p>Los servidores: apache, Nginx, litespeed web server.</p>
+        <li><strong>¿Qué verbos admite un comando en el requerimiento HTTP?</strong></li>
+        <p>Algunos de los métodos: <br>
+            CONNECT: Lo usan los proxys <br>
+            GET: Utilizado para la lectura (los valores viajan en la URL) <br>
+            PUT: Utilizado para crear recursos de un servidor <br>
+            DELETE: Utilizado para borrar recursos en un servidor <br>
+            POST: Utilizado mayormente para actualizar recursos en un servidor (los valores viajan en el body)</p>
+        <li><strong>¿Qué contenido lleva el body de un requerimiento HTTP?</strong></li>    
+        <p>El body de un requerimiento puede contener datos en cualquier tipo de formato, audio, video, html, datos ingresados a través de un formulario, archivos enviados en un proceso de upload, entre otros.</p>
+        <li><strong>¿Qué diferencia existe entre un URL y un URI?</strong></li>
+        <p>La url es el dominio al cual quiero acceder, es la direccion del servidor al cual quiero conectarme y la uri es la direccion de los recursos a los cuales quiero acceder dentro del servidor.</p>
+        <li><strong>¿Cómo se almacena información relacionado con las respuestas HTTP?</strong></li>
+        <p>Existen tres maneras en las que se puede manejar la informacion con las respuestas http: <br>
+            Sin cache: el navegador no almacena las respuestas, si no que estas se cargan totalmente en cada requerimiento. <br>
+            Cache con fechas: el navegador hace una peticion con header de if-Modified-Since y la fecha que tiene cargada, si el servidor no tiene una modificacion desde esa fecha entonces el navegador carga desde el cache el contenido. <br>
+            Igual que el caso anterior pero utilizando un identificativo (Etag) asociado a cada file en el servidor. Este es una etiqueta que se modifica en el servidor cada vez que se modifica el recurso. Si el cliente tiene almacenado el recurso en cache envía como header de req. el etag asosciado. Lo que se compara entonces en el server es este header con el etag del recurso. Si no fue modificado entonces solo devuelve una respuesta con un header «not Modified»</p>
+        <li><strong>¿Qué significa Virtual Hosting?</strong></li>
+        <p>El virtual hosting se refiere a la práctica de hospedar múltiples dominios (sitios web) en un único servidor. Un solo servidor físico aloja los sitios web de varios clientes, cada uno con su propio dominio, pero compartiendo los recursos del servidor como la CPU, la memoria RAM y el espacio en disco.</p>
+        <li><strong>¿ Porque el HTTP se considera STATE LESS?</strong></li>
+        <p>HTTP se considera "stateless" (sin estado) porque cada solicitud HTTP que realiza un cliente al servidor se procesa de forma independiente, sin tener en cuenta solicitudes anteriores</p>
+        <li><strong>¿Cómo va a mejorar la velocidad de la WEB en poco tiempo?</strong></li>
+        <p>HTTP/2 es un protocolo binario que conserva la misma semántica que el protocolo HTTP1.1 compactando cabeceras, priorizando elementos a transferir y multiplexando sin esperar respuestas. Esto que significa que todos los verbos, cabeceras, etc. siguen funcionando sin cambios. De hecho, HTTP/2 busca resolvery compensar los problemas de velocidad quetiene la comunicaciónatravésTCP (lacapa de transporte dentro del protocolo HTTP).</p>
+        <li><strong>¿Como va a mejorar el comportamiento de una aplicación WEB en ambientes ruidosos o de débil conexión?</strong></li>
+        <p>HTTP/3 mejora al http/2 en velocidad de establecimiento de conexión y en mayor capacidad de recuperación y velocidad en casos de estar en zonas con mucho ruido y en consecuencia de poca confiabilidad en los medios</p>
+    </ol>
+    <h2>Errores de HTTP y sus significados</h2>
+    <header><img src="erroreshttp.png" alt="Foto errores http" style="width: 700px;height:500px" ></header>
+    <hr>
+    <h2>Protocolo HTTM y para que lo utilizamos</h2>
+    <video src="videoprotocolo.mp4" controls></video>
+    <hr>
+    <h2>Datos del Alumno</h2>
+    <footer>Damian Ezequiel Martinez <br>
+    Legajo 28885 <br>
+    <a href="mailto:dmartinez885@alumnos.frh.utn.edu.ar">dmartinez885@alumnos.frh.utn.edu.ar</a>
+    </footer>
+    <br>
+    <a href="../index.html">Volver</a>
+
+</body>
+</html>
