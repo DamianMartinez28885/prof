@@ -1,0 +1,32 @@
+html,body {
+    height: 100%;
+
+
+}
+
+div.divprincipal {
+    width: 80%;
+    background-color: rgb(164, 223, 77);
+    margin: auto;
+    max-height: max-content;
+    
+}
+
+.primerdiv, .segundodiv, .tercerdiv, .cuartodiv, .quintodiv {
+    background-color: rgb(69, 233, 178);
+    max-width: 50%;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 2.5%;
+    border-radius: 10px;
+    
+}
+
+.primerdiv {
+    background-color: gray;
+}
+
+#parrafosegundodiv {
+    margin: auto;
+
+}
