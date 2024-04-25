@@ -12,8 +12,8 @@ div.divprincipal {
     
 }
 
-.primerdiv, .segundodiv, .tercerdiv, .cuartodiv, .quintodiv {
-    background-color: rgb(69, 233, 178);
+.primerdiv,  .tercerdiv, .cuartodiv, .quintodiv {
+
     max-width: 50%;
     height: 200px;
     margin: auto;
@@ -24,9 +24,61 @@ div.divprincipal {
 
 .primerdiv {
     background-color: gray;
+    justify-content: center;
+    display: flex;
+
 }
 
-#parrafosegundodiv {
-    margin: auto;
 
+
+@media (min-width: 600px) and (max-width:1080px) {div.primerdiv {
+background-color:rgb(235, 235, 107);
+}}
+
+@media (min-width: 1px) and (max-width:599px) {div.primerdiv {
+    background-color:rgb(125, 208, 241) ;
+    }}
+
+.primerparrafo {
+    color: rgb(255, 255, 255);
+    
+
+}
+
+.segundodiv {
+    
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(white, orange , red);
+    max-width: 50%;
+    height: 200px;
+    margin: auto;
+    margin-bottom: 2.5%;
+    border-radius: 10px;
+}
+
+.tercerdiv {
+    
+    background-image: linear-gradient(to top right,white,orange,red);
+    justify-content: center;
+    display: flex;
+    
+}
+
+.imagen3div {
+    max-height: 100%;
+
+}
+
+.cuartodiv {
+    background-image: linear-gradient(to bottom right, white,orange,red);
+
+}
+.quintodiv {
+    background-image: linear-gradient(to top right,white,orange,red);
+    justify-content: center;
+    display: flex;
+    
 }
