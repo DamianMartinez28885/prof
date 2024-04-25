@@ -1,0 +1,65 @@
+.divprincipal {
+    width: 80%;
+    height: 80px; 
+    background-color: aquamarine;
+    margin: auto;
+    padding: 1%;
+    display: flex;
+    float: left;
+}
+div {
+    border-radius: 10px;
+    margin-right: 2%;
+    width: 12%;
+    height: 100%;
+    }
+
+
+.primerdiv {
+   
+    background-image: linear-gradient(to top ,white,orange,red);
+    
+    
+    }
+
+.segundodiv {
+    
+    background-image: linear-gradient(to top ,white,orange,red);
+    
+    }
+
+.tercerdiv 
+    {
+    
+        background-image: linear-gradient(to top ,white,orange,red);
+        justify-content: center;
+        display: flex;
+        
+        
+        }
+
+.cuartodiv {
+    
+    background-image: linear-gradient(to top ,white,orange,red);
+    
+    }
+
+.quintodiv {
+    
+    background-image: linear-gradient(to top ,white,orange,red);
+   
+    }
+
+.sextodiv {
+    
+    background-image: linear-gradient(to top ,white,orange,red);
+    
+
+}
+
+.imgauto {
+    max-height: 100%;
+   
+
+}
+
