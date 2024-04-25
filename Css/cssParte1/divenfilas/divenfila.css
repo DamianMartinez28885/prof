@@ -41,6 +41,8 @@ div {
 .cuartodiv {
     
     background-image: linear-gradient(to top ,white,orange,red);
+    justify-content: center;
+        display: flex;
     
     }
 
@@ -58,8 +60,12 @@ div {
 }
 
 .imgauto {
-    max-height: 100%;
+    max-width: 100%;
    
 
 }
 
+.logotesla {
+    max-height: 100%;
+
+}
