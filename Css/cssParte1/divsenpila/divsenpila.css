@@ -74,11 +74,20 @@ background-color:rgb(235, 235, 107);
 
 .cuartodiv {
     background-image: linear-gradient(to bottom right, white,orange,red);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: small;
 
 }
 .quintodiv {
     background-image: linear-gradient(to top right,white,orange,red);
-    justify-content: center;
-    display: flex;
     
+    padding: 0;
+    
+}
+
+.parrafo5div {
+    font-size: small;
+
 }
