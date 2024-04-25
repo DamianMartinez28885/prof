@@ -81,7 +81,7 @@ background-color:rgb(235, 235, 107);
 
 }
 .quintodiv {
-    background-image: linear-gradient(to top right,white,orange,red);
+    background-image: linear-gradient(to top right,red,orange,white);
     
     padding: 0;
     
