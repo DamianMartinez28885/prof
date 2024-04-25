@@ -26,7 +26,7 @@ div.divprincipal {
     background-color: gray;
     justify-content: center;
     display: flex;
-
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
 }
 
 
@@ -41,7 +41,7 @@ background-color:rgb(235, 235, 107);
 
 .primerparrafo {
     color: rgb(255, 255, 255);
-    
+   
 
 }
 
@@ -78,6 +78,7 @@ background-color:rgb(235, 235, 107);
     padding-left: 10px;
     padding-right: 10px;
     font-size: small;
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
 
 }
 .quintodiv {
