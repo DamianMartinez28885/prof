@@ -1,0 +1,13 @@
+.divprincipal {
+    width: 90%;
+    right: 500px;
+    background-color: rgb(66, 66, 54);
+    margin: auto;
+    float: left;
+}
+
+.primerdiv {
+    width: 200px;
+    right: 600px;
+    background-color: brown;
+}
