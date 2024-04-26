@@ -1,40 +1,43 @@
 .divprincipal {
-    width: 80%;
+    width: 1600px;
     height: 80px; 
     background-color: aquamarine;
     margin: auto;
     padding: 1%;
     display: flex;
     float: left;
-    
-
     flex-wrap: wrap;
 }
-div {
-    border-radius: 10px;
-    margin-right: 2%;
-    width: 12%;
-    height: 100%;
-    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
-    
-    }
+
 
 
 .primerdiv {
-   
+    border-radius: 10px;
+    margin-right: 2%;
+    width: 150px;
+    height: 85px;
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
     background-image: linear-gradient(to top ,white,orange,red);
    
     
     }
 
 .segundodiv {
-    
+    border-radius: 10px;
+    margin-right: 2%;
+    width: 150px;
+    height: 85px;
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
     background-image: radial-gradient( white,orange,red);
     }
 
 .tercerdiv 
     {
-    
+        border-radius: 10px;
+        margin-right: 2%;
+        width: 150px;
+        height: 85px;
+        box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
         background-image: radial-gradient( white,orange,red);
         justify-content: center;
         display: flex;
@@ -43,7 +46,11 @@ div {
         }
 
 .cuartodiv {
-    
+    border-radius: 10px;
+    margin-right: 2%;
+    width: 150px;
+    height: 85px;
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
     background-image: radial-gradient( white,orange,red);
     justify-content: center;
         display: flex;
@@ -51,13 +58,22 @@ div {
     }
 
 .quintodiv {
-    
+    border-radius: 10px;
+    margin-right: 2%;
+    width: 150px;
+    height: 85px;
+   
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
     background-image: linear-gradient(to top ,white,orange,red);
    
     }
 
 .sextodiv {
-    
+    border-radius: 10px;
+    margin-right: 2%;
+    width: 150px;
+    height: 85px;
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
     background-image: radial-gradient( white,orange,red);
     
 
