@@ -1,0 +1,80 @@
+
+
+
+.divprincipal {
+    width: 80%;
+    height: 2000px;
+    background-color: antiquewhite;
+    margin: auto;
+    
+    
+}
+
+.divopcion {
+    padding: 20px;
+    background-color: rgba(241, 158, 25, 0.818);
+    float: left;
+    width: 150px;
+
+}
+
+.divopcion:hover {
+    background-color: greenyellow;
+    padding: 20px;
+    float: left;
+    width: 150px;
+}
+
+
+.divdelasopciones {
+    box-sizing: border-box;
+    display: block;
+    height: 100px;
+}
+
+.divdelasopciones:hover {
+    box-sizing: border-box;
+    display: block;
+    height: 100px;
+}
+
+
+img {
+    
+    max-height: 100%;
+    }
+
+.divimg {
+    
+    width: 200px;
+    height: 100px;
+    float: left;
+    border: 2px solid black;
+    transition: 0.3s;
+    }
+
+.divimg :active   {
+        width : 500px;
+        height : 500px;
+        transition: 0.5s;
+        
+    }
+
+a{
+    text-decoration: none;
+}
+
+input {
+    background-color: rgb(190, 179, 179);
+    border: none;
+}
+
+input:focus {
+    background-color: white;
+}
+
+
+
+
+
+

@@ -5,11 +5,9 @@
     display: inline-block;
     width: 100%;
     background-color: hsl(0, 7%, 64%);
-    
-}
+    }
 
 h1 {
-
     text-align: justify;
     color: #000000;
 }
@@ -31,9 +29,7 @@ body{
     box-sizing: border-box;
     padding: 10px;
     float: left;
-    
-}
-
+    }
 
 
 .divPrincipal{
@@ -42,13 +38,17 @@ body{
     margin: 50px;
     background-color: #222;
     box-sizing: border-box;
-    
-    
-}
+    }
 
 img {
-   
-        max-width: 100%;
-    
-    
+   max-width: 100%;
+   }
+
+@media ( max-width: 500px ){
+
+.divhijos{
+background-color: rgb(155, 4, 4);
+
+}
+
 }
