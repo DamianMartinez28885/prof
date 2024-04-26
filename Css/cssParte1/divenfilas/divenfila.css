@@ -6,32 +6,36 @@
     padding: 1%;
     display: flex;
     float: left;
+    
+
+    flex-wrap: wrap;
 }
 div {
     border-radius: 10px;
     margin-right: 2%;
     width: 12%;
     height: 100%;
+    box-shadow: 16px 8px 2px rgba(0,0, 0, 0.3);
+    
     }
 
 
 .primerdiv {
    
     background-image: linear-gradient(to top ,white,orange,red);
-    
+   
     
     }
 
 .segundodiv {
     
-    background-image: linear-gradient(to top ,white,orange,red);
-    
+    background-image: radial-gradient( white,orange,red);
     }
 
 .tercerdiv 
     {
     
-        background-image: linear-gradient(to top ,white,orange,red);
+        background-image: radial-gradient( white,orange,red);
         justify-content: center;
         display: flex;
         
@@ -40,7 +44,7 @@ div {
 
 .cuartodiv {
     
-    background-image: linear-gradient(to top ,white,orange,red);
+    background-image: radial-gradient( white,orange,red);
     justify-content: center;
         display: flex;
     
@@ -54,7 +58,7 @@ div {
 
 .sextodiv {
     
-    background-image: linear-gradient(to top ,white,orange,red);
+    background-image: radial-gradient( white,orange,red);
     
 
 }
@@ -69,3 +73,5 @@ div {
     max-height: 100%;
 
 }
+
+
