@@ -101,9 +101,14 @@
                         </li>
                         <li style="margin: 10px;">
                             <label style="font-weight: bold;" for="celular">Ingrese celular: </label><br>
-                            <input type="text" name="celular" id="celular" required="required" placeholder="(+54)11 44445555"><br>
+                            <input type="text" name="celular" id="celular" required="required" pattern="\(\+54\) \d{2} \d{4}-\d{4}" placeholder="(+54) 11 2222-3333"><br>
                             </li>
-    </ul>
+                            
+                            <li style="margin: 10px;"><input type="submit" name="submit" id="submit" value="Enviar"></li><br>
+                            <li style="margin: 10px;"><input type="reset" name="reset" id="reset" value="Reestablecer"></li>
+                    
+    
+                        </ul>
     
         
     

@@ -1,80 +1,88 @@
+*{
+    box-sizing: border-box;
+    padding: auto;  
+}
+
+body
+{
+   height: 100%;
+   width: 100%;
+}
 
 
+.divprincipal
+{
 
-.divprincipal {
+    height: 1500px;
     width: 80%;
-    height: 2000px;
-    background-color: antiquewhite;
+    background-color: rgb(228, 193, 39);
     margin: auto;
-    
-    
-}
-
-.divopcion {
-    padding: 20px;
-    background-color: rgba(241, 158, 25, 0.818);
-    float: left;
-    width: 150px;
+    padding:1%;
 
 }
 
-.divopcion:hover {
-    background-color: greenyellow;
-    padding: 20px;
-    float: left;
-    width: 150px;
-}
-
-
-.divdelasopciones {
-    box-sizing: border-box;
-    display: block;
-    height: 100px;
-}
-
-.divdelasopciones:hover {
-    box-sizing: border-box;
-    display: block;
-    height: 100px;
-}
-
-
-img {
-    
-    max-height: 100%;
+.divoption  
+{
+    height: 5%;
+    width: 13%;
+    border: solid thin;
+    float:left;
+    margin:1px;
+    background-color: rgb(209, 252, 100);
+    border-radius:10px;
+    padding: auto;
+    transition: width 1s , height 1s;
     }
-
-.divimg {
     
-    width: 200px;
-    height: 100px;
-    float: left;
-    border: 2px solid black;
-    transition: 0.3s;
-    }
-
-.divimg :active   {
-        width : 500px;
-        height : 500px;
-        transition: 0.5s;
-        
-    }
-
-a{
-    text-decoration: none;
+.divoption:hover
+{
+background: rgb(240, 255, 72);
+    color: white;
 }
 
-input {
-    background-color: rgb(190, 179, 179);
+
+
+form
+{
+    margin-top: 10%;
+}
+
+input
+{
+    border-radius: 5px;
+    height: 30px;
+    background-color: rgb(209, 252, 100);
+}
+
+input:focus
+{
+    background-color: rgb(255, 255, 255);
+}
+
+.divimg
+{
+
+    height: 100px;
+    width: 100px;
+    border:solid medium;
+    margin-top: 20px;
+    float: left;
+    padding: 5px;
+    transition-duration: 1s;
+
+}
+
+
+.divimg:active
+{
+    height: 50%;
+    width: 50%;
     border: none;
 }
 
-input:focus {
-    background-color: white;
+img
+{
+   max-height: 100%;
+   max-width: 100%;
+    margin-top: 10%;
 }
-
-
-
-
-
-
