@@ -68,8 +68,8 @@ input:focus
     margin-top: 20px;
     float: left;
     padding: 5px;
-    transition-duration: 1s;
-
+    transition-duration: 0,5s;
+    border: 1px solid black;
 }
 
 
@@ -86,3 +86,6 @@ img
    max-width: 100%;
     margin-top: 10%;
 }
+
+
+
