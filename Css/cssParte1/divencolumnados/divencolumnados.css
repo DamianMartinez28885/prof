@@ -52,3 +52,11 @@ background-color: rgb(155, 4, 4);
 }
 
 }
+
+.divvolver {
+    clear: both;
+    font-size: 40px;
+    color: black;
+    position: fixed;
+    top: 95%;
+}

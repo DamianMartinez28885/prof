@@ -1,0 +1,36 @@
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+.divprincipal {
+    width: 80%;
+    height: 100%;
+    background-color: rgb(82, 232, 243);
+    margin: auto;
+    padding: 1%;
+}
+
+.divimg {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+img {
+    min-width: 30%;
+    height: 30%;
+}
+
+.divvolver {
+    clear: both;
+    font-size: 40px;
+    color: black;
+    position: fixed;
+    top: 95%;
+}

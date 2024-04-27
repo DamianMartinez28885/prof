@@ -87,5 +87,15 @@ img
     margin-top: 10%;
 }
 
+.divvolver {
+    clear: both;
+    font-size: 25px;
+}
 
-
+.divvolver {
+    clear: both;
+    font-size: 40px;
+    color: black;
+    position: fixed;
+    top: 95%;
+}

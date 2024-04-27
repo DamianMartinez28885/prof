@@ -92,3 +92,11 @@ background-color:rgb(235, 235, 107);
     font-size: small;
 
 }
+
+.divvolver {
+    clear: both;
+    font-size: 40px;
+    color: black;
+    position: fixed;
+    top: 95%;
+}

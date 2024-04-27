@@ -38,7 +38,7 @@
 
 	.relativo1, .relativo2{
 		width: 80%;
-		height: 8%;
+		height: 5%;
         background-color: rgb(220, 223, 91);
 	}
 	
@@ -90,3 +90,11 @@
 		padding: 20px;
 		color: white;
 	}
+
+    .divvolver {
+        clear: both;
+        font-size: 40px;
+		color: white;
+		position: fixed;
+		top: 95%;
+    }
