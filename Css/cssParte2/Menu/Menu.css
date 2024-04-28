@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    }
+
+a,li{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+.divprincipal .divmenu{
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.divprincipal .menu{
+    width: 100%;
+    text-align: center;
+}
+
+.divprincipal .menu .primermenu{
+    color: #ffffff;
+    background-color: #0310c2;
+    display: inline-block;
+    width: 100%;
+    padding: 2%;
+    font-size: 2em;
+}
+
+.divprincipal .menu .primermenu:hover{
+    background-color: #9ba1ff;
+    transition: 0.3s;
+}
+
+.divprincipal ul ul{
+    padding: 0;
+    display: none;
+}
+
+.divprincipal ul ul a{
+    padding: 15px;
+    display: block;
+    background-color: #0310c2;
+    color: #ffffff;
+}
+
+.divprincipal ul ul a:hover{
+    background-color: #9ba1ff;
+    transition: 0.3s;
+}
+
+.divprincipal .menu:hover ul{
+    display: block;
+}
