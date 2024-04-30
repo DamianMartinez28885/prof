@@ -6,9 +6,6 @@ body{
 
 a,li{
     text-decoration: none;
-}
-
-ul{
     list-style: none;
 }
 
@@ -35,7 +32,6 @@ ul{
 
 .divprincipal .menu .primermenu:hover{
     background-color: #9ba1ff;
-    transition: 0.3s;
 }
 
 .divprincipal ul ul{
