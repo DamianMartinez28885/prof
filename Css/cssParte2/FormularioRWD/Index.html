@@ -11,111 +11,110 @@
         <div class="divcabeza"><h1>FORMULARIO</h1></div>
         <div class="divformulario">
             <form action="./respuestaFormulario.htlm" target="_blank" method="get">
-                <h3>Entadas simples</h3>
-                <ul>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold" for="apellido">Apellido: </label><br>
-                    <input type="text" id="apellido" name="apellido" value="" autofocus="autofocus">
-                    </li>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold" for="contrasena">Contrasena: </label><br>
-                    <input type="password" id="contrasena" name="contrasena" >
-                    </li>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="oculto">Oculto: </label><br>
-                    <input type="hidden" id="oculto" name="oculto"> <br>
-                    </li>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="campo deshabilitado">Campo deshabilitado: </label><br>
-                    <input disabled type="text" id="campo deshabilitado" value="Valor deshabilitado"><br>
-                    </li>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="Campo de solo lectura">Campo de solo lectura:</label><br>
-                    <input type="text" id="solo lectura" value="Valor solo de lectura" readonly><br>
-                    </li>
-                </ul>
-                <h3>Entrada de seleccion</h3>
-                <ul>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="practica basket">Practica de basket</label><br>
-                    <input type="checkbox" id="basket" name="basket" value="si"><br>
-                    </li>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="practica futbol">Practica de futbol</label><br>
-                    <input type="checkbox" id="futbol" name="futbol" value="si"><br>
-                    </li>
-                    <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="practica handball">Practica de handball</label><br>
-                    <input type="checkbox" id="handball" name="handball" value="si"><br>
-                    </li>
-                <li>
-                <label style="font-weight: bold;" for="sexo">Sexo</label><br>
-                <label for="categoria">Masculino</label>
-                <input type="radio" id="masculino" name="sexo" value="m" checked="checked">
-                <label for="categoria">Femenino</label>
-                <input type="radio" id="Femenino" name="sexo" value="f"><br><br>
-                </li>
-                <li style="margin: 10px;">
-                <label style="font-weight: bold;" for="categoria">Categoria</label>
-                <select name="Categoria" id="categoria">
-                    <option value="pre" selected="selected">Pre-mini</option>
-                    <option value="mini">Mini</option>
-                    <option value="sub13">Sub-13</option>
-                    <option value="sub15">Sub-15</option>
-                    <option value="sub17">Sub-17</option>
-                </select>
-                </li><br>
-                <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="fecha y hora">Fecha y Hora: </label><br>
-                    <input type="date" id="fecha" name="fecha">
-                    <input type="time" id="hora" name="hora"><br>
-                </li>
-                <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="color">Color: </label><br>
-                    <input type="color" id="color" for="color"><br>
-                </li>
-                </ul>
-        
-            <h3>Entradas de validacion</h3>
-            <ul>
-                <li style="margin: 10px;">
-                <label style="font-weight: bold;" for="comentario">Comentario: </label><br>
-                <input type="text" name="comentario" id="comentario" required="required"><br>
-                </li>
-                <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="email">Email con doble validacion: </label><br>
-                    <input type="email" name="email" id="email" placeholder="texto@texto" required="required"><br>
-                    </li>
-                <li style="margin: 10px;">
-                    <label style="font-weight: bold;" for="numero entero">Numero entero : </label><br>
-                    <input type="number" min="1" max="10" name="numeroentero" id="numeroentero" required="required"><br>
-                    </li>
-                    <li style="margin: 10px;">
-                        <label style="font-weight: bold;" for="numero real">Numero real : </label><br>
-                        <input type="number" min="1" max="10" name="numeroreal" id="numeroreal" required="required" step="0.5"><br>
+                <ol>
+                    <div class="divlista">
+                        <li>
+                            <label for="apellido">1 Apellido: </label><br>
+                            <input type="text" id="apellido" name="apellido" value="" autofocus="autofocus">
+                        </li>    
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="apellido">2 Nombre: </label><br>
+                            <input type="text" id="nombre" name="nombre" value="">
+                        </li>    
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="apellido">3 Contraseña: </label><br>
+                            <input type="password" id="contraseña" name="congraseña" value="">
+                        </li>    
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label style="font-weight: bold;" for="oculto">4 Oculto: </label><br>
+                            <input type="hidden" id="oculto" name="oculto"> <br>
+                        </li>    
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="practica basket">6 Practica algunos de estos deportes</label><br>
+                            <label for="practica futbol">Practica futbol</label>
+                            <input type="checkbox" id="futbol" name="futbol" value="si"><br>
+                            <label for="practica futbol">Practica basket</label>
+                            <input type="checkbox" id="basket" name="basket" value="si"><br>
+                            <label for="practica futbol">Practica futbol</label>
+                            <input type="checkbox" id="golf" name="golf" value="si"><br>
+                        </li>    
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="categoria">7 Categoria</label><br>
+                            <select name="Categoria" id="categoria"><br>
+                                <option value="pre" selected="selected">Pre-mini</option>
+                                <option value="mini">Mini</option>
+                                <option value="sub13">Sub-13</option>
+                                <option value="sub15">Sub-15</option>
+                                <option value="sub17">Sub-17</option>
+                            </select>
+                        </li>  
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="sexo">8 Sexo</label><br>
+                            <label for="categoria">Masculino</label><br>
+                            <input type="radio" id="masculino" name="sexo" value="m" checked="checked"><br>
+                            <label for="categoria">Femenino</label><br>
+                            <input type="radio" id="Femenino" name="sexo" value="f"><br>
                         </li>
-                        <li style="margin: 10px;">
-                            <label style="font-weight: bold;" for="url">URL : </label><br>
-                            <input type="url" name="sito" id="url" placeholder="http:\\xxx" required="required"><br>
-                            </li>
-                            <li style="margin: 10px;">
-                                <label style="font-weight: bold;" for="pattern">Pattern de validacion : </label><br>
-                                <input type="text" name="pattern" id="pattern" pattern="[a-z]{2}[0-9]{3}[a-z]{2}" required="required" title="2 letras,3 numeros y 2 letras"><br>
-                                </li>
-                                <li style="margin: 10px;">
-                                    <label style="font-weight: bold;" for="celular">Ingrese celular: </label><br>
-                                    <input type="text" name="celular" id="celular" required="required" pattern="\(\+54\) \d{2} \d{4}-\d{4}" placeholder="(+54) 11 2222-3333"><br>
-                                    </li>
-                                    
-                                    <li style="margin: 10px;"><input type="submit" name="submit" id="submit" value="Enviar"></li><br>
-                                    <li style="margin: 10px;"><input type="reset" name="reset" id="reset" value="Reestablecer"></li>
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label style="font-weight: bold;" for="fecha y hora">9 Fecha y Hora: </label><br>
+                            <input type="date" id="fecha" name="fecha"><br>
                             
-            
-                                </ul>
-            
-                
-            
-            </form>
+                        </li>
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <li>
+                                <label for="apellido">10 DNI: </label><br>
+                                <input type="dni" id="dni" name="dni">
+                            </li>    
+                        </li>
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="categoria">11 Estudio</label><br>
+                            <select name="estudio" id="estudio"><br>
+                                <option value="primario">Primario</option>
+                                <option value="secundario" selected="selected">Secundario</option>
+                                <option value="terciario">Terciario</option>
+                                <option value="universitario">universitario</option>
+                                <option value="post">Post-grado</option>
+                            </select>
+                        </li>  
+                    </div>
+                    <div class="divlista">
+                        <li>
+                            <label for="categoria">12 Turno</label><br>
+                            <select name="Categoria" id="categoria"><br>
+                                <option value="pre" selected="selected">Pre-mini</option>
+                                <option value="mini">Mini</option>
+                                <option value="sub13">Sub-13</option>
+                                <option value="sub15">Sub-15</option>
+                                <option value="sub17">Sub-17</option>
+                            </select>
+                        </li>  
+                    </div>
+
+                    <div class="contenedorbotones">     
+                            <div class="divboton"><li><input type="submit" name="submit" id="submit" value="Enviar"></li></div>
+                            <div class="divboton"><li><input type="reset" name="reset" id="reset" value="Reestablecer"></li></div>
+                    </div>
+                    
+                </ol>
+        </form>
         </div>
         <div class="divpie"><h2>Pie de formulario</h2></div>
 

@@ -1,10 +1,14 @@
-body{
-    background-color:aqua;
+body, html, form{
+    
 width: 100%;
-height: 100%;
+height: 30%;
 padding: 0%;
 margin: 0%;
+box-sizing: border-box;
+
 }
+
+
 
 h1 {
     font-size: 40px;
@@ -20,21 +24,24 @@ h1 {
     width: 100%;
     margin: 0%;
     color: white;
-    display: inline-block;
     text-align: center;
-    display: block;
+    display: flex;
 }
 
 .divformulario {
     background-color: rgb(245, 97, 29);
     width: 100%;
-    height: 1000px;
+    height: 580px;
     margin: 0%;
     color: white;
-    display: inline-block;
-    text-align: center;
+    box-sizing: border-box ;
+    overflow: auto;
+    flex-wrap: wrap;
+    padding: 0%;
     display: block;
-
+    overflow: auto;
+    
+    
 }
 
 .divpie{
@@ -42,8 +49,44 @@ h1 {
     width: 100%;
     margin: 0%;
     color: white;
-
+    display: flex;
     display: inline-block;
+}
+
+.divlista {
+    width: 20%;
+    height: 150px;
+    background-color: green;
+    box-sizing: border-box;
+    float: left;
+    padding: 1%;
+    margin: 0%;
+    border: 1px solid;
+    border-color: black;
     
+
+}
+
+li {
+    list-style: none;
+
+
+
+}
+
+.contenedorbotones {
+    clear: both;
+    width: 100%;
+    height: 80px;
+    background-color: purple;
+    display: flex;
+    padding: 3%;
+}
+
+.divboton {
+    
+    
+    width: 40%;
+    height: 60px;
 
 }
