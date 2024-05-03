@@ -1,0 +1,200 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+    }
+
+h1{
+    text-align: center;
+    margin: 80px;
+    color: #ffffff;
+    font-size: 4em;
+}
+
+h2{
+    margin: 0;
+    color: #ffffff;
+}
+
+header{
+    background-color: #062d99;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+footer{
+    background-color: #062d99;
+    font-size: 1.5em;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    position: absolute;
+    top: 120px;
+    bottom: 100px;
+    width: 100%;
+    overflow: auto;
+}
+
+table{ 
+    text-align: center;
+    text-wrap: wrap;
+    height: 100%;
+    overflow: auto;
+    }
+
+thead{
+    background-color: #960b0b;
+    color: #fcfafa;
+}
+
+tbody tr:nth-child(even){
+    background-color: #3bdcf8;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #098cc0;
+}
+
+thead tr th{
+    padding: 15px;
+    font-size: 2em;
+    
+}
+
+tbody tr td{
+    padding: 15px;
+    font-size: 1.5em;
+}
+
+.codigo{
+    width: 15%;
+}
+
+.producto{
+    width: 15%;
+}
+
+.descripcion{
+    width: 45%;
+}
+
+.proveedor{
+    width: 20%;
+}
+
+.iva{
+    width: 5%;
+}
+
+
+
+@media(max-width: 600px){
+
+    table{
+        width: 100%;
+    }
+
+    main{
+        height: 100%;
+    }
+
+    .iva{
+        display: none;
+    }
+
+    .proveedor{
+        display: none;
+    }
+
+    .descripcion{
+        display: none;
+    }
+
+    tbody tr{
+        height: 100px;
+        width: 50px;
+    }
+    tbody{
+        font-size: 0.9em;
+    }
+
+    thead{
+        font-size: 0.8em;
+    }
+}
+
+
+@media(max-width: 800px){
+
+    table{
+        width: 100%;
+    }
+
+    main{
+        height: 100%;
+    }
+
+    .iva{
+        display: none;
+    }
+
+    .proveedor{
+        display: none;
+    }
+
+    .descripcion{
+        display: none;
+    }
+
+    tbody tr{
+        height: 100px;
+        width: 50px;
+    }
+    tbody{
+        font-size: 0.9em;
+    }
+
+    thead{
+        font-size: 0.8em;
+    }
+}
+
+@media(min-width: 800px) and (max-width:1000px){
+
+    
+
+    .iva{
+        display: none;
+    }
+
+    .proveedor{
+        display: none;
+    }
+
+    tbody tr{
+        height: 100px;
+    }
+}
+
+@media(min-width: 1000px) and (max-width:1200px){
+
+    
+    .iva{
+        display: none;
+    }
+
+
+}
