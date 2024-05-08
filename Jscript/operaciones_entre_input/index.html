@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones entre input</title>
+    <style>
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .divinput{
+        width: 100;
+        background-color: aqua;    
+        }
+
+        .divboton{
+        padding-top: 1%;
+        }
+
+        div label{
+            padding-right: 6%;
+        }
+
+        div{
+            margin: 1%;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Intruducir un valor en los cuadros de textos y luego pulsar el boton ejecutar la funcion correspondiente</h2>
+    <div class="divinput">
+	<div>
+		<label for="input1">Entrada 1</label>
+		<input type="text" id="input1">
+	</div>
+
+	<div>
+		<label for="input2">Entrada 2</label>
+		<input type="text" id="input2">
+	</div>
+
+	<div>
+		<label for="input3">Entrada 3</label>
+		<input type="text" id="input3">
+	</div>
+
+	<div>
+			<label for="inputResultado">Resultado</label>
+			<input type="text" id="inputresultado">
+	</div>
+    </div>
+	<div class="divboton">
+		<button id="suma">Suma</button>
+		<button id="promedio">Promedio</button>
+		<button id="mayor">Mayor</button>
+	</div>
+
+    <script>
+        var input1 = document.getElementById('input1');
+        var input2 = document.getElementById('input2');
+        var input3 = document.getElementById('input3');
+
+        var suma = document.getElementById('suma');
+        var promedio = document.getElementById('promedio');
+        var mayor = document.getElementById('mayor');
+        var resultado = document.getElementById('inputresultado');
+
+        suma.addEventListener('click', function () {
+        	resultado.value = parseInt(input1.value) + parseInt(input2.value) + parseInt(input3.value);
+        });
+
+        promedio.addEventListener('click', function () {
+        	resultado.value =(parseInt(input1.value) + parseInt(input2.value) +parseInt(input3.value)) /3;
+        });
+
+        mayor.addEventListener('click', function () {
+        	resultado.value = Math.max(parseInt(input1.value),parseInt(input2.value),parseInt(input3.value),);
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones sobre input</title>
+</head>
+<body>
+    <h1>Introducir un valor en el cuadro de texto y luego pulsar boton para ejecutar el procedimiento adecuado</h1>
+	<input type="text" id="X">
+	<button id="A">Mostrar valor</button>
+	<button id="B">Sumar 1</button>
+	<button id="C">Elevar al cuadrado</button>
+	<button id="D">Multiplicar por 2</button>
+	<button id="E">Elevar 2 al valor de "X"</button>
+    
+</body>
+
+<script>
+const X = document.getElementById('X');
+const A = document.getElementById('A');
+const B = document.getElementById('B');
+const C = document.getElementById('C');
+const D = document.getElementById('D');
+const E = document.getElementById('E');
+
+A.addEventListener('click', function () {
+	alert(X.value);
+});
+
+B.addEventListener('click', function () {
+	X.value = parseInt(X.value) + 1;
+});
+
+C.addEventListener('click', function () {
+	X.value = parseInt(X.value) ** 2;
+});
+
+D.addEventListener('click', function () {
+	X.value = parseInt(X.value) * 2;
+});
+
+E.addEventListener('click', function () {
+	X.value = 2 ** parseInt(X.value);
+});
+
+</script>
+</html>
