@@ -7,29 +7,29 @@ const num6 = document.getElementById('boton6');
 const num7 = document.getElementById('boton7');
 const num8 = document.getElementById('boton8');
 const num9 = document.getElementById('boton9');
-const memoria = 0;
 
-const acumulador = document.getElementById('botonacumulador');
+const acumulador = document.getElementById('botonacumular');
 const borraracumulador = document.getElementById('botonborraracumulador');
 const borrarpantalla = document.getElementById('botonborrarpantalla');
 const sumar = document.getElementById('botonsumar');
+const pantalla = document.getElementById('pantalla');
 
-let pantalla = document.getElementById('pantalla');
+let memoria = 0;
 
 num1.addEventListener('click', function () {
-	addToDisplay(1);
+	mostrarenpantalla(1);
 });
 
 num2.addEventListener('click', function () {
-	addToDisplay(2);
+	mostrarenpantalla(2);
 });
 
 num3.addEventListener('click', function () {
-	addToDisplay(3);
+	mostrarenpantalla(3);
 });
 
 num4.addEventListener('click', function () {
-	addToDisplay(4);
+	mostrarenpantalla(4);
 });
 
 num5.addEventListener('click', function () {
@@ -37,57 +37,55 @@ num5.addEventListener('click', function () {
 });
 
 num6.addEventListener('click', function () {
-	addToDisplay(6);
+	mostrarenpantalla(6);
 });
 
 num7.addEventListener('click', function () {
-	addToDisplay(7);
+	mostrarenpantalla(7);
 });
 
 num8.addEventListener('click', function () {
-	addToDisplay(8);
+	mostrarenpantalla(8);
 });
 
 num9.addEventListener('click', function () {
-	addToDisplay(9);
+	mostrarenpantalla(9);
 });
 
-function addToDisplay(value) {
+function mostrarenpantalla(value) {
 	pantalla.value += value;
 }
 
-function clearDisplay() {
+function borrarpant() {
 	pantalla.value = '';
 }
 
-function clearAccumulator() {
+function borrarmemoria() {
 	memoria = 0;
 }
 
-function showAccumulator() {
+function mostrarenalert() {
 	alert(memoria);
 }
 
-function sum() {
-	const currentValue = parseInt(pantalla.value);
-	memoria += currentValue;
-	clearDisplay();
+function sumador() {
+	const auxiliar = parseInt(pantalla.value);
+	memoria += auxiliar;
+	borrarpant();
 }
 
-
-
 sumar.addEventListener('click', function () {
-	sum();
+	sumador();
 });
 
 acumulador.addEventListener('click', function () {
-	showAccumulator();
+	mostrarenalert();
 });
 
 borrarpantalla.addEventListener('click', function () {
-	clearDisplay();
+	borrarpant();
 });
 
 borraracumulador.addEventListener('click', function () {
-	clearAccumulator();
+	borrarmemoria();
 });
