@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form confirmacion</title>
+    <style>
+        * {
+	        box-sizing: border-box;
+	        padding: 0;
+	        margin: 0;
+            }
+
+        html,body {
+	        height: 100%;
+	        width: 100%;
+        }
+
+        body {
+	    background-color: white;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+        }
+
+        .divprincipal {
+	    background-color: #f5cd70;
+	    padding: 2%;
+	    width: 40%;
+        }
+
+        label {
+	    display: block;
+	    }
+
+        input ,select{
+	    width: 100%;
+	    height: 30px;
+        
+	    }
+        
+        button {
+	    width: 50%;
+        padding: 3%;
+	    cursor: pointer;
+	    float: left;
+        margin-top: 5%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="divprincipal">
+        <h2>Confirmacion carrera de calle</h2>
+        <form action="./respuesta_formulario.html" method="get" id="form">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido">
+            </div>
+            <div>
+                <label for="sexo">Sexo</label>
+                <select name="sexo" id="sexo">
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino" selected="selected">Masculino</option>
+                    </select>
+            </div>
+
+            <div>
+                <label for="distancia">Distancia de carrera</label>
+                <select name="distancia" id="distancia">
+                <option value="3k" >3k kids</option>
+                <option value="5k">5k participativo</option>
+                <option value="10k" selected="selected">10k competitivo</option>
+                </select>
+            </div>
+            <div>
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="distancia">
+                <option value="menor" >9-17</option>
+                <option value="18-24">18-24</option>
+                <option value="25-29" selected="selected">25-29</option>
+                <option value="30-34" >30-34</option>
+                <option value="35-40">35-40</option>
+                <option value="40-50">40-50</option>
+                <option value="adulto">adulto</option>
+                </select>
+            </div>
+        </form>
+        <div class="divboton">
+            
+            <button id="botonenviar">Enviar</button>
+            <button id="botonreset">Resetear</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const formulario = document.getElementById('form');
+        const botonenviar = document.getElementById('botonenviar');
+        const reset = document.getElementById('botonreset');
+        
+        botonenviar.addEventListener('click', function () {
+            if (confirm('¿Esta seguro que desea enviar el formulario?')) {
+                formulario.submit();
+            }
+        });
+        
+        reset.addEventListener('click', function () {
+            formulario.reset();
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locacion</title>
+</head>
+<body>
+    <button id="boton1">Youtube</button>
+	<button id="boton2">Mercado libre</button>
+	<button id="boton3">Iloverunn</button>
+    
+</body>
+    <script>
+        const boton1 = document.getElementById('boton1');
+        const boton2 = document.getElementById('boton2');
+        const boton3 = document.getElementById('boton3');
+
+boton1.addEventListener('click', () => {
+	location.href = 'https://www.youtube.com';
+});
+
+boton2.addEventListener('click', () => {
+	location.href = 'https://www.mercadolibre.com.ar/';
+});
+
+boton3.addEventListener('click', () => {
+	location.href = 'https://iloverunn.com/2024/index-3/';
+});
+
+
+
+    </script>
+</html>
