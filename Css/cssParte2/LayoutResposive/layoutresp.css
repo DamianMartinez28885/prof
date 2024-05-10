@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0;
+}
+
+body
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#principal
+ {
+    height: 100%;
+    width: 80%;
+    position: relative;
+ }
+
+#cabecera
+{
+
+    display: flex;
+    position: fixed;
+    height:10%;
+    width: 80%;
+    background-color: #222651;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#contenedor-central
+{
+
+    position: absolute;
+    display: flex;
+    height: 80%;
+    width: 100%;
+    top:10%;
+    
+}
+
+
+#Navegacion
+{
+    position: relative;    
+    height: 15%;
+    width: 100%;
+    float: left;
+    overflow: auto;
+}
+
+.Menu
+{
+float: left;
+height: 100%;
+width: 100%;
+display: flex;
+position: absolute;
+flex-wrap: wrap;
+align-items: center;
+background-color: #cce9f3;
+}
+
+.items
+{
+background-color: #0078b7;
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+width: 25%;
+height: 60%;
+float: left;
+font-size: 2em;
+}
+
+.items:hover
+{
+    background-color: #00b4d8;
+    color: white;
+}
+
+#opacity 
+{
+    position: fixed;
+    top: 22%;
+    height: 68% ;
+    width: 80%;
+    z-index: 10;
+}
+
+#main
+{
+    background-color: beige;
+    position: absolute;
+    top: 15%;
+    height: 85% ;
+    width: 100%;
+    overflow: auto;
+    padding: 2%;
+    font-family: cursive;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+
+
+footer
+{  
+    top:90% ;
+    display: flex;
+    position: fixed;
+    height:10%;
+    width: 80%;
+    background-color: #222651;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: -2;
+    }
+
+.parrafos
+{
+position:relative;
+    display:inline-table;
+    width: 280px;
+    height: 100%;
+    padding: 1%;
+    font-size: medium;
+    text-align: left;
+    z-index: 20;
+    margin: 6px;
+    border: solid thin;
+}
+
+img
+{
+    position: static;
+    height:150px;
+    margin: 10%;
+    transform: rotate(20deg);
+}
+
+#imgpaisaje
+{
+    position: static;
+    height:100px;
+    margin: 10%;
+    transform: none;
+    
+}
+
+a
+{
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+@media (max-width:1400px)
+{
+    .items
+    {
+        width: 50%;
+        
+    }
+}
+@media (max-width:900px)
+{
+    .items
+    {
+        width: 100%;
+        
+    }
+
+
+}
