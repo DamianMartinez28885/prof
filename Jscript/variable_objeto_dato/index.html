@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable objeto dato</title>
+    <style>
+       
+       * {
+	    box-sizing: border-box;
+	    padding: 0;
+	    margin: 0;
+        }
+
+        html,
+        body {
+	    height: 100%;
+    	width: 100%;
+        }
+
+        body {
+	    justify-content: center;
+	    align-items: center;
+        padding: auto;
+        }
+
+        button {
+	    cursor: pointer;
+        padding: 1%;
+	    }
+
+        .control{
+            background-color: rgb(170, 22, 150);
+            width: 60%;
+            padding: 1%;
+        }
+
+        table{
+	    width: 100%;
+        border-collapse: collapse;
+        
+        border: .2rem solid #222;
+        }
+
+        td,td,th{
+	    text-align: center;
+        border: .2rem solid #222;
+        }
+
+        .container {
+	    background-color: rgb(50, 92, 241);
+	    padding: 1%;
+	    width: 60%;
+        }
+
+        .form-group label {
+	    display: block;
+	   }
+
+        .form-group input {
+	    width: 100%;
+	    padding: 1%;
+	    }
+
+        .display{
+	    background-color: rgb(211, 244, 48);
+        width: 60%;
+        margin-top: 1%;
+        padding: 1%;
+        display: flex;
+        flex-direction: column;
+        
+        }
+
+        .hidden{
+	    display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Agregar persona</h2>
+        <form id='form'>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Fecha de nacimiento:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+        </form>
+		<div class="form-group">
+			<button id="submitButton">Agregar</button>
+		</div>
+
+		
+		
+
+		
+
+    </div>
+    <div class="control">
+        <h2>Control</h2>
+        <button id="mostrar">Mostrar Personas</button>
+        <button id="ocultar">Ocultar Personas</button>
+    </div>
+    <div class="display"></div>
+    <script>
+        var $form = document.getElementById('form');
+
+var $inputNombre = document.getElementById('nombre');
+var $inputApellido = document.getElementById('apellido');
+var $inputFecha = document.getElementById('date');
+var $inputAgregar = document.getElementById('submitButton');
+
+var $inputMostrar = document.getElementById('mostrar');
+var $inputOcultar = document.getElementById('ocultar');
+
+var $display = document.querySelector('.display');
+
+var persona1 = {
+	nombre: 'Juan',
+	apellido: 'Perez',
+	edad: new Date(1992, 4, 20),
+};
+var persona2 = {
+	nombre: 'María',
+	apellido: 'Gonzales',
+	edad: new Date(1990, 1, 27),
+};
+
+var arregloPersonas = [persona1, persona2];
+
+function mostrarPersonas() {
+	let html = '';
+	$display.innerHTML = html;
+	html = `
+			<table>
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Edad</th>
+					</tr>
+				</thead>
+				<tbody>
+	`;
+
+	arregloPersonas.forEach((persona) => {
+		var edad = persona.edad;
+		var fecha = `${edad.getDate()}/${edad.getMonth() + 1}/${edad.getFullYear()}`;
+		html += `
+			<tr>
+				<td>${persona.nombre}</td>
+				<td>${persona.apellido}</td>
+				<td>${fecha}</td>
+			</tr>
+        `;
+	});
+
+	html += `
+			</tbody>
+			</table>
+			<p>Longitud del arreglo: ${arregloPersonas.length}</p>
+		`;
+
+	$display.innerHTML = html;
+}
+
+mostrarPersonas();
+
+$inputAgregar.addEventListener('click', (event) => {
+	if (!$inputNombre.checkValidity()) return $inputNombre.focus();
+	if (!$inputApellido.checkValidity()) return $inputApellido.focus();
+	if (!$inputFecha.checkValidity()) return $inputFecha.focus();
+
+	arregloPersonas.push({
+		nombre: $inputNombre.value,
+		apellido: $inputApellido.value,
+		edad: new Date($inputFecha.value),
+	});
+
+	document.querySelectorAll('input').forEach((input) => (input.value = ''));
+
+	mostrarPersonas();
+});
+
+$inputOcultar.addEventListener('click', (event) => {
+	$display.classList.add('hidden');
+});
+
+$inputMostrar.addEventListener('click', (event) => {
+	$display.classList.remove('hidden');
+});
+
+    </script>
+</body>
+</html>
