@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion con KeyUP</title>
+</head>
+<style>
+    
+    * {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+    }
+    
+    .divprincipal{
+        background-color: rgb(85, 240, 93);
+        width: 30%;
+        padding: 1%;
+        display: flex;
+	    justify-content: center;
+	    align-items: center;
+        font-size: larger;
+    }
+
+    input{
+        width: 300px;
+        padding: 2%;
+
+    }
+
+    label{
+        display: block;
+    }
+
+    button {
+	cursor: pointer;
+    padding: 1%;
+    width: 40%;
+    margin-top: 2%;
+	}
+
+
+</style>
+<body>
+    <h1>Validacion de input</h1>
+    <div class="divprincipal">
+        
+        <form>
+            
+                <label for="dia">Ingrese un dia del mes</label>
+                <input type="text" id="dia" name="dia" required>
+                <label for="año">Ingrese un mes </label>
+                <input type="text" id="mes" name="mes" required>
+            
+		<div class="divbotones">
+			<button type="submit">Enviar</button>
+			<button type="reset">Resetear</button>
+		</div>
+        </form>
+    </div>
+
+    <script>
+        var Dia = document.getElementById('dia');
+        var Mes = document.getElementById('mes');
+
+Dia.addEventListener('keyup', (event) => {
+	Valor = parseInt(event.target.value);
+	if (isNaN(Valor) || Valor > 31) {
+		alert('Solo es posible ingresar un valor numérico del 1 al 31');
+		event.target.value = '';
+	}
+});
+
+Mes.addEventListener('keyup', (event) => {
+	Valor = parseInt(event.target.value);
+	if (isNaN(Valor) || Valor > 12) {
+		alert('Solo es posible ingresar un valor numérico del 1 al 12');
+		event.target.value = '';
+	}
+});
+    </script>
+</body>
+</html>

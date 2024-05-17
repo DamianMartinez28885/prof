@@ -29,10 +29,10 @@
         padding: 1%;
 	    }
 
-        .control{
-            background-color: rgb(170, 22, 150);
-            width: 60%;
-            padding: 1%;
+        .divboton{
+        background-color: rgb(170, 22, 150);
+        width: 60%;
+        padding: 1%;
         }
 
         table{
@@ -47,22 +47,22 @@
         border: .2rem solid #222;
         }
 
-        .container {
+        .divprincipal {
 	    background-color: rgb(50, 92, 241);
 	    padding: 1%;
 	    width: 60%;
         }
 
-        .form-group label {
+        .divinput label {
 	    display: block;
 	   }
 
-        .form-group input {
+        .divinput input {
 	    width: 100%;
 	    padding: 1%;
 	    }
 
-        .display{
+        .divtabla{
 	    background-color: rgb(211, 244, 48);
         width: 60%;
         margin-top: 1%;
@@ -79,67 +79,58 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Agregar persona</h2>
-        <form id='form'>
-            <div class="form-group">
+    <div class="divprincipal">
+        <h2>Adicionar persona</h2>
+        	<div class="divinput">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <input type="text" id="nombre" name="nombre">
             </div>
-            <div class="form-group">
+            <div class="divinput">
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
+                <input type="text" id="apellido" name="apellido">
             </div>
-            <div class="form-group">
-                <label for="date">Fecha de nacimiento:</label>
-                <input type="date" id="date" name="date" required>
+            <div class="divinput">
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fecha">
             </div>
-        </form>
-		<div class="form-group">
-			<button id="submitButton">Agregar</button>
-		</div>
-
-		
-		
-
-		
+        
+		<div >
+			<button id="botonagregar">Crear persona</button>
+	</div>	
 
     </div>
-    <div class="control">
+    <div class="divboton">
         <h2>Control</h2>
-        <button id="mostrar">Mostrar Personas</button>
-        <button id="ocultar">Ocultar Personas</button>
+        <button id="botonagregar">Lista persona</button>
+        <button id="botonocultar">Ocultar presentacion</button>
     </div>
-    <div class="display"></div>
+    <div class="divtabla"></div>
     <script>
-        var $form = document.getElementById('form');
-
-var $inputNombre = document.getElementById('nombre');
-var $inputApellido = document.getElementById('apellido');
-var $inputFecha = document.getElementById('date');
-var $inputAgregar = document.getElementById('submitButton');
-
-var $inputMostrar = document.getElementById('mostrar');
-var $inputOcultar = document.getElementById('ocultar');
-
-var $display = document.querySelector('.display');
+        
+var Nombre = document.getElementById('nombre');
+var Apellido = document.getElementById('apellido');
+var Fecha = document.getElementById('fecha');
+var Agregar = document.getElementById('botonagregar');
+var Mostrar = document.getElementById('botonmostrar');
+var Ocultar = document.getElementById('botonocultar');
+var divtabla = document.querySelector('.divtabla');
 
 var persona1 = {
-	nombre: 'Juan',
-	apellido: 'Perez',
-	edad: new Date(1992, 4, 20),
+	nombre: 'Joaquin',
+	apellido: 'Martinez',
+	edad: new Date(2007, 1, 2),
 };
 var persona2 = {
-	nombre: 'María',
-	apellido: 'Gonzales',
-	edad: new Date(1990, 1, 27),
+	nombre: 'Juan',
+	apellido: 'Carlos',
+	edad: new Date(1997, 11, 17),
 };
 
 var arregloPersonas = [persona1, persona2];
 
 function mostrarPersonas() {
 	let html = '';
-	$display.innerHTML = html;
+	divtabla.innerHTML = html;
 	html = `
 			<table>
 				<thead>
@@ -170,20 +161,20 @@ function mostrarPersonas() {
 			<p>Longitud del arreglo: ${arregloPersonas.length}</p>
 		`;
 
-	$display.innerHTML = html;
+		divtabla.innerHTML = html;
 }
 
 mostrarPersonas();
 
-$inputAgregar.addEventListener('click', (event) => {
-	if (!$inputNombre.checkValidity()) return $inputNombre.focus();
-	if (!$inputApellido.checkValidity()) return $inputApellido.focus();
-	if (!$inputFecha.checkValidity()) return $inputFecha.focus();
+Agregar.addEventListener('click', (event) => {
+	if (!Nombre.checkValidity()) return Nombre.focus();
+	if (!Apellido.checkValidity()) return Apellido.focus();
+	if (!Fecha.checkValidity()) return Fecha.focus();
 
 	arregloPersonas.push({
-		nombre: $inputNombre.value,
-		apellido: $inputApellido.value,
-		edad: new Date($inputFecha.value),
+		nombre: Nombre.value,
+		apellido: Apellido.value,
+		edad: new Date(Fecha.value),
 	});
 
 	document.querySelectorAll('input').forEach((input) => (input.value = ''));
@@ -191,12 +182,12 @@ $inputAgregar.addEventListener('click', (event) => {
 	mostrarPersonas();
 });
 
-$inputOcultar.addEventListener('click', (event) => {
-	$display.classList.add('hidden');
+Ocultar.addEventListener('click', (event) => {
+	divtabla.classList.add('hidden');
 });
 
-$inputMostrar.addEventListener('click', (event) => {
-	$display.classList.remove('hidden');
+Mostrar.addEventListener('click', (event) => {
+	divtabla.classList.remove('hidden');
 });
 
     </script>
