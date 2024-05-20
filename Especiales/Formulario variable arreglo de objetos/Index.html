@@ -4,27 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form  Variable arreglo de objetos</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="../categoriacarrera.json" type="text/javascript"></script>
 </head>
 <body>
     
     <header><h2>Formulario de competicion</h2></header>
     <main>
-    <form action="./respuestaFormulario.html" target="_blank" method="get"></form>
+    <form action="./respuestaFormulario.html" target="_blank" method="get">
     
         <div>
             <label for="apellido">Apellido: </label>
-            <input type="text" id="apellido" name="apellido" value="" autofocus="autofocus">
+            <input type="text" id="apellido" name="apellido"  autofocus="autofocus">
         </div>
         <div>
             <label for="apellido">Nombre: </label>
-            <input type="text" id="nombre" name="nombre" value="" autofocus="autofocus">
+            <input type="text" id="nombre" name="nombre"  autofocus="autofocus">
         </div>
         <div>
-            <label for="apellido">Apellido: </label>
-            <input type="text" id="apellido" name="apellido" value="" autofocus="autofocus">
+            <label for="apellido">DNI: </label>
+            <input type="number" id="dni" name="dni" autofocus="autofocus">
         </div>
         <div>
-            <button><input type="submit"   name="submit" id="submit" value="enviar"></button>
+            <label for="categoria">Categoria: </label>
+            <select name="categoria" id="categoria">
+
+
+            </select>
+
+        </div>
+        <div>
+            <button><input type="submit"  name="submit" id="submit" value="enviar"></button>
         </div>
             
     </form>
@@ -35,6 +45,12 @@
 
     </main>
     <footer><h2>Nunca te rindas </h2></footer>
-    
+
+    <script>
+
+
+
+
+    </script>
 </body>
 </html>
