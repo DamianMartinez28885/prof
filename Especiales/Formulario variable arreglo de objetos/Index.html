@@ -4,11 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form  Variable arreglo de objetos</title>
-    <script src="../jquery-3.7.1.min.js"></script>
-    <script src="../categoriacarrera.json" type="text/javascript"></script>
+    
+    <style>
+         * {
+        margin: auto;
+        padding: 0;
+        
+    }
+
+
+html,body{
+    
+    box-sizing: border-box;
+    width: 100%;
+    
+    }
+
+    .divcontenedor{
+        width: 35%;
+        background-color: beige;
+        font-size: 30px;
+        padding: 1%;
+    }
+
+    label{
+        display: block;
+    }
+
+    input,select,option {
+        height: 40px;
+        width: 90%;
+    }
+
+    footer{
+        top: 90%;
+    position: fixed;
+    width: 100%;
+    height: 20%;
+    background-color: #222651;
+    color: aliceblue;
+    text-align: center;
+    font-size: larger;
+    font-size: 40px;
+    }
+
+
+
+    </style>
 </head>
 <body>
-    
+    <div class="divcontenedor">
     <header><h2>Formulario de competicion</h2></header>
     <main>
     <form action="./respuestaFormulario.html" target="_blank" method="get">
@@ -34,7 +79,8 @@
 
         </div>
         <div>
-            <button><input type="submit"  name="submit" id="submit" value="enviar"></button>
+            <input type="submit"  name="submit" id="submit" value="enviar">
+        </div>
         </div>
             
     </form>
@@ -47,13 +93,32 @@
     <footer><h2>Nunca te rindas </h2></footer>
 
     <script>
-        var categoria = '{"categoriacarrera":[{"codcat":"mini","descripcioncat":"mini"},{"codcat":"25","descripcioncat":"18-25"},{"codcat":"30","descripcioncat":"26-30"},{"codcat":"40","descripcioncat":"31-40"},{"codcat":"mayor","descripcioncat":"Mayor"}]};';
-        console.log(typeof categoria);
-        var objetoJason = JSON.parse(categoria);
-        console.log(typeof objetoJason);
+        const jsonString = `{
+	"varitas":[
+		{"value":"alder","texto":"Varita de Aliso"},
+		{"value":"yew","texto":"Varita de Tejo"},
+		{"value":"holly","texto":"Varita de Acebo"},
+		{"value":"oak","texto":"Varita de Roble"},
+		{"value":"maple","texto":"Varita de Cedro"},
+        {"value":"mahogany","texto":"Varita de Madera"},
+        {"value":"birch","texto":"Varita de Bosque"},
+        {"value":"elm","texto":"Varita de Eucalipto"},
+        {"value":"chestnut","texto":"Varita de Cerezo"}
+	]
+}`;
 
+const $select = document.getElementById('categoria');
 
+const objetoDatos = JSON.parse(jsonString);
 
+document.addEventListener('DOMContentLoaded', () => {
+	objetoDatos.varitas.forEach((varita) => {
+		const option = document.createElement('option');
+		option.value = varita.value;
+		option.textContent = varita.texto;
+		$select.appendChild(option);
+	});
+});
 
     </script>
 </body>
