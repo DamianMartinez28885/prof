@@ -1,0 +1,2 @@
+var json = '{"Carrera":[{"lugar":"Tandel","distancia":"10k","fecha":"20/05/24","tipo":"Calle","organizador":"I love runn","valor":"$12.000"},{"lugar":"Tandel","distancia":"10k","fecha":"20/05/24","tipo":"Calle","organizador":"I love runn","valor":"$12.000"},{"lugar":"Tandel","distancia":"10k","fecha":"20/05/24","tipo":"Calle","organizador":"I love runn","valor":"$12.000"},{"lugar":"Tandel","distancia":"10k","fecha":"20/05/24","tipo":"Calle","organizador":"I love runn","valor":"$12.000"},]}'
+
