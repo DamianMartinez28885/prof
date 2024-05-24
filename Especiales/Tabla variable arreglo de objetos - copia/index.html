@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Variable arreglo de objetos</title>
+    <style>
+
+html,body{
+    padding: auto;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: beige;
+    }
+
+    header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #222651;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    display: flex;
+}
+
+#div-principal{
+    background-color: beige;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 100px;
+    bottom: 60px;
+    color: #222651;
+    
+    overflow: auto;
+
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #222651;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+button{
+    padding: 10px;
+    margin: 20px;
+    float: right;
+    font-size: 30px;
+}
+
+table{
+    width: 100%;
+    text-align: center;
+}
+
+th,tr{
+    background-color: #2a3183;
+    color: white;
+    height: 10%;
+    font-size: 30px;
+    width: 15%;
+}
+
+tr:nth-child(even){
+    background-color: #0078b7;
+    color: white;
+}
+
+tr:nth-child(odd){
+    background-color: #039cee;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="botones">
+            <button id="cargar">Cargar datos</button>
+            <button id="borrar">Vaciar datos</button>
+        </div>
+    </header>
+        <div id="div-principal">
+                <table id="tabla">
+                    <thead id="thead">
+                        <th id="marca">Lugar</th>
+                        <th id="cilindrada">Distancia</th>
+                        <th id="fecha">Fecha de carrea</th>
+                        <th id="precio">Tipo de carrea</th>
+                        <th id="origen">Organizador</th>
+                        <th id="origen">Valor de carrera</th>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+        </div>
+        <footer>
+            <h2>Pie de pagina</h2>
+        </footer> 
+    
+</body>
+<script>
+
+
+</script>
+</html>
