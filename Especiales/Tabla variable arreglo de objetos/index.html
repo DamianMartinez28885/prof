@@ -3,191 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Variable arreglo de objetos</title>
-    <script src="./json.js"></script>
-    <script src="../jquery-3.7.1.min.js"></script>
-    <style>
-
-html,body{
-    padding: auto;
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: beige;
-    }
-
-    header{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #222651;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    padding: auto;
-    display: flex;
-}
-
-#div-principal{
-    background-color: beige;
-    width: 100%;
-    margin: auto;
-    position: absolute;
-    top: 100px;
-    bottom: 60px;
-    color: #222651;
-    
-    overflow: auto;
-
-}
-
-
-footer{
-    position: absolute;
-    bottom: 0;
-    height: 60px;
-    width: 100%;
-    background-color: #222651;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-button{
-    padding: 10px;
-    margin: 20px;
-    float: right;
-    font-size: 30px;
-}
-
-table{
-    width: 100%;
-    text-align: center;
-}
-
-th,tr{
-    background-color: #2a3183;
-    color: white;
-    height: 10%;
-    font-size: 30px;
-    width: 15%;
-}
-
-tr:nth-child(even){
-    background-color: #0078b7;
-    color: white;
-}
-
-tr:nth-child(odd){
-    background-color: #039cee;
-    color: white;
-}
-
-    </style>
+    <link rel="stylesheet" href="./styleTablaVariableArregloDeObjetos.css">
+    <title>Tabla Variable Arreglo de Objetos</title>
 </head>
+    
 <body>
-    <header>
+    <div id="principal">
+        <header id="encabezado">
+            
+            <div class="Botones">
+                <button id="Cargar" >CARGAR</button>
+                <button id="Vaciar" >VACIAR</button>
+               
+            </div>
+        </header>
         
-        <div class="botones">
-            <button id="cargar">Cargar datos</button>
-            <button id="vaciar">Vaciar datos</button>
-        </div>
-    </header>
-        <div id="div-principal">
-                <table id="tabla">
-                    <thead id="thead">
-                        <th class="celdalugar">Lugar</th>
-                        <th class="celdadistancia">Distancia</th>
-                        <th class="celdafecha">Fecha de carrera</th>
-                        <th class="celdatipo">Tipo de carrera</th>
-                        <th class="celdaorganizador">Organizador</th>
-                        <th class="celdavalor">Valor de carrera</th>
-                    </thead>
-                    <tbody id="tbody">
+        <table id="general" >
+            <thead>
+                <tr id="filasEnCabezado">
+                    <th class="celda">FECHA</th>
+                    <th class="celda">LUGAR</th>
+                    <th class="celda">DISTANCIA</th>
+                    <th class="celda">TIPO CARRERA</th>
+                    <th class="celda">PRECIO</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+
+            </tbody>
+
+            
+
+        </table>
 
 
-
-
-                    </tbody>
-                </table>
-        </div>
         <footer>
             <h2>Pie de pagina</h2>
-        </footer> 
-    
+        </footer>
+        
+   
+    </div>
+<script src="../Tabla variable arreglo de objetos/json.js"></script>
+<script src="../jquery-3.7.1.min.js"></script>
+<script src="./tablaVariableArreglosDeObjetos.js"></script>
+
 </body>
-<script>
-    var objJson= JSON.parse(json);
 
 
-var button_Cargar= $("#cargar").click(creartabla);
-var button_borrar= $("#vaciar").click(vaciartabla);
-var tbody= document.getElementById("tbody");
-
-
-function creartabla(){
-
-   $("#tbody").empty();
- if (tbody.childNodes.length==0)
-   {
-
-      objJson.Carrera.forEach(function(Carrera){
-
-         
-         var fila= document.createElement("tr");
-         var CeldaCarrera= document.createElement("td");
-
-         var Celdadistancia= document.createElement("td");
-         var CeldaFecha= document.createElement("td");
-         var CeldaTipo= document.createElement("td");
-         var CeldaOrganizador= document.createElement("td");
-         var CeldaValor= document.createElement("td");
-         
-
-         fila.className="secondary-row";
-         tbody.appendChild(fila);
-
-         CeldaCarrera.className="lugar";
-         CeldaCarrera.innerHTML=Carreras.lugar;
-         fila.appendChild(Celdalugar);
-
-         Celdadistancia.className="distancia";
-         Celdadistancia.innerHTML=Carreras.distancia
-         fila.appendChild(Celdadistancia);
-
-         CeldaFecha.className="fecha";
-         CeldaFecha.innerHTML=Carreras.fecha
-         fila.appendChild(Celdafecha);
-         
-         CeldaTipo.className="tipo";
-         CeldaTipo.innerHTML=Carreras.tipo
-         fila.appendChild(Celdatipo);
-
-         CeldaOrganizador.className="organizador";
-         CeldaOrganizador.innerHTML=Carreras.organizador
-         fila.appendChild(Celdaorganizador);
-
-         CeldaValor.className="valor";
-         CeldaValor.innerHTML=Carreras.valor
-         fila.appendChild(Celdavalor);
-         
-       
- });
-
-}
-
-}
-
-function vaciartabla() {
-
-$("#tbody").empty();
-
-}
-
-
-
-
-</script>
 </html>
