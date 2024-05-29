@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleTablaVariableArregloDeObjetos.css">
+    <link rel="stylesheet" href="./stylemodal.css">
+    <title>Tabla Variable Arreglo de Objetos</title>
+</head>
+    
+<body>
+    <div class="principal"  id="principal">
+        <header id="encabezado">
+            
+            <div class="Botones">
+                <button id="Cargar" >CARGAR</button>
+                <button id="Vaciar" >VACIAR</button>
+                <button id="Mostar">MOSTRAR</button>
+               
+            </div>
+        </header>
+        
+        <table id="general" >
+            <thead>
+                <tr id="filasEnCabezado">
+                    <th class="celda">FECHA</th>
+                    <th class="celda">LUGAR</th>
+                    <th class="celda">DISTANCIA</th>
+                    <th class="celda">TIPO CARRERA</th>
+                    <th class="celda">PRECIO</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+
+            </tbody>
+
+            
+
+        </table>
+
+
+        <footer>
+            <h2>Pie de pagina</h2>
+        </footer>
+        
+   
+    </div>
+
+
+    <div class="divcontenedor" id="divcontenedor">
+        <header><h2>CARRERA</h2></header>
+        <button id="Cerrar">X</button>
+        
+        <form action="./respuestaFormulario.html" target="_blank" method="get">
+    
+        <div>
+            <label for="apellido">LUGAR: </label>
+            <input type="text" id="apellido" name="apellido"  autofocus="autofocus" required="required">
+        </div>
+        <div>
+            <label for="apellido">DISTANCIA: </label>
+            <input type="text" id="nombre" name="nombre"  autofocus="autofocus" required="required">
+        </div>
+        <div>
+            <label for="apellido">TIPO DE CARRERA: </label>
+            <input type="number" id="dni" name="dni" autofocus="autofocus" required="required">
+        </div>
+        <div>
+            <label for="categoria">CATEGORIA: </label>
+            <select name="categoria" id="categoria">
+
+            </select>
+
+        </div>
+
+        <div>
+            <label for="fecha">FECHA CARRERA: </label>
+            <input type="date" id="fecha" name="fecha" autofocus="autofocus" required="required">
+        </div>
+
+        <div>
+            <input type="submit"  name="submit" id="submit" value="enviar">
+        </div>
+        </div>
+            
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    
+<script src="./json.js"></script>
+<script src="./categoriacarrera.js"></script>
+<script src="../jquery-3.7.1.min.js"></script>
+<script src="./tablaVariableArreglosDeObjetos.js"></script>
+
+</body>
+
+
+</html>
