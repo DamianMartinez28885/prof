@@ -98,25 +98,19 @@
 
     }
 
-
-
-
-
-
     echo "</tr>";
-
 
    }
 
-
-
-
-
    echo"</TAble>";
 
+    echo "<h2>Tambien se puede expresar el valor de \$aBebidasCalientes[1][3]: ". $aBebidasCalientes[1][3] . " </h2>";
+    echo  "<h2>La cantidad de elementos de BebidasCalientes es ". count($aBebidasCalientes) ."</h2>";
 
     ?>
-
+    
+    <footer><h2>Variable tipo arreglo asociativos</h2></footer>
+    
 
 
 
