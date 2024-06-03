@@ -59,7 +59,9 @@
     echo "<p>Cantidad de renglones es " . count($aRenglonesCarrera) ."</p>";
     $json_RenglonesCarrera = json_encode($objetoRenglonesCarrera);
 
+    echo "<h2>Produccion de  un Json JsonRengones:</h2>";
     echo "<p> $json_RenglonesCarrera</p>";
+
     
     ?>
     
