@@ -38,8 +38,8 @@
             background-color: greenyellow;
             float: left;
             box-sizing: border-box;
-            padding: auto;
             
+            padding: 1%;
 
         }
 
@@ -47,12 +47,14 @@
             background-color: yellow;
             float: left;
             box-sizing: border-box;
+            padding: 1%;
         }
 
         #divEstado{
             background-color: skyblue;
             clear: both;
             box-sizing: border-box;
+            padding: 1%;
         }
 
         input{
@@ -63,12 +65,12 @@
 
         h2{
             display: block;
-            font-size : 40px;
+            
         }
 
-        #submit {
+        #enviar {
             
-            width: 95%;
+            width: 80%;
             height: auto;
             
             
@@ -79,6 +81,8 @@
 
 
     </style>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="./ajax.js"></script>
 </head>
 <body>
 <form action="./respuestaFormulario.php" target="_blank" method="get">
@@ -86,20 +90,31 @@
         <div id="divInput">
             <label for=""><h2>Dato de entrada</h2></label><br>
             
-            <input type="text" name="dato">
+            <input type="text" name="dato" id="dato">
             
         </div>
         <div id="divBoton">
-        <input type="image" src="./enviar.jpg"  name="submit" id="submit" value="enviar">
+        <label for=""><h2>Encriptar</h2></label><br>
+        <input type="image" src="./enviar.jpg"  name="submit" id="enviar" value="enviar">
         </div>
-        <div id="divResultado"></div>
-        <div id="divEstado"></div>
+        
+        
+        <div id="divResultado">
+        <label for=""><h2>Resultado</h2></label><br>
+        </div>
+        
+        
+        
+        <div id="divEstado">
+        <label for=""><h2>Estado de requerimiento</h2></label><br>
+        </div>
 
 
 
 
 
     </div>
+
 </form>    
 </body>
 </html>
