@@ -85,12 +85,12 @@
     <script src="./ajax.js"></script>
 </head>
 <body>
-<form action="./respuestaFormulario.php" target="_blank" method="get">
+<form action="./respuestaFormulario.php" target="_blank" method="post">
     <div id="divPrincipal">
         <div id="divInput">
             <label for=""><h2>Dato de entrada</h2></label><br>
             
-            <input type="text" name="dato" id="dato">
+            <input type="text" name="clave" id="clave">
             
         </div>
         <div id="divBoton">
