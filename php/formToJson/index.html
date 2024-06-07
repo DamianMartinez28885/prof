@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form To Json</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+
+        }
+        header{
+            top: 0%;
+            height: 10%;
+            width: 100%;
+            background-color: #222651;
+            color: white;
+
+        }
+
+        footer{
+            bottom: 0%;
+            height: 10%;
+            width: 100%;
+            background-color: #222651;
+            color: white;
+
+        }
+
+        main{
+            top: 10%;
+            height: 80%;
+            width: 100%;
+            background-color: beige;
+
+
+        }
+
+        button{
+            width: 20%;
+            height: 10%;
+        }
+
+        .divModal{
+            width: 50%;
+            height: 80%;
+            background-color: #0078b7;
+            color: white;
+            margin-left: 25%;
+            
+        }
+
+        .divBarra{
+           
+            background-color: #222651;
+            width: 100%;
+            height: 10%;
+            
+
+        }
+
+        .divX{
+            width: 10%;
+            height: 100%;
+            background-color: red;
+            color: white;
+            font-size: 15px;
+            float: right;
+            display: block;
+        }
+
+        input, label {
+            margin: 1%;
+
+        }
+
+      
+
+
+    </style>
+</head>
+<body>
+    <header>
+        Header 10%
+    </header>
+
+    
+
+    <main>
+        <button>
+            <h2>Ventana Modal</h2>
+            
+        </button>
+        <div id="divModal" class="divModal">
+            <div class="divBarra">
+                
+                    <button id="divX" class="divX">
+                        <h2>X</h2>
+                    </button>
+            </div>
+            
+            <form action="./respuestaFormulario.php" target="_blank" method="post">
+                        
+                <label for="numero">INGRESAR EL NUMERO DE CORREDOR: </label><br>
+                <input type="number" id="clave" name="clave" value="" ><br>
+
+                <label for="apellido">INGRESAR EL APELLIDO DEL: </label><br>
+                <input type="text" id="apellido" name="apellido" value="" ><br>
+
+                
+                <label for="nombre">INGRESAR EL NOMBRE DEL CORREDOR: </label><br>
+                <input type="text" id="nombre" name="nombre" value="" ><br>
+
+                
+                <label for="dni">INGESAR DNI DEL CORREDOR: </label><br>
+                <input type="text" id="dni" name="dni" value="" ><br>
+
+                
+                <label for="fecha">INGRESAR EL NUMERO DE CORREDOR: </label><br>
+                <input type="date" id="fecha" name="fecha" value="" ><br>
+
+
+
+
+                <input type="submit" name="submit" id="submit" value="ENVIAR"> 
+
+
+            </form>
+        </div>
+    </main>
+    
+
+
+    <footer>
+        Footer 10%
+    </footer>
+    
+</body>
+</html>
