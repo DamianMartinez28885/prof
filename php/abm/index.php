@@ -25,7 +25,7 @@
         <table id="general" >
             <thead>
                 <tr id="filasEnCabezado">
-                    <th class="celda">FECHA</th>
+                    <th><div class="celda"><button>FECHA</button><input type="text"></div></th>
                     <th class="celda">LUGAR</th>
                     <th class="celda">DISTANCIA</th>
                     <th class="celda">TIPO CARRERA</th>
@@ -35,6 +35,8 @@
                     <th class="celda">BORRAR</th>
 
                 </tr>
+                
+              
             </thead>
             <tbody id="tbody">
                 
