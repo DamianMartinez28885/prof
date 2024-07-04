@@ -11,7 +11,7 @@ $(document).ready(function() {
 		objCodArtModi=document.getElementById("formArticulosEntCodArtModi");
 		objFamiliaModi=document.getElementById("formArticulosEntFamiliaModi");
 		objDescripcionModi=document.getElementById("formArticulosEntDescripcionModi");
-		$("#orden").val("codArt"); //suponiendo que de entrada quisiera este orden
+		$("#orden").val("idCarrera"); //buscamos por idCarrera
 		$("#contenedorTablaArticulos").attr("className","contenedorActivo");
 		$("#ventanaModalFormularioAlta").css("visibility","hidden");
 		$("#ventanaModalFormularioModi").css("visibility","hidden");
@@ -101,7 +101,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#th_articulos_codArt" ).click(function() {
-		$("#orden").val("codArt"); //solo cargo esta variable orden
+		$("#orden").val("idCarrera"); //solo cargo esta variable orden
 		cargaTabla();
 	});	//cierro click
 }); //cierro ready

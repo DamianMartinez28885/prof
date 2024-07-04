@@ -4,7 +4,7 @@ include("./datosConexionBase.php");
 
 $respuesta_estado="";
 
-$sql="select * from familias";
+$sql="select * from categorias";
 
 
 
@@ -34,8 +34,8 @@ $familias=[];
 
 while($fila=$stmt->fetch()) {
 	$objFamilia= new stdclass;
-	$objFamilia->codFamilia=$fila['codFamilia'];
-	$objFamilia->descripcionFamilia=$fila['descripcionFamilia'];
+	$objFamilia->codFamilia=$fila['idCategoria'];
+	$objFamilia->descripcionFamilia=$fila['descripcion'];
 	array_push($familias, $objFamilia);
 }
 

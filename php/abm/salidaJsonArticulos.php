@@ -1,7 +1,7 @@
 <?php
 //sleep(1);
 
-include("../ejer26DBAbm/datosConexionBase.php");
+include("./datosConexionBase.php");
 
 
 $orden=$_GET['orden'];
