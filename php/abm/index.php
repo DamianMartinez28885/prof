@@ -30,38 +30,55 @@
 
 
 <body>
-    <div id="principal">
-        <header id="encabezado">
-            
-            <div class="Botones">
-                
-                <input type="text" class="orden">
-                <button id="Cargar" >CARGAR DATOS</button>
-                <button id="Vaciar" >VACIAR DATOS</button>
-                <button id="Cargar" >LIMPIAR FILTROS</button>
-                <button id="Vaciar" >ALTA REGISTRO</button>
-               
-            </div>
-        </header>
-        
-        <table id="general" >
-            <thead>
-                <tr id="filasEnCabezado">
-                    <th class="celda">FECHA</th>
-                    <th class="celda">LUGAR</th>
-                    <th class="celda">DISTANCIA</th>
-                    <th class="celda">TIPO CARRERA</th>
-                    <th class="celda">PRECIO</th>
-                    <th class="celda">PDF</th>
-                    <th class="celda">MOD</th>
-                    <th class="celda">BORRAR</th>
+	<div id="contenedorTablaArticulos" class="contenedorTabla">
+		
+		<header >
+			
+			<input type="text" name="orden" id="orden" readonly value="" >
 
-                </tr>
-            </thead>
-            <tbody id="tbody">
-                
+			<button id="btAccionCarga">Cargar datos</button>
+			<button id="btAccionVacia">Vaciar datos</button>
+			<button id="btLimpiaFiltros">Limpiar filtros</button>
+			<button id="btAlta">Alta registro</button>
+			<!--<button id="btCierraSesion">Cierra Sesión</button>-->
+		</header>
 
-            </tbody>
+
+
+		<table>
+			<thead >
+			<tr style="height:50%">
+			<td class="titulosColumnas" campo-dato="articulos_codArt" id="th_articulos_codArt">ID CARRERA</td>
+			<td class="titulosColumnas" campo-dato="articulos_familia" id="th_articulos_familia">IDENTIFICADOR</td>
+			<td class="titulosColumnas" campo-dato="articulos_um" id="th_articulos_um">DESCRIPCION</td>
+			<td class="titulosColumnas" campo-dato="articulos_descripcion" id="th_articulos_descripcion">CATEGORIA</td>
+			<td class="titulosColumnas" campo-dato="articulos_fechaAlta" id="th_articulos_fechaAlta">DISTANCIA</td>
+			<td class="titulosColumnas" campo-dato="articulos_saldoStock" id="th_articulos_saldoStock">FECHA EVENTO</td>
+			<td class="titulosColumnas" campo-dato="articulos_pdf" id="th_articulos_pdf">PDF</td>
+			<!--<td class="titulosColumnas" campo-dato="articulos_btC" id="th_articulos_btC">C</td>	-->
+			<td class="titulosColumnas" campo-dato="articulos_btModi">MODIFICAR</td>
+			<td class="titulosColumnas" campo-dato="articulos_btModi">BAJA</td>
+			</tr>
+
+			<tr style="height:50%">
+			<td campo-dato="articulos_codArt"><input id="f_articulos_codArt"></input></td>
+			<td campo-dato="articulos_um"><input id="f_articulos_um"></input></td>
+			<td campo-dato="articulos_descripcion"><input id="f_articulos_descripcion"></input></td>
+            <td campo-dato="articulos_familia">
+				<select id="f_articulos_familia" name="familia"></select> 
+				<!--<input id="f_articulos_familia"></input>-->
+			</td>
+			<td campo-dato="articulos_fechaAlta"><input id="f_articulos_fechaAlta"></input></td>
+			<td campo-dato="articulos_saldoStock"></td>
+			<td campo-dato="articulos_pdf"></td>
+			<td campo-dato="articulos_btC"></td>
+			<td campo-dato="articulos_btModi"></td>
+			<td campo-dato="articulos_btbaja"></td>
+			</tr>
+			</thead>
+
+			<tbody id="tbDatos">
+			</tbody>
 
 			
 
