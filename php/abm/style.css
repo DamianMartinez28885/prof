@@ -1,0 +1,202 @@
+/*Estilo global*/
+* {
+	margin:0;
+	box-sizing: border-box;
+	padding:0;
+}
+html {
+	height:100%;
+	width:100%;
+}
+
+body {
+	height:100%;
+	width:100%;
+	font-size:14px;
+}
+
+</style>
+
+
+<style id="estiloTabla">
+div.contenedorTabla {
+	width:100%;
+	height:100%;
+	background-color: gray;
+	/*overflow: auto;*/
+}
+
+
+
+div.contenedorTabla button {
+	height:80%;
+	width:20%;
+	margin-right:0;
+	cursor:pointer;
+}
+
+
+div.contenedorTabla h1 {
+	width:100%;
+	text-align: center;
+	padding:1%;
+}
+
+div.contenedorTabla input {
+	height:100%;
+	width:100%;
+}
+
+
+div.contenedorTabla Select {
+	height:100%;
+	width:100%;
+}
+
+div.contenedorTabla td.titulosColumnas {
+	font-size: 1.1em;
+	cursor:pointer;
+	font-weight: bold;
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+}
+
+
+div.contenedorTabla td.totalizador {
+	font-weight: bold;
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+}
+
+
+
+div.contenedorTabla header {
+	display:flex;
+	width:100%;
+	height:10%;
+	background-color: beige;
+	overflow-y:hidden;
+	display: flex; 
+	justify-content:center;
+	align-items: center;
+	padding:0;
+}
+
+div.contenedorTabla footer {
+	display:block;
+	width:100%;
+	height:10%;
+	background-color: beige;
+}
+
+div.contenedorTabla footer div.totalRegistros {
+	font-size:1.1em;
+	height:100%;
+	width:20%;
+	float: left;
+}
+
+
+div.contenedorTabla footer div.textoPie {
+	font-size:1.1em;
+	height:100%;
+	width:70%;
+	display: flex; 
+	justify-content:center;
+	align-items: center;
+	float: left;
+}
+
+
+
+div.contenedorTabla table {
+  width:100%;
+  height:80%;
+  border-collapse: collapse;
+  
+}
+
+div.contenedorTabla thead {
+  display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
+  background-color: #FF7361;
+  text-align: center;
+  height: 20%;
+  overflow-y: scroll;
+}
+
+
+div.contenedorTabla tfoot {
+  display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
+  background-color: #FF7361;
+  height: 10%;
+  overflow-y: scroll;
+  text-align: left;
+}
+
+
+div.contenedorTabla tbody { /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
+  display: block;
+  overflow-y: scroll;
+  color: #000;
+  height:70%;
+}
+
+
+div.contenedorTabla tr {
+  display: block; /*todos los elementos que contendrá se renderizaran en esta linea */
+  overflow: hidden;
+  height:60px;
+}
+
+
+div.contenedorTabla tbody tr:nth-child(odd) {
+  background: rgba(0,0,0,.2);
+  color: white;
+}
+
+
+div.contenedorTabla tbody tr:nth-child(even) {
+  background: rgba(0,0,0,.3);
+  color: white;
+}
+
+div.contenedorTabla th, td {
+  float:left; /*todos flotan respetando sus anchos pero dentro de los limites el contenedor
+                que debera presentarse como display:block;*/
+  width:100%;
+  height:100%;
+}
+
+
+
+
+/*Estilo para tabla de articulos*/
+
+[campo-dato="articulos_codArt"] {
+  width: 10%;
+  height:100%;
+}
+[campo-dato="articulos_familia"] {
+  width: 10%;
+  height:100%;
+}
+[campo-dato="articulos_descripcion"] {
+  width: 20%;
+  height:100%;
+}
+[campo-dato="articulos_um"] {
+  width: 10%;
+  height:100%;
+}
+[campo-dato="articulos_fechaAlta"] {
+  width: 10%;
+  height:100%;
+}
+[campo-dato="articulos_saldoStock"] {
+  width: 10%;
+  height:100%;
+  text-align:right;
+}
+
