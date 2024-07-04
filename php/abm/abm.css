@@ -1,0 +1,498 @@
+
+
+/*Estilo global*/
+* {
+	margin:0;
+	box-sizing: border-box;
+	padding:0;
+	font-size:14px;
+}
+html {
+	height:100%;
+	width:100%;
+}
+
+body {
+	height:100%;
+	width:100%;
+}
+
+
+
+
+/*Estilos para presentacion de tabla*/
+
+
+
+div.contenedorTabla {
+	width:100%;
+	height:100%;
+	background-color: gray;
+	/*overflow: auto;*/
+}
+
+
+div.contenedorTabla header {
+	width:100%;
+	height:10%;
+	background-color: #222651;
+	overflow:hidden;
+	display: flex; 
+	color: white;
+	align-items: center;
+	justify-content: center;
+    align-items: center;
+}
+
+
+div.contenedorTabla header label { /*Para el input del orden*/
+	width:9%;
+	height:80%;
+	margin:1%;
+	padding:1%;
+	font-weight:bold;
+	font-size: 1.1em;
+}
+
+
+
+
+div.contenedorTabla header input { /*Para el input del orden*/
+	width:12%;
+	height:60%;
+	margin:1%;
+	padding:1%;
+	margin-right: 40%;
+}
+
+
+div.contenedorTabla header button { /*botones de control del tablero (altas o cargar tabla por ejemplo*/
+	height:60%;
+	width:10%;
+	cursor:pointer;
+}
+
+div.contenedorTabla table h1 { 
+	width:100%;
+	text-align: center;
+}
+
+div.contenedorTabla table input { /*Para los filtros*/
+	height:100%;
+	width:100%;
+}
+
+div.contenedorTabla table select { /*Para los filtros*/
+	height:100%;
+	width:100%;
+}
+
+
+
+div.contenedorTabla td.titulosColumnas {
+	font-size:1em;
+	cursor:pointer;
+	font-weight: bold;
+	display: flex; 
+	justify-content:left; 
+	align-items: center; 
+}
+
+
+div.contenedorTabla td.totalizador {
+	display: flex; 
+	justify-content:left; 
+	align-items: center; 
+}
+
+
+
+
+div.contenedorTabla footer {
+	display:block;
+	width:100%;
+	height:10%;
+	background-color: #222651;
+	overflow: hidden;
+	color: white;
+}
+
+div.contenedorTabla footer div.totalRegistros {
+	font-size:1.2em;
+	height:100%;
+	width:20%;
+	float:left;
+	font-weight:bold;
+}
+
+
+div.contenedorTabla footer div.textoPie {
+	font-size: larger;
+	height:100%;
+	width:70%;
+	display: flex; 
+	justify-content:center;
+	align-items: center;
+}
+
+
+
+
+div.contenedorTabla table {
+  width:100%;
+  height:80%;
+  border-collapse: collapse;
+  
+}
+
+div.contenedorTabla thead {
+  display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
+  background-color: #0078b7;
+  color: white;
+  text-align: center;
+  height: 10%;
+  overflow-y: scroll;
+}
+
+
+
+
+
+
+
+div.contenedorTabla tbody { /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
+  display: block;
+  overflow-y: scroll;
+  /*color: #000;*/
+  color: white;
+  height:70%;
+}
+
+
+div.contenedorTabla tr {
+  display: block; /*todos los elementos que contendrá se renderizaran en esta linea */
+  overflow: hidden;
+  height:60px;
+}
+
+
+div.contenedorTabla tbody tr:nth-child(odd) {
+  background: rgba(0,0,0,.2);
+}
+
+
+div.contenedorTabla tbody tr:nth-child(even) {
+  background: rgba(0,0,0,.3);
+}
+
+div.contenedorTabla th, td {
+	float:left; /*todos flotan respetando sus anchos pero dentro de los limites el contenedor
+	                que debera presentarse como display:block;*/
+	display:flex;
+	display: flex; /*Permite flexibilizar el contenido*/
+	justify-content: center; /*Permite centrar al medio en x el contenido*/
+	align-items: center; 
+	width:100%;
+	height:100%;
+}
+
+/*Ancho y alto de las columnas*/
+
+[campo-dato="articulos_codArt"] {
+  width:12%;
+  height:100%;
+}
+[campo-dato="articulos_familia"] {
+  width: 12%;
+  height:100%;
+}
+[campo-dato="articulos_descripcion"] {
+  width: 12%;
+  height:100%;
+}
+[campo-dato="articulos_um"] {
+  width: 12%;
+  height:100%;
+}
+[campo-dato="articulos_fechaAlta"] {
+  width: 12%;
+  height:100%;
+}
+[campo-dato="articulos_saldoStock"] {
+  width: 12%;
+  height:100%;
+  text-align:right;
+}
+
+
+[campo-dato="articulos_pdf"] {
+  width: 12%;
+  height:100%;
+  text-align:right;
+}
+
+[campo-dato="articulos_btC"] {
+	width: 12%;
+	height:100%;
+}
+
+
+[campo-dato="articulos_btModi"] {
+  width: 12%;
+  height:100%;
+ cursor:pointer;
+
+}
+
+[campo-dato="articulos_btBaja"] {
+  width: 12%;
+  height:100%;
+  cursor:pointer;
+}
+
+
+
+/*Estilo para comportamiento de modales*/
+
+
+
+
+div.contenedorActivo {
+opacity:1;
+/*permite activar todos los elementos sensibles a eventos:*/
+pointer-events: auto;
+}
+
+div.contenedorPasivo {
+opacity:0.3;
+/*permite desactivar todos los elementos sensibles a eventos:*/
+pointer-events: none;
+}
+
+/*Comportamiento Modal*/
+div.ventanaModalFormularioApagado {
+	visibility:hidden;
+}
+
+div.ventanaModalFormularioPrendido {
+	visibility:visible;
+}
+
+/*Comportamiento Modal Respuesta*/
+div.ventanaModalRespuestaApagado {
+	visibility:hidden;
+}
+
+div.ventanaModalRespuestaPrendido {
+	visibility:visible;
+}
+
+
+
+
+/*Ventana Modal Formulario*/
+
+
+div.ventanaModalFormulario {
+	position:fixed;
+	left:50%;
+	top:50%;
+	width:40%;
+	height:40%;
+	color:black;
+	/*padding:1%;*/
+	z-index:10;
+	/*overflow:hidden;*/
+	transform: translate(-50%, -50%);
+}
+
+
+div.ventanaModalFormulario header {
+	width:100%;
+	height:10%;
+	background-color:#AAAAAA;
+	display:block;
+	overflow:hidden;
+}
+
+
+
+
+div.ventanaModalFormulario p {
+	font-size: 1.2em;
+	background-color: #222651;
+	width:90%;height:100%;
+	float: left; /*Asegura que todo lo que siga este pegado a el a la derecha*/
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+div.ventanaModalFormulario div.btCruz {
+	color:red;
+	background-color: white;
+	width:10%;
+	height:100%;
+	cursor:pointer;
+	display: flex;
+	justify-content: center; 
+	align-items: center; 
+}
+
+
+
+div.ventanaModalFormulario div.btCruz:hover {
+	background-color:gray;
+}
+
+
+
+div.ventanaModalFormulario div.contenidoModal {
+	background-color: beige;
+	width:100%;
+	height:80%;
+	padding: 2%;
+}
+
+
+div.ventanaModalFormulario footer {
+	background-color: #222651;
+	height:10%;
+	display: flex;
+	justify-content: center; 
+	align-items: center; 
+}
+
+div.ventanaModalFormulario button.btModi {
+	height:100%;
+	width:30%;
+}
+
+div.ventanaModalFormulario button.btAlta {
+	height:100%;
+	width:30%;
+}
+
+div.ventanaModalFormulario div.contenidoModal ul {
+	list-style: none;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	clear:both;
+}
+
+div.ventanaModalFormulario div.contenidoModal li {
+	/*margin:10px;*/
+	width:50%;
+	height:30%;
+	float:left;
+}
+
+@media(max-width:600px) {
+	div.ventanaModalFormulario div.contenidoModal li {
+		width:100%;
+		font-size:1.2em;
+	}
+}
+
+div.ventanaModalFormulario div.contenidoModal label {
+	font-size:1.4em;
+	width:80%;
+	height:50%;
+	display: flex; /*Permite flexibilizar el contenido*/
+	/*justify-content: center; Permite centrar al medio en x el contenido*/
+	align-items: center; 
+}
+
+div.ventanaModalFormulario div.contenidoModal input {
+	width:80%;
+	height:50%;
+	font-size:1em;
+}
+
+div.ventanaModalFormulario div.contenidoModal select {
+	width:80%;
+	height:50%;
+	font-size: 1em;
+}
+
+
+div.ventanaModalFormulario option.elementoOptionSelect {
+	background-color:beige;
+	font-size: 1em;
+}
+
+
+
+
+
+
+
+
+
+	
+/*Ventana Modal respuesta*/
+
+div.ventanaModalRespuesta {
+	position:fixed;
+	left:45%;
+	top:18%;
+	width:50%;
+	height:50%;
+	color:black;
+	z-index:20;
+}
+
+
+div.ventanaModalRespuesta header {
+	width:100%;
+	height:10%;
+	background-color: black;
+	/*clear:both;*/
+	overflow:hidden;
+}
+
+
+div.ventanaModalRespuesta header p {
+	font-size:1.5em;
+	background-color: #EEEEEE;
+	width:90%;height:100%;
+	float: left; /*Asegura que todo lo que siga este pegado a el a la derecha, ej bt cruz*/
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+}
+
+div.ventanaModalRespuesta div.btCruz {
+	background-color: gray;
+	color: black;
+	width:10%;
+	height:100%;
+	float:right;
+	cursor:pointer;
+	display: flex; /*Permite flexibilizar el contenido*/
+	justify-content: center; /*Permite centrar al medio en x el contenido*/
+	align-items: center; /*Permite centrar al medio en y el contenido*/
+}
+
+
+
+div.ventanaModalRespuesta div.btCruz:hover {
+	background-color:gray;
+}
+
+
+div.ventanaModalRespuesta div.contenidoModal {
+	background-color: #BBBBBB;
+	width:100%;
+	overflow:auto;
+}
+
+div.ventanaModalRespuesta div.contenidoModal p {
+	text-align:left;
+	font-size:1.5em;
+}
+
+
+
