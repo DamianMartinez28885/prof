@@ -30,22 +30,22 @@ try {
 //$fila=$stmt->fetch();
 
 
-$familias=[];
+$categorias=[];
 
 while($fila=$stmt->fetch()) {
-	$objFamilia= new stdclass;
-	$objFamilia->codFamilia=$fila['idCategoria'];
-	$objFamilia->descripcionFamilia=$fila['descripcion'];
-	array_push($familias, $objFamilia);
+	$objCategoria= new stdclass;
+	$objCategoria->codCategoria=$fila['idCategoria'];
+	$objCategoria->descripcionCategoria=$fila['descripcion'];
+	array_push($categorias, $objCategoria);
 }
 
 
 
 
-$objFamilias=new stdclass();
-$objFamilias->familias=$familias;
+$objCategorias=new stdclass();
+$objCategorias->categorias=$categorias;
 
-$salidaJson=json_encode($objFamilias,JSON_INVALID_UTF8_SUBSTITUTE);
+$salidaJson=json_encode($objCategorias,JSON_INVALID_UTF8_SUBSTITUTE);
 
 $dbh = null; /*para cerrar la conexion*/
 

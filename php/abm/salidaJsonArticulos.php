@@ -34,13 +34,13 @@ try {
 
 //Carga de sentencia en crudo
 
-$sql="select * from articulos where ";
+$sql="select * from carreras where ";
 
-$sql=$sql . "codArt LIKE CONCAT('%',:codArt,'%') and ";//ojo con espacios antes y despues del and
-$sql=$sql . "familia LIKE CONCAT('%',:familia,'%') and ";
+$sql=$sql . "idCarrera LIKE CONCAT('%',:idCarrera,'%') and ";//ojo con espacios antes y despues del and
+$sql=$sql . "categoria LIKE CONCAT('%',:categoria,'%') and ";
 $sql=$sql . "descripcion LIKE CONCAT('%',:descripcion,'%') and ";
-$sql=$sql . "um LIKE CONCAT('%',:um,'%') and ";
-$sql=$sql . "fechaAlta LIKE CONCAT('%',:fechaAlta,'%')";
+$sql=$sql . "identificador LIKE CONCAT('%',:identificador,'%') and ";
+$sql=$sql . "fechaEvento LIKE CONCAT('%',:fechaEvento,'%')";
 $sql=$sql . " ORDER BY $orden";
 
 $respuesta_estado = $respuesta_estado . "\nsql string: " . $sql;
@@ -51,11 +51,11 @@ $stmt = $dbh->prepare($sql);
 
 //Vinculacion de sentencia:
 
-$stmt->bindParam(':codArt', $f_articulos_codArt);
-$stmt->bindParam(':familia', $f_articulos_familia);
+$stmt->bindParam(':idCarrera', $f_articulos_codArt);
+$stmt->bindParam(':categoria', $f_articulos_familia);
 $stmt->bindParam(':descripcion', $f_articulos_descripcion);
-$stmt->bindParam(':um', $f_articulos_um);
-$stmt->bindParam(':fechaAlta', $f_articulos_fechaAlta);
+$stmt->bindParam(':identificador', $f_articulos_um);
+$stmt->bindParam(':fechaEvento', $f_articulos_fechaAlta);
 /*$stmt->bindParam(':ordenamiento', $orden);  El bindParam no aplica a la clausulo order by*/ 
 //Ejecucion de sentencia
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -67,13 +67,14 @@ $articulos=[];
 //Carga del arreglo
 While($fila = $stmt->fetch()) {
 	$objArticulo = new stdClass();
-	$objArticulo->codArt=$fila['codArt'];
-	$objArticulo->familia=$fila['familia'];
+	$objArticulo->codArt=$fila['idCarrera'];
+	$objArticulo->um=$fila['identificador'];
 	$objArticulo->descripcion=$fila['descripcion'];
-	$objArticulo->um=$fila['um'];
-	$objArticulo->fechaAlta=$fila['fechaAlta'];
-	$objArticulo->saldoStock=$fila['saldoStock'];
-
+	$objArticulo->familia=$fila['categoria'];
+	
+	$objArticulo->saldoStock=$fila['distancia'];
+	$objArticulo->fechaAlta=$fila['fechaEvento'];
+	
 	$respuesta_estado = $respuesta_estado . "\n" . $objArticulo->codArt;
 	array_push($articulos,$objArticulo);
 

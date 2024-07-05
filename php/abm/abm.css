@@ -27,7 +27,7 @@ body {
 div.contenedorTabla {
 	width:100%;
 	height:100%;
-	background-color: gray;
+	background-color: rgb(225, 253, 123);
 	/*overflow: auto;*/
 }
 
@@ -42,6 +42,7 @@ div.contenedorTabla header {
 	align-items: center;
 	justify-content: center;
     align-items: center;
+	
 }
 
 
@@ -164,8 +165,8 @@ div.contenedorTabla tbody { /*todos los elementos que contendrá se renderizaran
   display: block;
   overflow-y: scroll;
   /*color: #000;*/
-  color: white;
-  height:70%;
+  color: black;
+  height:90%;
 }
 
 
@@ -177,12 +178,12 @@ div.contenedorTabla tr {
 
 
 div.contenedorTabla tbody tr:nth-child(odd) {
-  background: rgba(0,0,0,.2);
+  background: beige;
 }
 
 
 div.contenedorTabla tbody tr:nth-child(even) {
-  background: rgba(0,0,0,.3);
+  background: white;
 }
 
 div.contenedorTabla th, td {
@@ -226,6 +227,7 @@ div.contenedorTabla th, td {
 
 
 [campo-dato="articulos_pdf"] {
+	
   width: 12%;
   height:100%;
   text-align:right;
