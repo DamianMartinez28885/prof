@@ -447,7 +447,7 @@ function llenaFamilias() { //el argumento corresponde al objeto que será llenad
 			$("#f_articulos_familia").empty();
 			var objAjax = $.ajax({
 			type:"get", 
-			url:"./salidaJsonFamilias.php",
+			url:"./salidaJsonCategoria.php",
 			
 			success: function(respuestaDelServer,estado) {
 						alert(respuestaDelServer);
@@ -486,7 +486,7 @@ function llenaFamiliasAlta() { //el argumento corresponde al objeto que será ll
 			$("#formArticulosEntFamiliaAlta").empty();
 			var objAjax = $.ajax({
 			type:"get", 
-			url:"./salidaJsonFamilias.php",
+			url:"./salidaJsonCategoria.php",
 			
 			success: function(respuestaDelServer,estado) {
 						//alert(respuestaDelServer);
@@ -519,7 +519,7 @@ function llenaFamiliasModi() {
 
 			var objAjax = $.ajax({
 			type:"get", 
-			url:"./salidaJsonFamilias.php",
+			url:"./salidaJsonCategoria.php",
 			
 			success: function(respuestaDelServer,estado) {
 						
