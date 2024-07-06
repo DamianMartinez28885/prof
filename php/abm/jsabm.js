@@ -1,6 +1,4 @@
 
-
-
 /*Evento de carga inicial*/
 
 $(document).ready(function() {
@@ -100,49 +98,56 @@ $(document).ready(function() {
 
 
 
+
+
+
+//CARGA ORDEN SEGUN TITULO DE TABLA
 $(document).ready(function() {
 	$("#th_articulos_codArt" ).click(function() {
-		$("#orden").val("idCarrera"); //solo cargo esta variable orden
+		$("#orden").val("idCarrera"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
-
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_articulos_familia" ).click(function() {
-		$("#orden").val("identificador"); //solo cargo esta variable orden
+		$("#orden").val("identificador"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
-
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_articulos_descripcion" ).click(function() {
-		$("#orden").val("categoria"); //solo cargo esta variable orden
+		$("#orden").val("categoria");
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_articulos_um" ).click(function() {
-		$("#orden").val("descripcion"); //solo cargo esta variable orden
+		$("#orden").val("descripcion"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_articulos_fechaAlta" ).click(function() {
-		$("#orden").val("fechaEvento"); //solo cargo esta variable orden
+		$("#orden").val("fechaEvento"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+});
 
 $(document).ready(function() {
 	$("#th_articulos_saldoStock" ).click(function() {
-		$("#orden").val("distancia"); //solo cargo esta variable orden
+		$("#orden").val("distancia");
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
+
+
+
+
+
 
 
 

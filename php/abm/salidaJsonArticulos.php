@@ -1,8 +1,5 @@
 <?php
-//sleep(1);
-
 include("./datosConexionBase.php");
-
 
 $orden=$_GET['orden'];
 $f_articulos_codArt=$_GET['f_articulos_codArt'];
@@ -27,7 +24,7 @@ $respuesta_estado = $respuesta_estado . "<h4> f_articulos_fechaAlta: " . $f_arti
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
 	$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
-	$respuesta_estado = $respuesta_estado .  "\nconexion exitosa";
+	$respuesta_estado = $respuesta_estado .  "\nCONECTADA";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
 }
