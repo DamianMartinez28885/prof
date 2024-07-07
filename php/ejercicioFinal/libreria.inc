@@ -94,4 +94,4 @@ function infoDeSesion() {
 	echo "</div>";
 }
 
-?>	
+?>
