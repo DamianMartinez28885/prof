@@ -1,9 +1,8 @@
 <?php
-$dbname="b3c1dnzjfajzfextbbcs";
-$host="b3c1dnzjfajzfextbbcs-mysql.services.clever-cloud.com";
-$user ="ubtjuyglm1htsjy0";
-$password = "yzK5Hjq3yudhhhfTdyJ2";
-
+$dbname="bvkbecdbl2l2s8fbc9h1";
+$host="bvkbecdbl2l2s8fbc9h1-mysql.services.clever-cloud.com";
+$user ="uctwb0vvhztukj2a";
+$password = "oVFYQ36gVsQp9jJ0q4kz";
 
 /*
 define("SERVER","b3c1dnzjfajzfextbbcs-mysql.services.clever-cloud.com:3306");
