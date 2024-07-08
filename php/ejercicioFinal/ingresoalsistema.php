@@ -91,8 +91,8 @@ try {
 
 infoDeSesion();
 ?>
-<button id="btAppMod1" >Ingrese al módulo 1 de la app</button>
-<button id="btAppFinSesion" >Terminar sesión</button>
+<button id="btAppMod1" style="background-color: #1877f2; color: #fff; border: none; padding: 10px 20px; border-radius: 7px; cursor: pointer;">INGRESAR AL PROGRAMA</button>
+<button id="btAppFinSesion" style="background-color: #1877f2; color: #fff; border: none; padding: 10px 20px; border-radius: 7px; cursor: pointer;">CERRAR SECION</button>
 
 <script>
 document.getElementById("btAppMod1").onclick=function(){

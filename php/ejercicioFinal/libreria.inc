@@ -71,8 +71,10 @@ function autenticacion($arg1,$arg2) {
 
 
 function infoDeSesion() {
+	
+	echo "<h1 style='font-size: 36px;'>ACCESO PERMITIDO</h1>";
 
-	echo "<div style='border-style:solid;border-width:thin;padding:10px'>";	
+	echo "<div style='border-style:solid;border-width:thin;padding:20px;background-image: url(./imagen/conejo.png); background-size: cover; background-repeat: no-repeat; height: 300px;'>";	
 	echo "<h1>Información de Sesión</h1>";
 	echo "<h2> Identificativo de sesión: " . $_SESSION['identificativo'] . "</h2>";
 	echo "<h2> Login de usuario: " . $_SESSION['login'] . "</h2>";

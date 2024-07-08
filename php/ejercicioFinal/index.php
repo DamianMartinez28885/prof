@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION['identificativo'])) {  //Entra aquí si no hay sesion iniciada
+if (!isset($_SESSION['identificativo'])) { 
     	header('Location:./formularioDeLogin.html');
-    	exit; //termina la ejecucion del script   	
+    	exit; 
 }
 include('./libreria.php');
 
