@@ -1,5 +1,5 @@
 <?php
-include('../manejoSesion.inc');
+//include('../manejoSesion.inc');
 ?>
 <!DOCTYPE html>
 
