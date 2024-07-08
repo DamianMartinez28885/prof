@@ -4,7 +4,7 @@ if (!isset($_SESSION['identificativo'])) {  //Entra aquí si no hay sesion inici
     	header('Location:./formularioDeLogin.html');
     	exit; //termina la ejecucion del script   	
 }
-include('./libreria.inc');
+include('./libreria.php');
 
 echo "<h1>Nombre de la aplicación: Práctica sobre maestro de artículos.</h1>";
 echo "<h2> Nombre del alumno: </h2>";

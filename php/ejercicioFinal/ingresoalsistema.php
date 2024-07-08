@@ -3,7 +3,7 @@ session_start(); //registra el identificativo de sesión entrante
 //y coloca el puntero de php en la fila que se corresponde con el mismo
 //si no viene ningun id de sesión o si el que viene no se corresponde con ninguno existente, entonces el puntero
 //se coloca en una fila vacía.
-include('./libreria.inc');
+include('libreria.php');
 
 include('datosConexionBase.php');
 
