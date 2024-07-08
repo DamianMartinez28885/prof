@@ -1,14 +1,10 @@
 <?php
-session_start(); //registra el identificativo de sesión entrante 
-//y coloca el puntero de php en la fila que se corresponde con el mismo
-//si no viene ningun id de sesión o si el que viene no se corresponde con ninguno existente, entonces el puntero
-//se coloca en una fila vacía.
+session_start(); 
 include('libreria.inc');
-
 include('datosConexionBase.php');
 
-$varLogin=$_POST['login'];//lee la variable de formulario
-$varClave=$_POST['clave'];//lee la variable de formulario
+$varLogin=$_POST['login'];
+$varClave=$_POST['clave'];
 
 $salidaParaLog = "Salida para log: <br/>";
 $salidaParaLog = $salidaParaLog . $varLogin;
@@ -21,24 +17,19 @@ if (!isset($_SESSION['identificativo'])) {
 	$salidaParaLog = $salidaParaLog . "Usuario se encuentra fuera de sesion, luego pasamos a autenticar:";
 	$salidaParaLog = $salidaParaLog . "<br />";
 
-	if (!autenticacion($varLogin,$varClave)) { //Si no autentica termina el programa
-		header('Location: ./formularioDeLogin.html'); //Envia un header en crudo (sin procesar) al cliente
+	if (!autenticacion($varLogin,$varClave)) { 
+		header('Location: ./formularioDeLogin.html');
 		exit();
 	}
 
 	$salidaParaLog = $salidaParaLog . "El Usuario fue autenticado";
 	$salidaParaLog = $salidaParaLog . "<br />";
-
 	$_SESSION['identificativo'] = session_create_id();
-
-	$_SESSION['login']=$varLogin;					//crea una variable de sesion para el nombre de usuario
-
-
-
+	$_SESSION['login']=$varLogin;	
 
 	try {
 		$dsn = "mysql:host=$host;dbname=$dbname";
-		$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
+		$dbh = new PDO($dsn, $user, $password);
 		$salidaParaLog = $salidaParaLog .  "<br />conexion exitosa a la base para tomar nro de contador";
 	} 
 	catch (PDOException $e) {

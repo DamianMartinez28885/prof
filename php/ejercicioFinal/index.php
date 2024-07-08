@@ -5,9 +5,6 @@ if (!isset($_SESSION['identificativo'])) {
     	exit; 
 }
 include('./libreria.php');
-
-echo "<h1>Nombre de la aplicación: Práctica sobre maestro de artículos.</h1>";
-echo "<h2> Nombre del alumno: </h2>";
 echo infoDeSesion();
 
 ?>

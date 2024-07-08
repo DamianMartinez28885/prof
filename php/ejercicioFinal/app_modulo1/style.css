@@ -17,13 +17,13 @@ body {
 	width:100%;
 }
 
+
 div.contenedorTabla {
 	width:100%;
 	height:100%;
 	background-color: rgb(225, 253, 123);
 	/*overflow: auto;*/
 }
-
 
 div.contenedorTabla header {
 	width:100%;
@@ -35,31 +35,31 @@ div.contenedorTabla header {
 	align-items: center;
 	justify-content: center;
     align-items: center;
-	
 }
 
-
-div.contenedorTabla header label { /*Para el input del orden*/
-	width:9%;
+div.contenedorTabla header label { 
+	width:40%;
 	height:80%;
 	margin:1%;
 	padding:1%;
 	font-weight:bold;
 	font-size: 1.1em;
+	margin-right: 0;
 }
 
-div.contenedorTabla header input { /*Para el input del orden*/
-	width:12%;
+div.contenedorTabla header input { 
+	width:30%;
 	height:60%;
 	margin:1%;
 	padding:1%;
 	margin-right: 40%;
+	margin-left: 0;
 }
 
 
-div.contenedorTabla header button { /*botones de control del tablero (altas o cargar tabla por ejemplo*/
+div.contenedorTabla header button { 
 	height:60%;
-	width:10%;
+	width:30%;
 	cursor:pointer;
 }
 
@@ -78,8 +78,6 @@ div.contenedorTabla table select { /*Para los filtros*/
 	width:100%;
 }
 
-
-
 div.contenedorTabla td.titulosColumnas {
 	font-size:1em;
 	cursor:pointer;
@@ -87,17 +85,15 @@ div.contenedorTabla td.titulosColumnas {
 	display: flex; 
 	justify-content:left; 
 	align-items: center; 
+	color: white;
 }
-
 
 div.contenedorTabla td.totalizador {
 	display: flex; 
 	justify-content:left; 
 	align-items: center; 
+	width: 11;
 }
-
-
-
 
 div.contenedorTabla footer {
 	display:block;
@@ -106,6 +102,7 @@ div.contenedorTabla footer {
 	background-color: #222651;
 	overflow: hidden;
 	color: white;
+
 }
 
 div.contenedorTabla footer div.totalRegistros {
@@ -118,7 +115,7 @@ div.contenedorTabla footer div.totalRegistros {
 
 
 div.contenedorTabla footer div.textoPie {
-	font-size: larger;
+	font-size:large;
 	height:100%;
 	width:70%;
 	display: flex; 
@@ -130,17 +127,26 @@ div.contenedorTabla table {
   width:100%;
   height:80%;
   border-collapse: collapse;
-  
-}
+  }
 
 div.contenedorTabla thead {
   display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
   background-color: #0078b7;
-  color: white;
+  color: while;
   text-align: center;
   height: 10%;
   overflow-y: scroll;
 }
+
+/*
+div.contenedorTabla tfoot {
+  display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas 
+  background-color: black;
+  height: 10%;
+  overflow-y: scroll;
+  text-align: center;
+}
+*/
 
 div.contenedorTabla tbody { /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
   display: block;
@@ -181,54 +187,53 @@ div.contenedorTabla th, td {
 /*Ancho y alto de las columnas*/
 
 [campo-dato="articulos_codArt"] {
-  width:12%;
+  width:11%;
   height:100%;
 }
 [campo-dato="articulos_familia"] {
-  width: 12%;
+  width: 11%;
   height:100%;
 }
 [campo-dato="articulos_descripcion"] {
-  width: 12%;
+  width: 11%;
   height:100%;
 }
 [campo-dato="articulos_um"] {
-  width: 12%;
+  width:11%;
   height:100%;
 }
 [campo-dato="articulos_fechaAlta"] {
-  width: 12%;
+  width: 11%;
   height:100%;
-}
+}	
 [campo-dato="articulos_saldoStock"] {
-  width: 12%;
+  width: 11%;
   height:100%;
   text-align:right;
 }
 
 
 [campo-dato="articulos_pdf"] {
-	
-  width: 12%;
+  width: 11%;
   height:100%;
   text-align:right;
 }
 
 [campo-dato="articulos_btC"] {
-	width: 12%;
+	width: 11%;
 	height:100%;
 }
 
 
 [campo-dato="articulos_btModi"] {
-  width: 12%;
+  width: 11%;
   height:100%;
  cursor:pointer;
 
 }
 
 [campo-dato="articulos_btBaja"] {
-  width: 12%;
+  width: 11%;
   height:100%;
   cursor:pointer;
 }
@@ -289,22 +294,19 @@ div.ventanaModalFormulario {
 	transform: translate(-50%, -50%);
 }
 
-
 div.ventanaModalFormulario header {
 	width:100%;
 	height:10%;
-	background-color:#AAAAAA;
+	background-color:#222651;
 	display:block;
 	overflow:hidden;
 }
 
-
-
-
 div.ventanaModalFormulario p {
 	font-size: 1.2em;
 	background-color: #222651;
-	width:90%;height:100%;
+	width:90%;
+	height:100%;
 	float: left; /*Asegura que todo lo que siga este pegado a el a la derecha*/
 	display: flex; 
 	justify-content: center;
@@ -314,8 +316,8 @@ div.ventanaModalFormulario p {
 
 div.ventanaModalFormulario div.btCruz {
 	color:red;
-	background-color: white;
-	width:10%;
+	background-color: gray;
+	width:8%;
 	height:100%;
 	cursor:pointer;
 	display: flex;
@@ -323,10 +325,8 @@ div.ventanaModalFormulario div.btCruz {
 	align-items: center; 
 }
 
-
-
 div.ventanaModalFormulario div.btCruz:hover {
-	background-color:gray;
+	background-color:white;
 }
 
 
@@ -406,6 +406,8 @@ div.ventanaModalFormulario option.elementoOptionSelect {
 	font-size: 1em;
 }
 
+
+	
 /*Ventana Modal respuesta*/
 
 div.ventanaModalRespuesta {
@@ -431,7 +433,8 @@ div.ventanaModalRespuesta header {
 div.ventanaModalRespuesta header p {
 	font-size:1.5em;
 	background-color: #EEEEEE;
-	width:90%;height:100%;
+	width:90%;
+	height:100%;
 	float: left; /*Asegura que todo lo que siga este pegado a el a la derecha, ej bt cruz*/
 	display: flex; 
 	justify-content: center;
@@ -440,7 +443,7 @@ div.ventanaModalRespuesta header p {
 
 div.ventanaModalRespuesta div.btCruz {
 	background-color: gray;
-	color: black;
+	color:red;
 	width:10%;
 	height:100%;
 	float:right;
@@ -467,6 +470,9 @@ div.ventanaModalRespuesta div.contenidoModal p {
 	text-align:left;
 	font-size:1.5em;
 }
+
+
+
 
 
 
