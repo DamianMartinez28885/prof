@@ -38,13 +38,13 @@ div.contenedorTabla header {
 }
 
 div.contenedorTabla header label { 
-	width:40%;
+	width:30%;
 	height:80%;
 	margin:1%;
 	padding:1%;
 	font-weight:bold;
 	font-size: 1.1em;
-	margin-right: 0;
+	
 }
 
 div.contenedorTabla header input { 
@@ -59,7 +59,7 @@ div.contenedorTabla header input {
 
 div.contenedorTabla header button { 
 	height:60%;
-	width:30%;
+	width:40%;
 	cursor:pointer;
 }
 
