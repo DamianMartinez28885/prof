@@ -412,11 +412,11 @@ div.ventanaModalFormulario option.elementoOptionSelect {
 
 div.ventanaModalRespuesta {
 	position:fixed;
-	left:45%;
-	top:18%;
-	width:50%;
-	height:50%;
-	color:black;
+	left:35%;
+	top:10%;
+	width:70%;
+	height:30%;
+	color:red;
 	z-index:20;
 }
 
@@ -432,7 +432,7 @@ div.ventanaModalRespuesta header {
 
 div.ventanaModalRespuesta header p {
 	font-size:1.5em;
-	background-color: #EEEEEE;
+	background-color: #222651;
 	width:90%;
 	height:100%;
 	float: left; /*Asegura que todo lo que siga este pegado a el a la derecha, ej bt cruz*/
@@ -461,7 +461,7 @@ div.ventanaModalRespuesta div.btCruz:hover {
 
 
 div.ventanaModalRespuesta div.contenidoModal {
-	background-color: #BBBBBB;
+	background-color: beige;
 	width:100%;
 	overflow:auto;
 }

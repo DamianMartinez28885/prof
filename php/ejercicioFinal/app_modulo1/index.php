@@ -100,40 +100,41 @@
 
 				<ul>
 				<li>
-				<label>codArt: </label>
-				<input id="formArticulosEntCodArtAlta" name="codArt" required />
+				<label>INGRESAR ID DE CARRERA: </label>
+				<input id="formArticulosEntCodArtAlta" name="idCarrera" required />
+				</li>
+				
+				
+				<li>
+				<label>NOMBRE DE LA CARRERA: </label>
+				<input id="formArticulosEntUmAlta" name="identificador" required />
 				</li>
 
-
 				<li>
-				<label>Descripción: </label>
+				<label>DESCRIPCION DE LA CARRERA: </label>
 				<input id="formArticulosEntDescripcionAlta" name="descripcion" required />
 				</li>
 
 
 				<li>
-				<label>Familia de artículo: </label>
-				<select id="formArticulosEntFamiliaAlta" name="familia" required></select> 
+				<label>CATEGORIA: </label>
+				<select id="formArticulosEntFamiliaAlta" name="categoria" required></select> 
 				</li>
 
 
-				<li>
-				<label>UM: </label>
-				<input id="formArticulosEntUmAlta" name="um" required />
-				</li>
 		
 				<li>
-				<label>Fecha Alta:</label>
-				<input type="date" id="formArticulosEntfechaAltaAlta" name="fechaAlta"  required />
+				<label>FECHA DE LA CARRERA:</label>
+				<input type="date" id="formArticulosEntfechaAltaAlta" name="fechaEvento"  required />
 				</li>
 
 				<li>
-				<label>Saldo stock: </label>
-				<input type="number" min=0 id="formArticulosEntSaldoStockAlta" name="saldoStock" value="0" required />
+				<label>DISTANCIA: </label>
+				<input type="number" min=0 id="formArticulosEntSaldoStockAlta" name="distancia" value="10" required />
 				</li>
 
 				<li>
-				<label>Pdf: </label>
+				<label>PDF: </label>
 				<input type="file" id="formArticulosEntDocumentoPdfAlta" name="documentoPdf" />
 				</li>
 
@@ -159,7 +160,7 @@
 
 		<div id="contenidoModalFormularioModi" class="contenidoModal">
 
-			<form  id="formArticulosModi"  method="post" enctype="multipart/form-data">
+			<form  id="formArticulosModi"  method="post" >
 			<ul>
 
 			<li>
