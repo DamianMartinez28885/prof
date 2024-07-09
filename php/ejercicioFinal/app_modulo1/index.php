@@ -90,7 +90,7 @@
 	<div id="ventanaModalFormularioAlta" class="ventanaModalFormulario">
 
 		<header>
-			<p>Encabezado modal Formulario de alta</p>
+			<p>FORMULARIO ALTA</p>
 			<div id="btCruzFormularioAlta" class="btCruz">X</div>
 		</header> <!--Cierra encabezado modal-->
 
@@ -142,19 +142,19 @@
 				</ul>
 
 			</form>
-		</div> <!--Cierra contenido Modal-->
+		</div> 
 
 		<footer>
-			<button id="btEnvioFormAlta" class="btAlta">Enviar Alta</button>
+			<button id="btEnvioFormAlta" class="btAlta">ENVIAR</button>
 		</footer>
 
-	</div> <!--Cierra ventana modal formulario-->
+	</div> 
 
-	<!--Ventana Modal para formulario de Modi que debe estar fuera del contenedor-->
+	
 	<div id="ventanaModalFormularioModi" class="ventanaModalFormulario">
 
 		<header>
-			<p>Encabezado modal Formulario de modificación</p>
+			<p>FORMULARIO MODI</p>
 			<div id="btCruzFormularioModi" class="btCruz">X</div>
 		</header> <!--Cierra encabezado modal-->
 
@@ -164,34 +164,34 @@
 			<ul>
 
 			<li>
-			<label>codArt: </label>
-			<input id="formArticulosEntCodArtModi" name="codArt" required />
+			<label>INGRESAR ID: </label>
+			<input id="formArticulosEntCodArtModi" name="" required />
 			</li>
 
 			<li>
-			<label>Descripción: </label>
+			<label>DESCRIPCION CARRERA: </label>
 			<input id="formArticulosEntDescripcionModi" name="descripcion" required />
 			</li>
 
 			<li>
-			<label>Familia de artículo: </label>
-			<select id="formArticulosEntFamiliaModi" name="familia" required></select> 
+			<label>CATEGORIA: </label>
+			<select id="formArticulosEntFamiliaModi" name="categoria" required></select> 
 			</li>
 
 
 			<li>
-			<label>UM: </label>
-			<input id="formArticulosEntUmModi" name="um" required />
+			<label>NOMBRE CARRERA: </label>
+			<input id="formArticulosEntUmModi" name="identificador" required />
 			</li>
 	
 			<li>
-			<label>Fecha Alta:</label>
-			<input type="date" id="formArticulosEntfechaAltaModi" name="fechaAlta"  required />
+			<label>FECHA EVENTO:</label>
+			<input type="date" id="formArticulosEntfechaAltaModi" name="fechaEvento"  required />
 			</li>
 
 			<li>
-			<label>Saldo stock: </label>
-			<input type="number" min=0 id="formArticulosEntSaldoStockModi" name="saldoStock" value="0" required />
+			<label>DISTANCIA: </label>
+			<input type="number" min=0 id="formArticulosEntSaldoStockModi" name="DISTANCIA" value="10" required />
 			</li>
 
 		

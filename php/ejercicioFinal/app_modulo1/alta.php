@@ -88,7 +88,7 @@ $stmt->execute();
 	}
 
 
-/*
+
 $salidaJson = json_encode($respuesta_estado,JSON_INVALID_UTF8_SUBSTITUTE);
 
 
