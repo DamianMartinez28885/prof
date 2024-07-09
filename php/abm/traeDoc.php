@@ -1,8 +1,6 @@
 <?php
 
 include("./datosConexionBase.php");
-
-
 $bindCodArt = $_GET['codArt'];
 
 $respuesta_estado= "codArt: " . $bindCodArt;

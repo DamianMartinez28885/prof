@@ -31,12 +31,12 @@
 		<table>
 			<thead >
 			<tr style="height:50%">
-			<td class="titulosColumnas" campo-dato="articulos_codArt" id="th_articulos_codArt">ID</td>
-			<td class="titulosColumnas" campo-dato="articulos_familia" id="th_articulos_familia">LUGAR</td>
-			<td class="titulosColumnas" campo-dato="articulos_um" id="th_articulos_um">DESCRIPCION</td>
-			<td class="titulosColumnas" campo-dato="articulos_descripcion" id="th_articulos_descripcion">CATEGORIA (AÑOS)</td>
-			<td class="titulosColumnas" campo-dato="articulos_fechaAlta" id="th_articulos_fechaAlta">FECHA EVENTO</td>
-			<td class="titulosColumnas" campo-dato="articulos_saldoStock" id="th_articulos_saldoStock">DISTANCIA</td>
+			<td class="titulosColumnas" campo-dato="articulos_codArt" id="th_idCarrera">ID</td>
+			<td class="titulosColumnas" campo-dato="articulos_familia" id="th_identificador">LUGAR</td>
+			<td class="titulosColumnas" campo-dato="articulos_um" id="th_descripcion">DESCRIPCION</td>
+			<td class="titulosColumnas" campo-dato="articulos_descripcion" id="th_categoria">CATEGORIA (AÑOS)</td>
+			<td class="titulosColumnas" campo-dato="articulos_fechaAlta" id="th_fechaEvento">FECHA EVENTO</td>
+			<td class="titulosColumnas" campo-dato="articulos_saldoStock" id="th_distancia">DISTANCIA</td>
 			<td class="titulosColumnas" campo-dato="articulos_pdf" id="th_articulos_pdf">DESLINDE</td>
 			<!--<td class="titulosColumnas" campo-dato="articulos_btC" id="th_articulos_btC">C</td>	-->
 			<td class="titulosColumnas" campo-dato="articulos_btModi">MODIFICAR</td>
@@ -44,17 +44,17 @@
 			</tr>
 
 			<tr style="height:40%">
-			<td campo-dato="articulos_codArt"><input id="f_articulos_codArt"></input></td>
-			<td campo-dato="articulos_descripcion"><input id="f_articulos_descripcion"></input></td>
-			<td campo-dato="articulos_um"><input id="f_articulos_um"></input></td>
+			<td campo-dato="articulos_codArt"><input id="fila_id"></input></td>
+			<td campo-dato="articulos_descripcion"><input id="fila_identificador"></input></td>
+			<td campo-dato="articulos_um"><input id="fila_descripcion"></input></td>
 			
 			<td campo-dato="articulos_familia">
-				<select id="f_articulos_familia" name="familia"></select> 
+				<select id="fila_categoria" name="familia"></select> 
 				<!--<input id="f_articulos_familia"></input>-->
 			</td>
 			
 			
-			<td campo-dato="articulos_fechaAlta"><input id="f_articulos_fechaAlta"></input></td>
+			<td campo-dato="articulos_fechaAlta"><input id="fila_fechaEvento"></input></td>
 			<td campo-dato="articulos_saldoStock"></td>
 			<td campo-dato="articulos_pdf"></td>
 			<td campo-dato="articulos_btC"></td>
@@ -66,20 +66,7 @@
 			<tbody id="tbDatos">
 			</tbody>
 
-			<tfoot>
-			<tr>
-			<td class="totalizador" campo-dato="articulos_codArt" id="tf_articulos_codArt"></td>
-			<td class="totalizador" campo-dato="articulos_familia" id="tf_articulos_familia"></td>
-			<td class="totalizador" campo-dato="articulos_um" id="tf_articulos_um"></td>
-			<td class="totalizador" campo-dato="articulos_descripcion" id="tf_articulos_descripcion"></td>
-			<td class="totalizador" campo-dato="articulos_fechaAlta" id="tf_articulos_fechaAlta"></td>
-			<td class="totalizador" campo-dato="articulos_saldoStock" id="tf_articulos_saldoStock"></td>
-			<td class="totalizador" campo-dato="articulos_pdf" id="tf_articulos_pdf"></td>
-			<!--<td class="titulosColumnas" campo-dato="articulos_btC" id="th_articulos_btC"></td>	-->
-			<td class="totalizador" campo-dato="articulos_btModi" id="tf_articulos_saldoStock"></td>
-			<td class="totalizador" campo-dato="articulos_btBaja" id="tf_articulos_saldoStock"></td>
-			</tr>
-			</tfoot>
+			
 
 		</table>
 

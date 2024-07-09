@@ -2,11 +2,11 @@
 include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
-$codArt = $_POST['codArt'];
-$familia = $_POST['familia'];
+$codArt = $_POST['idCarrera'];
+$familia = $_POST['categoria'];
 $descripcion = $_POST['descripcion'];
-$um = $_POST['um'];
-$fechaAlta = $_POST['fechaAlta'];
+$um = $_POST['identificador'];
+$fechaAlta = $_POST['fechaEvento'];
 $saldoStock = $_POST['saldoStock'];
 //$documentoPdf = $_POST['documentoPdf'];
 

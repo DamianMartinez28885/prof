@@ -9,14 +9,14 @@ $(document).ready(function() {
 		objCodArtModi=document.getElementById("formArticulosEntCodArtModi");
 		objFamiliaModi=document.getElementById("formArticulosEntFamiliaModi");
 		objDescripcionModi=document.getElementById("formArticulosEntDescripcionModi");
-		$("#orden").val("codArt"); //suponiendo que de entrada quisiera este orden
+		$("#orden").val("idCarrera"); //suponiendo que de entrada quisiera este orden
 		$("#contenedorTablaArticulos").attr("className","contenedorActivo");
 		$("#ventanaModalFormularioAlta").css("visibility","hidden");
 		$("#ventanaModalFormularioModi").css("visibility","hidden");
 		$("#ventanaModalRespuesta").css("visibility","hidden");
 		$("#btEnvioFormModi").attr("disabled",true);
 		$("#btEnvioFormAlta").attr("disabled",true);
-		llenaFamilias();
+		llenaCategorias();
 });
 
 
@@ -92,51 +92,51 @@ $(document).ready(function() {
 		$("#contenedorTablaArticulos").attr("className","contenedorPasivo");
 		$("#ventanaModalFormularioAlta").css("visibility","visible");
 		vaciaFormulario(); //carga valor vacío en todos los campos del form
-		llenaFamiliasAlta(); //completa familias del cuadro de lista
+		llenaCategoriasAlta(); //completa familias del cuadro de lista
 	});
 });
 
 
 $(document).ready(function() {
-	$("#th_articulos_codArt" ).click(function() {
-		$("#orden").val("codArt"); //solo cargo esta variable orden
+	$("#th_idCarrera" ).click(function() {
+		$("#orden").val("idCarrera"); //solo cargo esta variable orden
 		cargaTabla();
 	});	//cierro click
 }); //cierro ready
 
 
 $(document).ready(function() {
-	$("#th_articulos_familia" ).click(function() {
-		$("#orden").val("familia"); //solo cargo esta variable orden
+	$("#th_identificador" ).click(function() {
+		$("#orden").val("identificador"); //solo cargo esta variable orden
 		cargaTabla();
 	});	//cierro click
 }); //cierro ready
 
 
 $(document).ready(function() {
-	$("#th_articulos_descripcion" ).click(function() {
+	$("#th_categoria" ).click(function() {
+		$("#orden").val("categoria"); //solo cargo esta variable orden
+		cargaTabla();
+	});	//cierro click
+}); //cierro ready
+
+$(document).ready(function() {
+	$("#th_descripcion" ).click(function() {
 		$("#orden").val("descripcion"); //solo cargo esta variable orden
 		cargaTabla();
 	});	//cierro click
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#th_articulos_um" ).click(function() {
-		$("#orden").val("um"); //solo cargo esta variable orden
+	$("#th_fechaEvento" ).click(function() {
+		$("#orden").val("fechaEvento"); //solo cargo esta variable orden
 		cargaTabla();
 	});	//cierro click
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#th_articulos_fechaAlta" ).click(function() {
-		$("#orden").val("fechaAlta"); //solo cargo esta variable orden
-		cargaTabla();
-	});	//cierro click
-}); //cierro ready
-
-$(document).ready(function() {
-	$("#th_articulos_saldoStock" ).click(function() {
-		$("#orden").val("saldoStock"); //solo cargo esta variable orden
+	$("#th_distancia" ).click(function() {
+		$("#orden").val("distancia"); //solo cargo esta variable orden
 		cargaTabla();
 	});	//cierro click
 }); //cierro ready
@@ -282,18 +282,19 @@ function todoListoParaModi() { //Habilita/deshabilita boton de modi
 function cargaTabla() {
 	
 	$("#tbDatos").empty();
-	$("#tbDatos").html("<p>Eserando respuesta ..</p>");
+	$("#tbDatos").html("<p style='font-size: 50px;'>ESTABLECIENDO CONEXION --- ESPERE POR FAVOR</p>");
 	var objAjax = $.ajax({
 		type:"get", 
-		url:"salidaJsonArticulos.php",
+		url:"salidaJsonCarreras.php",
 		timeout:8000,
 		data: { 
 			orden: $("#orden").val(),
-			f_articulos_codArt: $("#f_articulos_codArt").val(),
-			f_articulos_familia: $("#f_articulos_familia").val(),
-			f_articulos_descripcion: $("#f_articulos_descripcion").val(),
-			f_articulos_um: $("#f_articulos_um").val(),
-			f_articulos_fechaAlta:$("#f_articulos_fechaAlta").val()
+			fila_id: $("#fila_id").val(),
+			fila_categoria: $("#fila_categoria").val(),
+			fila_identificador: $("#fila_identificador").val(),
+			fila_descripcion: $("#fila_descripcion").val(),
+			fila_fechaEvento:$("#fila_fechaEvento").val(),
+			fila_distancia:$("#fila_distancia").val(),
 		},
 		success: function(respuestaDelServer,estado) {  //La funcion de callback que se ejecutara cuando el req. sea completado.
 					//$("#tbDatos").html(respuestaDelServer)//para ver el json recibido dentro de tbDatos;
@@ -302,38 +303,38 @@ function cargaTabla() {
 					
 					objJson=JSON.parse(respuestaDelServer);
 					//Luego barre el objeto de datos leyendo sus datos copiandolos al cuerpo de la tabla.
-					objJson.articulos.forEach(function(argValor,argIndice) { 
+					objJson.carreras.forEach(function(argValor,argIndice) { 
 						var objTr= document.createElement("tr");
 						var objTd=document.createElement("td");
 						//objTd.setAttribute("classname","")
 						objTd.setAttribute("campo-dato","articulos_codArt");
-						objTd.innerHTML=argValor.codArt;
-						objTr.appendChild(objTd);
-
-						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_familia");
-						objTd.innerHTML=argValor.familia;
+						objTd.innerHTML=argValor.idCarrera;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
 						objTd.setAttribute("campo-dato","articulos_um");
-						objTd.innerHTML=argValor.um;
+						objTd.innerHTML=argValor.identificador;
 						objTr.appendChild(objTd);
-
 
 						var objTd=document.createElement("td");
 						objTd.setAttribute("campo-dato","articulos_descripcion");
 						objTd.innerHTML=argValor.descripcion;
 						objTr.appendChild(objTd);
 
+
+						var objTd=document.createElement("td");
+						objTd.setAttribute("campo-dato","articulos_familia");
+						objTd.innerHTML=argValor.categoria;
+						objTr.appendChild(objTd);
+
 						var objTd=document.createElement("td");
 						objTd.setAttribute("campo-dato","articulos_fechaAlta");
-						objTd.innerHTML=argValor.fechaAlta;
+						objTd.innerHTML=argValor.fechaEvento;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
 						objTd.setAttribute("campo-dato","articulos_saldoStock");
-						objTd.innerHTML=argValor.saldoStock;
+						objTd.innerHTML=argValor.distancia;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
@@ -343,7 +344,7 @@ function cargaTabla() {
 						objTd.addEventListener("click", function() {
 							$("#contenedorTablaArticulos").attr("className","contenedorPasivo");
 							$("#ventanaModalRespuesta").css("visibility","visible");
-							traeDoc(argValor.codArt);
+							traeDoc(argValor.idCarrera);
 						});
 
 						objTr.appendChild(objTd);
@@ -357,8 +358,8 @@ function cargaTabla() {
 							$("#contenedorTablaArticulos").attr("className","contenedorPasivo");
 							$("#ventanaModalFormularioModi").css("visibility","visible");
 							//alert();
-							llenaFamiliasModi();
-							CompletaFichaArticulo(argValor.codArt);
+							llenaCategoriasModi();
+							CompletaFichaArticulo(argValor.idCarrera);
 						});
 
 						objTr.appendChild(objTd);
@@ -376,7 +377,7 @@ function cargaTabla() {
 						objTbDatos.appendChild(objTr);
 				
 					});//cierra el forEach
-					$("#totalRegistros").html("Nro de registros: " + objJson.articulos.length);
+					$("#totalRegistros").html("Nro de registros: " + objJson.carreras.length);
 					
 				}//cierra funcion asignada al success
 			}); //cierra objeto de parametros y funcion ajax
@@ -423,11 +424,11 @@ function vaciaFormulario() {
 
 
 
-function llenaFamilias() { //el argumento corresponde al objeto que será llenado
-			$("#f_articulos_familia").empty();
+function llenaCategorias() { //el argumento corresponde al objeto que será llenado
+			$("#fila_categoria").empty();
 			var objAjax = $.ajax({
 			type:"get", 
-			url:"./salidaJsonFamilias.php",
+			url:"./salidaJsonCategorias.php",
 			
 			success: function(respuestaDelServer,estado) {
 						alert(respuestaDelServer);
@@ -437,17 +438,17 @@ function llenaFamilias() { //el argumento corresponde al objeto que será llenad
 						/*objOption.setAttribute("class","elementoOptionSelect");*/
 						objOption.setAttribute("value", ""); 
 						objOption.innerHTML="";
-						document.getElementById("f_articulos_familia").appendChild(objOption);
+						document.getElementById("fila_categoria").appendChild(objOption);
 
 						/*Barre el array de lista de Objetos para agregar opciones*/
-						listaDeObjetos.familias.forEach(function(argValor,argIndice) { 
+						listaDeObjetos.categorias.forEach(function(argValor,argIndice) { 
 												
 							var objOption= document.createElement("option");
-							objOption.setAttribute("value", argValor.codFamilia); 
+							objOption.setAttribute("value", argValor.codCategoria); 
 							//alert(argValor.codFamilia);
-							objOption.innerHTML=argValor.descripcionFamilia;
+							objOption.innerHTML=argValor.descripcionCategoria;
 
-							document.getElementById("f_articulos_familia").appendChild(objOption);
+							document.getElementById("fila_categoria").appendChild(objOption);
 							
 						});//cierra foreach
 						return true;
@@ -462,22 +463,22 @@ function llenaFamilias() { //el argumento corresponde al objeto que será llenad
 
 
 
-function llenaFamiliasAlta() { //el argumento corresponde al objeto que será llenado
+function llenaCategoriasAlta() { //el argumento corresponde al objeto que será llenado
 			$("#formArticulosEntFamiliaAlta").empty();
 			var objAjax = $.ajax({
 			type:"get", 
-			url:"./salidaJsonFamilias.php",
+			url:"./salidaJsonCategorias.php",
 			
 			success: function(respuestaDelServer,estado) {
 						//alert(respuestaDelServer);
 						listaDeObjetos = JSON.parse(respuestaDelServer);
-						listaDeObjetos.familias.forEach(function(argValor,argIndice) { 
+						listaDeObjetos.categorias.forEach(function(argValor,argIndice) { 
 												
 							var objOption= document.createElement("option");
 							objOption.setAttribute("class","elementoOptionSelect");
-							objOption.setAttribute("value", argValor.codFamilia); 
+							objOption.setAttribute("value", argValor.codCategoria); 
 							
-							objOption.innerHTML=argValor.codFamilia + argValor.descripcionFamilia;
+							objOption.innerHTML=argValor.codCategoria + argValor.descripcionCategoria;
 
 							document.getElementById("formArticulosEntFamiliaAlta").appendChild(objOption);
 							
@@ -489,7 +490,7 @@ function llenaFamiliasAlta() { //el argumento corresponde al objeto que será ll
 
 
 
-function llenaFamiliasModi() { 
+function llenaCategoriasModi() { 
 	//alert($("#formArticulosEntFamiliaModi").val());
 		$("#formArticulosEntFamiliaModi").empty(); //antes de llenar vacío para no duplicar elementos
 	//alert($("#formArticulosEntFamiliaModi").val());		
@@ -499,21 +500,21 @@ function llenaFamiliasModi() {
 
 			var objAjax = $.ajax({
 			type:"get", 
-			url:"./salidaJsonFamilias.php",
+			url:"./salidaJsonCategorias.php",
 			
 			success: function(respuestaDelServer,estado) {
 						
 						listaDeObjetos = JSON.parse(respuestaDelServer);
-						listaDeObjetos.familias.forEach(function(argValor,argIndice) { 
+						listaDeObjetos.categorias.forEach(function(argValor,argIndice) { 
 						
 							
 							var objOption= document.createElement("option");
 							objOption.setAttribute("class","elementoOptionSelect");
-							objOption.setAttribute("value", argValor.codFamilia); 
+							objOption.setAttribute("value", argValor.codCategoria); 
 
 							//El formulario ya está cargado con los datos desde el momento en que 
 							//hizo click en el boton de modi del registro apuntado.
-							objOption.innerHTML=argValor.codFamilia + argValor.descripcionFamilia;
+							objOption.innerHTML=argValor.codCategoria + argValor.descripcionCategoria;
 							if(objOption.value == $("#formArticulosEntFamiliaModi").val()) {
 								objOption.setAttribute("selected","selected");
 							}
@@ -528,11 +529,11 @@ function llenaFamiliasModi() {
 
 
 function limpiaFiltros() {
-	$("#f_articulos_codArt").val("");
-	$("#f_articulos_familia").val("");
-	$("#f_articulos_um").val("");
-	$("#f_articulos_descripcion").val("");
-	$("#f_articulos_fechaAlta").val("");
+	$("#fila_id").val("");
+	$("#fila_categoria").val("");
+	$("#fila_descripcion").val("");
+	$("#fila_identificador").val("");
+	$("#fila_fechaEvento").val("");
 }
 
 function consultaDatos(codArt) {

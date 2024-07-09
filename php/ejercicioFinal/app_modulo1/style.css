@@ -187,30 +187,30 @@ div.contenedorTabla th, td {
 /*Ancho y alto de las columnas*/
 
 [campo-dato="articulos_codArt"] {
-  width:11%;
-  height:100%;
-}
-[campo-dato="articulos_familia"] {
-  width: 11%;
-  height:100%;
-}
-[campo-dato="articulos_descripcion"] {
-  width: 11%;
-  height:100%;
-}
-[campo-dato="articulos_um"] {
-  width:11%;
-  height:100%;
-}
-[campo-dato="articulos_fechaAlta"] {
-  width: 11%;
-  height:100%;
-}	
-[campo-dato="articulos_saldoStock"] {
-  width: 11%;
-  height:100%;
-  text-align:right;
-}
+	width:11%;
+	height:100%;
+  }
+  [campo-dato="articulos_familia"] {
+	width: 11%;
+	height:100%;
+  }
+  [campo-dato="articulos_descripcion"] {
+	width: 11%;
+	height:100%;
+  }
+  [campo-dato="articulos_um"] {
+	width:11%;
+	height:100%;
+  }
+  [campo-dato="articulos_fechaAlta"] {
+	width: 11%;
+	height:100%;
+  }
+  [campo-dato="articulos_saldoStock"] {
+	width: 11%;
+	height:100%;
+	text-align:right;
+  }
 
 
 [campo-dato="articulos_pdf"] {

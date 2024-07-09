@@ -294,7 +294,7 @@ function cargaTabla() {
 	$("#tbDatos").html("<p>ESPERANDO RESPUESTA--ESPERE POR FAVOR.</p>");
 	var objAjax = $.ajax({
 		type:"get", 
-		url:"salidaJsonArticulos.php",
+		url:"salidaJsonCarreras.php",
 		
 		data: { 
 			orden: $("#orden").val(),
