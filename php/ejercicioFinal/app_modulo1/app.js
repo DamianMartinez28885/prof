@@ -389,21 +389,21 @@ function cargaTabla() {
 
 
 
-function CompletaFichaArticulo(argArticulo) {	
-	$("#formArticulosEntCodArtModi").val(argArticulo);
+function CompletaFichaArticulo(argCarrera) {	
+	$("#formArticulosEntCodArtModi").val(argCarrera);
 	var objAjax = $.ajax({
 		type:"get", 
 		url:"./salidaJsonArticulo.php",
-		data: { codArt:argArticulo },
+		data: { idCarrera:argCarrera },
 		success: function(respuestaDelServer,estado) {  //La funcion de callback que se ejecutara cuando el req. sea completado.
 			//alert(respuestaDelServer);
 			objetoDato = JSON.parse(respuestaDelServer);
-			$("#formArticulosEntCodArtModi").val(objetoDato.codArt);
-			$("#formArticulosEntFamiliaModi").val(objetoDato.familia);
+			$("#formArticulosEntCodArtModi").val(objetoDato.idCarrera);
+			$("#formArticulosEntFamiliaModi").val(objetoDato.categoria);
 			$("#formArticulosEntDescripcionModi").val(objetoDato.descripcion);
-			$("#formArticulosEntUmModi").val(objetoDato.um);						
-			$("#formArticulosEntfechaAltaModi").val(objetoDato.fechaAlta);
-			$("#formArticulosEntSaldoStockModi").val(objetoDato.saldoStock);
+			$("#formArticulosEntUmModi").val(objetoDato.identificador);						
+			$("#formArticulosEntfechaAltaModi").val(objetoDato.fechaEvento);
+			$("#formArticulosEntSaldoStockModi").val(objetoDato.distancia);
 			todoListoParaModi();//habilitacion del boton de enviar modi si todo valida
 		} //cierra el success
 	}); //cierro ajax
@@ -696,7 +696,7 @@ function traeDoc(argArticulo) {
 				objetoDato = JSON.parse(respuestaDelServer);
 				$("#ventanaModalRespuesta").css("visibility","visible");
 				$("#contenidoModalRespuesta").empty();
-				$("#contenidoModalRespuesta").html("<iframe width='100%' height='600px' src='data:application/pdf;base64,"+objetoDato.documentoPdf+"'></iframe>");
+				$("#contenidoModalRespuesta").html("<iframe width='100%' height='600px' src='data:application/pdf;base64,"+objetoDato.deslinde+"'></iframe>");
 
 			} //cierra success
 		}); //cierra ajax

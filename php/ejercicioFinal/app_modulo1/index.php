@@ -135,7 +135,7 @@
 
 				<li>
 				<label>PDF: </label>
-				<input type="file" id="formArticulosEntDocumentoPdfAlta" name="documentoPdf" />
+				<input type="file" id="formArticulosEntDocumentoPdfAlta" name="deslinde" />
 				</li>
 
 
@@ -165,7 +165,7 @@
 
 			<li>
 			<label>INGRESAR ID: </label>
-			<input id="formArticulosEntCodArtModi" name="" required />
+			<input id="formArticulosEntCodArtModi" name="idCarrera" required />
 			</li>
 
 			<li>
@@ -191,13 +191,13 @@
 
 			<li>
 			<label>DISTANCIA: </label>
-			<input type="number" min=0 id="formArticulosEntSaldoStockModi" name="DISTANCIA" value="10" required />
+			<input type="number" min=0 id="formArticulosEntSaldoStockModi" name="distancia" value="10" required />
 			</li>
 
 		
 			<li>
 			<label>Documento Pdf: </label>
-			<input type="file" id="formArticulosEntDocumentoPdfModi" name="documentoPdf"  />
+			<input type="file" id="formArticulosEntDocumentoPdfModi" name="deslinde"  />
 			</li>
 			
 			</ul>
