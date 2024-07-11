@@ -3,9 +3,9 @@ include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
 
-$bindCodArt = $_GET['codArt'];
+$bindidCarrera = $_GET['idCarrera'];
 
-$respuesta_estado= "codArt: " . $bindCodArt;
+$respuesta_estado= "idCarrera: " . $bindidCarrera;
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
@@ -19,7 +19,7 @@ try {
 
 
 
-$sql="select documentoPdf from articulos where codArt = :codArt";
+$sql="select deslinde from carreras where idCarrera = :idCarrera";
 
 $respuesta_estado = $respuesta_estado . $sql . "<br />";
 
@@ -34,7 +34,7 @@ try {
 
 
 try {
-	$stmt->bindParam(':codArt', $bindCodArt);
+	$stmt->bindParam(':idCarrera', $bindidCarrera);
 	
 	$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
 } catch (PDOException $e) {
@@ -53,16 +53,16 @@ try {
 
 
 $fila=$stmt->fetch();
-$objArticulo = new stdClass();
+$objCarrera = new stdClass();
 //recordemos que $fila['documentoPdf'] es el elemento asociativo que contiene el documento en formato binario
 
 
 
-$objArticulo->documentoPdf=base64_encode($fila['documentoPdf']);
+$objCarrera->carreras_pdf=base64_encode($fila['deslinde']);
 
 //$objArticulo->documentoPdf=$fila['documentoPdf'];
 
-$salidaJson = json_encode($objArticulo,JSON_INVALID_UTF8_SUBSTITUTE);
+$salidaJson = json_encode($objCarrera,JSON_INVALID_UTF8_SUBSTITUTE);
 /*El parámetro adicionado como 2do argumento es para evitar que el codificador json agregue caracteres que esten fuera de los valores posibles para base64*/
 $dbh = null; /*para cerrar la conexion*/
 

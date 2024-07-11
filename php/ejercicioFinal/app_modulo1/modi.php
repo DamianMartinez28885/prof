@@ -2,12 +2,12 @@
 include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
-$codArt=$_POST['codArt'];
-$familia = $_POST['familia'];
+$idCarrera=$_POST['idCarrera'];
+$categoria = $_POST['categoria'];
 $descripcion = $_POST['descripcion'];
-$um = $_POST['um'];
-$fechaAlta = $_POST['fechaAlta'];
-$saldoStock = $_POST['saldoStock'];
+$identificador = $_POST['identificador'];
+$fechaEvento = $_POST['fechaEvento'];
+$distancia = $_POST['distancia'];
 
 
 
@@ -15,7 +15,7 @@ $respuesta_estado = "Parte Modificacion simple de datos <br />\n";
 
 
 
-$sql="update articulos set codArt=:codArt,familia=:familia,descripcion=:descripcion,um=:um,fechaAlta=:fechaAlta,saldoStock=:saldoStock where codArt=:codArt;";
+$sql="update carreras set idCarrera=:idCarrera,categoria=:categoria,descripcion=:descripcion,identificador=:identificador,fechaEvento=:fechaEvento,distancia=:distancia where idCarrera=:idCarrera;";
 
 
 try {
@@ -36,12 +36,12 @@ try {
 
 
 try {
-	$stmt->bindParam(':codArt', $codArt);
-	$stmt->bindParam(':familia', $familia);
+	$stmt->bindParam(':idCarrera', $idCarrera);
+	$stmt->bindParam(':categoria', $categoria);
 	$stmt->bindParam(':descripcion', $descripcion);
-	$stmt->bindParam(':um', $um);
-	$stmt->bindParam(':fechaAlta', $fechaAlta);
-	$stmt->bindParam(':saldoStock', $saldoStock);	
+	$stmt->bindParam(':identificador', $identificador);
+	$stmt->bindParam(':fechaEvento', $fechaEvento);
+	$stmt->bindParam(':distancia', $distancia);	
 	$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
@@ -69,20 +69,20 @@ $respuesta_estado = $respuesta_estado . "<br />error: \n" . $_FILES['documentoPd
 */
 
 
-if ($_FILES['documentoPdf']['size']==0) {
+if ($_FILES['deslinde']['size']==0) {
 	$respuesta_estado=$respuesta_estado . "<br />\nNo ha sido seleccionado file para enviar";
 }
 else {
-	$respuesta_estado=$respuesta_estado . "<br />\nTrae documentoPdf asociado a codArt: " . $codArt;
+	$respuesta_estado=$respuesta_estado . "<br />\nTrae deslinde asociado a idCarrera: " . $idCarrera;
 	
-	$contenidoPdf = file_get_contents($_FILES['documentoPdf']['tmp_name']);	
+	$contenidoPdf = file_get_contents($_FILES['deslinde']['tmp_name']);	
 		//EL type de $_FILES['documentoPdf'] no es
 		//una variable simple que contiene el nombre
 		//del archivo subido desde el input de java script con nombre documentoPdf sino un array (para verlo se 
 		//puede usar var_dump(). El elemento name en la 2da dimension de $_FILES si contiene el nombre de archivo 
 	 	//original)
 
-	$sql="update articulos set documentoPdf=:contenidoPdf where codArt=:codArt;";
+	$sql="update carreras set deslinde=:deslinde where idCarrera=:idCarrera;";
 	
 	try {
 		$stmt = $dbh->prepare($sql);	
@@ -93,8 +93,8 @@ else {
 
 
 	try {
-		$stmt->bindParam(':codArt', $codArt);
-		$stmt->bindParam(':contenidoPdf', $contenidoPdf);	
+		$stmt->bindParam(':idCarrera', $idCarrera);
+		$stmt->bindParam(':deslinde', $deslinde);	
 
 		$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
 	} catch (PDOException $e) {

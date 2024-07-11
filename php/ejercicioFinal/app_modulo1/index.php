@@ -8,12 +8,11 @@
 <link rel="stylesheet" href="./style.css">
 <script src="./jquery.js"></script>
 <script src="./app.js"></script>
-
 </head>
 
 
 <body>
-	<div id="contenedorTablaArticulos" class="contenedorTabla">
+	<div id="contenedorTablaCarreras" class="contenedorTabla">
 		
 		<header >
 			<label >ORDENADO POR:</label>
@@ -31,32 +30,32 @@
 		<table>
 			<thead >
 			<tr style="height:50%">
-			<td class="titulosColumnas" campo-dato="articulos_codArt" id="th_idCarrera">ID</td>
-			<td class="titulosColumnas" campo-dato="articulos_familia" id="th_identificador">LUGAR</td>
-			<td class="titulosColumnas" campo-dato="articulos_um" id="th_descripcion">DESCRIPCION</td>
-			<td class="titulosColumnas" campo-dato="articulos_descripcion" id="th_categoria">CATEGORIA (AÑOS)</td>
-			<td class="titulosColumnas" campo-dato="articulos_fechaAlta" id="th_fechaEvento">FECHA EVENTO</td>
-			<td class="titulosColumnas" campo-dato="articulos_saldoStock" id="th_distancia">DISTANCIA</td>
-			<td class="titulosColumnas" campo-dato="articulos_pdf" id="th_articulos_pdf">DESLINDE</td>
+			<td class="titulosColumnas" campo-dato="carreras_idCarrera" id="th_idCarrera">ID</td>
+			<td class="titulosColumnas" campo-dato="carreras_identificador" id="th_identificador">LUGAR</td>
+			<td class="titulosColumnas" campo-dato="carreras_descripcion" id="th_descripcion">DESCRIPCION</td>
+			<td class="titulosColumnas" campo-dato="carreras_categoria" id="th_categoria">CATEGORIA (AÑOS)</td>
+			<td class="titulosColumnas" campo-dato="carreras_fechaEvento" id="th_fechaEvento">FECHA EVENTO</td>
+			<td class="titulosColumnas" campo-dato="carreras_distancia" id="th_distancia">DISTANCIA</td>
+			<td class="titulosColumnas" campo-dato="carreras_deslinde" id="th_deslinde">DESLINDE</td>
 			<!--<td class="titulosColumnas" campo-dato="articulos_btC" id="th_articulos_btC">C</td>	-->
 			<td class="titulosColumnas" campo-dato="articulos_btModi">MODIFICAR</td>
 			<td class="titulosColumnas" campo-dato="articulos_btModi">BAJA</td>
 			</tr>
 
 			<tr style="height:40%">
-			<td campo-dato="articulos_codArt"><input id="fila_id"></input></td>
-			<td campo-dato="articulos_descripcion"><input id="fila_identificador"></input></td>
-			<td campo-dato="articulos_um"><input id="fila_descripcion"></input></td>
+			<td campo-dato="carreras_idCarrera"><input id="fila_id"></input></td>
+			<td campo-dato="carreras_identificador"><input id="fila_identificador"></input></td>
+			<td campo-dato="carreras_descripcion"><input id="fila_descripcion"></input></td>
 			
-			<td campo-dato="articulos_familia">
-				<select id="fila_categoria" name="familia"></select> 
+			<td campo-dato="carreras_categoria">
+				<select id="fila_categoria" name="categoria"></select> 
 				<!--<input id="f_articulos_familia"></input>-->
 			</td>
 			
 			
-			<td campo-dato="articulos_fechaAlta"><input id="fila_fechaEvento"></input></td>
-			<td campo-dato="articulos_saldoStock"></td>
-			<td campo-dato="articulos_pdf"></td>
+			<td campo-dato="carreras_fechaEvento"><input id="fila_fechaEvento"></input></td>
+			<td campo-dato="carreras_distancia"></td>
+			<td campo-dato="carreras_deslinde"></td>
 			<td campo-dato="articulos_btC"></td>
 			<td campo-dato="articulos_btModi"></td>
 			<td campo-dato="articulos_btbaja"></td>
@@ -73,10 +72,10 @@
 		<footer>
 			<div id="totalRegistros" class="totalRegistros">
 			</div>
-			<div id="textoPie" class="textoPie"><h1>Pie</h1>
+			<div id="textoPie" class="textoPie"><h1 font>DAMIAN MARTINEZ LEG:28885</h1>
 			</div>
 		</footer>
-	</div> <!-- cierra contenedorTablaArticulos -->
+	</div>
 
 
 
@@ -86,13 +85,13 @@
 
 
 
-	<!--Ventana Modal para formulario de alta que debe estar fuera del contenedor-->
+	<!--Ventana modal alta-->
 	<div id="ventanaModalFormularioAlta" class="ventanaModalFormulario">
 
 		<header>
 			<p>FORMULARIO ALTA</p>
 			<div id="btCruzFormularioAlta" class="btCruz">X</div>
-		</header> <!--Cierra encabezado modal-->
+		</header>
 
 		<div id="contenidoModalFormularioAlta" class="contenidoModal">
 

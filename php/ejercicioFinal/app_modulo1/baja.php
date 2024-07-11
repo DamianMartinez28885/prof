@@ -2,9 +2,9 @@
 include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
-$bindCodArt = $_GET['codArt'];
+$bindCodArt = $_GET['idCarrera'];
 
-$respuesta_estado = "codArt pasado: " . $bindCodArt;
+$respuesta_estado = "idCarrera pasado: " . $bindidCarrera;
 
 
 try {
@@ -18,14 +18,14 @@ try {
 
 
 
-$sql = "delete from articulos where codArt=:codArt;";
+$sql = "delete from carreras where idCarrera=:idCarrera;";
 
 
 try {
 	$stmt = $dbh->prepare($sql);
 	$respuesta_estado = $respuesta_estado . "\nPreparacion exitosa!";
 	try {
-		$stmt->bindParam(':codArt', $bindCodArt);
+		$stmt->bindParam(':idCarrera', $bindCodArt);
 		$respuesta_estado = $respuesta_estado . "\nBinding exitoso!";
 		try {
 			$stmt->execute();

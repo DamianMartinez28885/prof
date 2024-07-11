@@ -9,7 +9,7 @@ include("./datosConexionBase.php");
 $hoy = date("Y-m-d H:i:s");
 $respuesta_estado=$hoy . "\n";
 
-$codArt=$_GET['codArt'];
+$idCarrera=$_GET['idCarrera'];
 
 
 
@@ -21,7 +21,7 @@ try {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
 }
 
-$sql = "select * from articulos where codArt=:bindCodArt";
+$sql = "select * from carreras where idCarrera=:bindidCarrera";
 
 
 
@@ -38,7 +38,7 @@ $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 
 try {
-	$stmt->bindParam(':bindCodArt', $codArt);
+	$stmt->bindParam(':bindidCarrera', $idCarrera);
 	$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
@@ -61,12 +61,12 @@ $fila = $stmt->fetch();
 
 
 $objArticulo = new stdClass();
-	$objArticulo->codArt=$fila['codArt'];
-	$objArticulo->familia=$fila['familia'];
+	$objArticulo->idCarrera=$fila['idCarrera'];
+	$objArticulo->categoria=$fila['categoria'];
 	$objArticulo->descripcion=$fila['descripcion'];
-	$objArticulo->um=$fila['um'];
-	$objArticulo->fechaAlta=$fila['fechaAlta'];
-	$objArticulo->saldoStock=$fila['saldoStock'];
+	$objArticulo->um=$fila['identificador'];
+	$objArticulo->fechaAlta=$fila['fechaEvento'];
+	$objArticulo->saldoStock=$fila['distancia'];
 
 
 //$puntero = fopen("./errores.log","a");

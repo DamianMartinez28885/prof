@@ -1,6 +1,4 @@
 
-
-/*Estilo global*/
 * {
 	margin:0;
 	box-sizing: border-box;
@@ -15,6 +13,10 @@ html {
 body {
 	height:100%;
 	width:100%;
+}
+
+h1{
+	font-size: 40px;
 }
 
 
@@ -186,34 +188,34 @@ div.contenedorTabla th, td {
 
 /*Ancho y alto de las columnas*/
 
-[campo-dato="articulos_codArt"] {
+[campo-dato="carreras_idCarrera"] {
 	width:11%;
 	height:100%;
   }
-  [campo-dato="articulos_familia"] {
+  [campo-dato="carreras_identificador"] {
 	width: 11%;
 	height:100%;
   }
-  [campo-dato="articulos_descripcion"] {
+  [campo-dato="carreras_descripcion"] {
 	width: 11%;
 	height:100%;
   }
-  [campo-dato="articulos_um"] {
+  [campo-dato="carreras_categoria"] {
 	width:11%;
 	height:100%;
   }
-  [campo-dato="articulos_fechaAlta"] {
+  [campo-dato="carreras_fechaEvento"] {
 	width: 11%;
 	height:100%;
   }
-  [campo-dato="articulos_saldoStock"] {
+  [campo-dato="carreras_distancia"] {
 	width: 11%;
 	height:100%;
 	text-align:right;
   }
 
 
-[campo-dato="articulos_pdf"] {
+[campo-dato="carreras_deslinde"] {
   width: 11%;
   height:100%;
   text-align:right;

@@ -1,13 +1,13 @@
 <?php
-include('../manejoSesion.inc');
+//include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
-$codArt = $_POST['codArt'];
-$familia = $_POST['familia'];
+$idCarrera = $_POST['idCarrera'];
+$categoria = $_POST['categoria'];
 $descripcion = $_POST['descripcion'];
-$um = $_POST['um'];
-$fechaAlta = $_POST['fechaAlta'];
-$saldoStock = $_POST['saldoStock'];
+$identificador = $_POST['identificador'];
+$fechaEvento = $_POST['fechaEvento'];
+$distancia = $_POST['distancia'];
 //$documentoPdf = $_POST['documentoPdf'];
 
 
@@ -26,25 +26,25 @@ try {
 
 
 $respuesta_estado=$respuesta_estado . "\nRespuesta del servidor al alta. Entradas recibidas en el req http:";
-$respuesta_estado=$respuesta_estado . "\ncodArt: " . $codArt;
-$respuesta_estado=$respuesta_estado . "\nfamilia: " . $familia;
+$respuesta_estado=$respuesta_estado . "\nidCarrera: " . $idCarrera;
+$respuesta_estado=$respuesta_estado . "\ncategoria: " . $categoria;
 $respuesta_estado=$respuesta_estado . "\ndescripcion: " . $descripcion;
-$respuesta_estado=$respuesta_estado . "\num: " . $um;
-$respuesta_estado=$respuesta_estado . "\nfechaAlta: " . $fechaAlta;
-$respuesta_estado=$respuesta_estado . "\nsaldoStock: " . $saldoStock;
+$respuesta_estado=$respuesta_estado . "\nidentificador: " . $identificador;
+$respuesta_estado=$respuesta_estado . "\nfechaEvento: " . $fechaEvento;
+$respuesta_estado=$respuesta_estado . "\ndistancia: " . $distancia;
 
 
-$sql="insert into articulos (codArt,familia,descripcion,um,fechaAlta,saldoStock) values (:codArt,:familia,:descripcion,:um,:fechaAlta,:saldoStock);";
+$sql="insert into carreras (idCarrera,categoria,descripcion,identificador,fechaEvento,distancia) values (:idCarrera,:categoria,:descripcion,:identificador,:fechaEvento,:distancia);";
 
 
 $stmt = $dbh->prepare($sql);
 
-$stmt->bindParam(':codArt', $codArt);
-$stmt->bindParam(':familia', $familia);
+$stmt->bindParam(':idCarrera', $idCarrera);
+$stmt->bindParam(':categoria', $categoria);
 $stmt->bindParam(':descripcion', $descripcion);
-$stmt->bindParam(':um', $um);
-$stmt->bindParam(':fechaAlta', $fechaAlta);
-$stmt->bindParam(':saldoStock', $saldoStock);
+$stmt->bindParam(':identificador', $identificador);
+$stmt->bindParam(':fechaEvento', $fechaEvento);
+$stmt->bindParam(':distancia', $distancia);
 
 //$stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
@@ -52,13 +52,13 @@ $stmt->execute();
 
 //Si viene documento! Sigue abajo
 
-	if (empty($_FILES['documentoPdf']['name'])) {
+	if (empty($_FILES['deslinde']['name'])) {
 		$respuesta_estado = $respuesta_estado . "<br />No ha sido seleccionado ningun file para enviar!";		
 	}
 	else {
-		$respuesta_estado=$respuesta_estado . "Trae documentoPdf asociado a codArt: " . $codArt;
+		$respuesta_estado=$respuesta_estado . "Trae deslinde asociado a idCarrera: " . $idCarrera;
 		
-		$contenidoPdf = file_get_contents($_FILES['documentoPdf']['tmp_name']);	
+		$deslinde = file_get_contents($_FILES['deslinde']['tmp_name']);	
 		//EL type de $_FILES['documentoPdf'] no es
 		//una variable simple que contiene el nombre
 		//del archivo subido desde el input de java script con nombre documentoPdf sino un array (para verlo se 
@@ -66,7 +66,7 @@ $stmt->execute();
 	 	//original)	
 
 
-		$sql="update articulos set documentoPdf=:contenidoPdf where codArt=:codArt;";
+		$sql="update carreras set deslinde=:deslinde where idCarrera=:idCarrera;";
 
 		try {
 			$stmt = $dbh->prepare($sql);	
@@ -79,8 +79,8 @@ $stmt->execute();
 
 
 		try {
-			$stmt->bindParam(':codArt', $codArt);
-			$stmt->bindParam(':contenidoPdf', $contenidoPdf);
+			$stmt->bindParam(':idCarrera', $idCarrera);
+			$stmt->bindParam(':deslinde', $deslinde);
 	
 			$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
 		} catch (PDOException $e) {

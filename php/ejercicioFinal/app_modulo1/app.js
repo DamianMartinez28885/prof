@@ -10,7 +10,7 @@ $(document).ready(function() {
 		objFamiliaModi=document.getElementById("formArticulosEntFamiliaModi");
 		objDescripcionModi=document.getElementById("formArticulosEntDescripcionModi");
 		$("#orden").val("idCarrera"); //suponiendo que de entrada quisiera este orden
-		$("#contenedorTablaArticulos").attr("className","contenedorActivo");
+		$("#contenedorTablaCarreras").attr("className","contenedorActivo");
 		$("#ventanaModalFormularioAlta").css("visibility","hidden");
 		$("#ventanaModalFormularioModi").css("visibility","hidden");
 		$("#ventanaModalRespuesta").css("visibility","hidden");
@@ -25,8 +25,8 @@ $(document).ready(function() {
 	$(document).ready(function() {
 		$("#btCruzFormularioAlta").click(function() {
 			
-			$("#contenedorTablaArticulos").attr("className","contenedorTabla");
-			$("#contenedorTablaArticulos").attr("className","contenedorActivo");
+			$("#contenedorTablaCarreras").attr("className","contenedorTabla");
+			$("#contenedorTablaCarreras").attr("className","contenedorActivo");
 			$("#ventanaModalFormularioAlta").css("visibility","hidden");
 		}); 
 	});
@@ -35,8 +35,8 @@ $(document).ready(function() {
 	$(document).ready(function() {
 		$("#btCruzFormularioModi").click(function() {
 			
-			$("#contenedorTablaArticulos").attr("class","contenedorTabla");
-			$("#contenedorTablaArticulos").attr("className","contenedorActivo");
+			$("#contenedorTablaCarreras").attr("class","contenedorTabla");
+			$("#contenedorTablaCarreras").attr("className","contenedorActivo");
 			$("#ventanaModalFormularioModi").css("visibility","hidden");
 			
 		}); 
@@ -47,8 +47,8 @@ $(document).ready(function() {
 	$(document).ready(function() {
 		$("#btCruzRespuesta").click(function() {
 			
-			$("#contenedorTablaArticulos").attr("class","contenedorTabla");
-			$("#contenedorTablaArticulos").attr("className","contenedorActivo");
+			$("#contenedorTablaCarreras").attr("class","contenedorTabla");
+			$("#contenedorTablaCarreras").attr("className","contenedorActivo");
 			$("#ventanaModalRespuesta").css("visibility","hidden");
 			$("#contenidoModalRespuesta").empty();
 			$("#ventanaModalFormularioModi").css("visibility","hidden");
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#btAlta").click(function() {
-		$("#contenedorTablaArticulos").attr("className","contenedorPasivo");
+		$("#contenedorTablaCarreras").attr("className","contenedorPasivo");
 		$("#ventanaModalFormularioAlta").css("visibility","visible");
 		vaciaFormulario(); //carga valor vacío en todos los campos del form
 		llenaCategoriasAlta(); //completa familias del cuadro de lista
@@ -307,42 +307,42 @@ function cargaTabla() {
 						var objTr= document.createElement("tr");
 						var objTd=document.createElement("td");
 						//objTd.setAttribute("classname","")
-						objTd.setAttribute("campo-dato","articulos_codArt");
+						objTd.setAttribute("campo-dato","carreras_idCarrera");
 						objTd.innerHTML=argValor.idCarrera;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_um");
+						objTd.setAttribute("campo-dato","carreras_identificador");
 						objTd.innerHTML=argValor.identificador;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_descripcion");
+						objTd.setAttribute("campo-dato","carreras_descripcion");
 						objTd.innerHTML=argValor.descripcion;
 						objTr.appendChild(objTd);
 
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_familia");
+						objTd.setAttribute("campo-dato","carreras_categoria");
 						objTd.innerHTML=argValor.categoria;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_fechaAlta");
+						objTd.setAttribute("campo-dato","carreras_fechaEvento");
 						objTd.innerHTML=argValor.fechaEvento;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_saldoStock");
+						objTd.setAttribute("campo-dato","carreras_distancia");
 						objTd.innerHTML=argValor.distancia;
 						objTr.appendChild(objTd);
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_pdf");
+						objTd.setAttribute("campo-dato","carreras_deslinde");
 						objTd.innerHTML="<button class='btCelda'>PDF</button>";
 
 						objTd.addEventListener("click", function() {
-							$("#contenedorTablaArticulos").attr("className","contenedorPasivo");
+							$("#contenedorTablaCarreras").attr("className","contenedorPasivo");
 							$("#ventanaModalRespuesta").css("visibility","visible");
 							traeDoc(argValor.idCarrera);
 						});
@@ -355,7 +355,7 @@ function cargaTabla() {
 						objTd.innerHTML="<button class='btCelda'>Modi</button>";
 
 						objTd.addEventListener("click",function() {	
-							$("#contenedorTablaArticulos").attr("className","contenedorPasivo");
+							$("#contenedorTablaCarreras").attr("className","contenedorPasivo");
 							$("#ventanaModalFormularioModi").css("visibility","visible");
 							//alert();
 							llenaCategoriasModi();
