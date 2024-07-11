@@ -369,7 +369,7 @@ function cargaTabla() {
 						objTd.setAttribute("campo-dato","articulos_btBaja");
 						objTd.innerHTML="<button class='btCelda'>Borrar</button>";
 						objTd.addEventListener("click", function() {	
-						baja(argValor.codArt);
+						baja(argValor.idCarrera);
 						});
 
 						objTr.appendChild(objTd);
@@ -665,7 +665,7 @@ function baja(argArticulo) {
 			type: "get",
 			url: "./baja.php",
 			data: {
-				codArt:argArticulo
+				idCarrera:argArticulo
 			},
 			success:function(respuestaDelServer) { //datos es lo que catura ajax
 				//alert(respuestaDelServer);
@@ -689,7 +689,7 @@ function traeDoc(argArticulo) {
 			type: "get",
 			url: "./traeDoc.php",
 			data: {
-				codArt:argArticulo
+				idCarrera:argArticulo
 			},
 			success:function(respuestaDelServer) { //datos es lo que catura ajax
 				//alert("Respuesta del SERVER desde adentro del success:"+ respuestaDelServer);

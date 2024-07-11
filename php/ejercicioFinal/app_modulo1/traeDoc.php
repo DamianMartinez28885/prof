@@ -1,5 +1,5 @@
 <?php
-include('../manejoSesion.inc');
+//include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
 
@@ -58,7 +58,7 @@ $objCarrera = new stdClass();
 
 
 
-$objCarrera->carreras_pdf=base64_encode($fila['deslinde']);
+$objCarrera->deslinde=base64_encode($fila['deslinde']);
 
 //$objArticulo->documentoPdf=$fila['documentoPdf'];
 

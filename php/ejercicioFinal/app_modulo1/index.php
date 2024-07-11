@@ -36,7 +36,7 @@
 			<td class="titulosColumnas" campo-dato="carreras_categoria" id="th_categoria">CATEGORIA (AÑOS)</td>
 			<td class="titulosColumnas" campo-dato="carreras_fechaEvento" id="th_fechaEvento">FECHA EVENTO</td>
 			<td class="titulosColumnas" campo-dato="carreras_distancia" id="th_distancia">DISTANCIA</td>
-			<td class="titulosColumnas" campo-dato="carreras_deslinde" id="th_deslinde">DESLINDE</td>
+			<td class="titulosColumnas" campo-dato="articulos_pdf" id="th_articulos_pdf">DESLINDE</td>
 			<!--<td class="titulosColumnas" campo-dato="articulos_btC" id="th_articulos_btC">C</td>	-->
 			<td class="titulosColumnas" campo-dato="articulos_btModi">MODIFICAR</td>
 			<td class="titulosColumnas" campo-dato="articulos_btModi">BAJA</td>

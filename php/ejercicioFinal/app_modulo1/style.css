@@ -414,9 +414,9 @@ div.ventanaModalFormulario option.elementoOptionSelect {
 
 div.ventanaModalRespuesta {
 	position:fixed;
-	left:35%;
-	top:10%;
-	width:70%;
+	left:0;
+	top:0%;
+	width:50%;
 	height:30%;
 	color:red;
 	z-index:20;

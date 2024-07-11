@@ -1,8 +1,8 @@
 <?php
-include('../manejoSesion.inc');
+//include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
-$bindCodArt = $_GET['idCarrera'];
+$bindidCarrera = $_GET['idCarrera'];
 
 $respuesta_estado = "idCarrera pasado: " . $bindidCarrera;
 
@@ -25,7 +25,7 @@ try {
 	$stmt = $dbh->prepare($sql);
 	$respuesta_estado = $respuesta_estado . "\nPreparacion exitosa!";
 	try {
-		$stmt->bindParam(':idCarrera', $bindCodArt);
+		$stmt->bindParam(':idCarrera', $bindidCarrera);
 		$respuesta_estado = $respuesta_estado . "\nBinding exitoso!";
 		try {
 			$stmt->execute();

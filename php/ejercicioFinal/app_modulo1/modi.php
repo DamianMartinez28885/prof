@@ -1,5 +1,5 @@
 <?php
-include('../manejoSesion.inc');
+//include('../manejoSesion.inc');
 include("./datosConexionBase.php");
 
 $idCarrera=$_POST['idCarrera'];
@@ -75,7 +75,7 @@ if ($_FILES['deslinde']['size']==0) {
 else {
 	$respuesta_estado=$respuesta_estado . "<br />\nTrae deslinde asociado a idCarrera: " . $idCarrera;
 	
-	$contenidoPdf = file_get_contents($_FILES['deslinde']['tmp_name']);	
+	$deslinde = file_get_contents($_FILES['deslinde']['tmp_name']);	
 		//EL type de $_FILES['documentoPdf'] no es
 		//una variable simple que contiene el nombre
 		//del archivo subido desde el input de java script con nombre documentoPdf sino un array (para verlo se 
