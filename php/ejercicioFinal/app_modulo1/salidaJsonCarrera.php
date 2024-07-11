@@ -1,7 +1,5 @@
 <?php
-include('../manejoSesion.inc');
-//sleep(1);
-//Este script trae un solo usuario para llenar la ficha modi.
+
 include("./datosConexionBase.php");
 //Abre conexion con el motor de base de datos
 

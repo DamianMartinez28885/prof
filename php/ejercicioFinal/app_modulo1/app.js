@@ -393,7 +393,7 @@ function CompletaFichaArticulo(argCarrera) {
 	$("#formArticulosEntCodArtModi").val(argCarrera);
 	var objAjax = $.ajax({
 		type:"get", 
-		url:"./salidaJsonArticulo.php",
+		url:"./salidaJsonCarrera.php",
 		data: { idCarrera:argCarrera },
 		success: function(respuestaDelServer,estado) {  //La funcion de callback que se ejecutara cuando el req. sea completado.
 			//alert(respuestaDelServer);
