@@ -414,12 +414,14 @@ div.ventanaModalFormulario option.elementoOptionSelect {
 
 div.ventanaModalRespuesta {
 	position:fixed;
-	left:0;
+	left:20%;
 	top:0%;
 	width:50%;
-	height:30%;
+	height:50%;
 	color:red;
 	z-index:20;
+	border: 10px solid black;
+	
 }
 
 
@@ -465,6 +467,7 @@ div.ventanaModalRespuesta div.btCruz:hover {
 div.ventanaModalRespuesta div.contenidoModal {
 	background-color: beige;
 	width:100%;
+	box-sizing: border-box;
 	overflow:auto;
 }
 
@@ -472,6 +475,7 @@ div.ventanaModalRespuesta div.contenidoModal p {
 	text-align:left;
 	font-size:1.5em;
 }
+
 
 
 

@@ -1,5 +1,5 @@
 <?php
-//include('../manejoSesion.inc');
+
 include("./datosConexionBase.php");
 
 $idCarrera = $_POST['idCarrera'];

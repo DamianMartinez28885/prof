@@ -696,7 +696,7 @@ function traeDoc(argArticulo) {
 				objetoDato = JSON.parse(respuestaDelServer);
 				$("#ventanaModalRespuesta").css("visibility","visible");
 				$("#contenidoModalRespuesta").empty();
-				$("#contenidoModalRespuesta").html("<iframe width='100%' height='600px' src='data:application/pdf;base64,"+objetoDato.deslinde+"'></iframe>");
+				$("#contenidoModalRespuesta").html("<iframe width='100%' height='300px' src='data:application/pdf;base64,"+objetoDato.deslinde+"'></iframe>");
 
 			} //cierra success
 		}); //cierra ajax
