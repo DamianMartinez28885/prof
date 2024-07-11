@@ -25,8 +25,6 @@ include ('../manejoSesion.php')
 			<button id="btCierraSesion">CERRAR SECION</button>
 		</header>
 
-
-
 		<table>
 			<thead >
 			<tr style="height:50%">
@@ -36,8 +34,7 @@ include ('../manejoSesion.php')
 			<td class="titulosColumnas" campo-dato="carreras_categoria" id="th_categoria">CATEGORIA (AÑOS)</td>
 			<td class="titulosColumnas" campo-dato="carreras_fechaEvento" id="th_fechaEvento">FECHA EVENTO</td>
 			<td class="titulosColumnas" campo-dato="carreras_distancia" id="th_distancia">DISTANCIA</td>
-			<td class="titulosColumnas" campo-dato="articulos_pdf" id="th_articulos_pdf">DESLINDE</td>
-			<!--<td class="titulosColumnas" campo-dato="articulos_btC" id="th_articulos_btC">C</td>	-->
+			<td class="titulosColumnas" campo-dato="carreras_deslinde" id="th_deslinde">DESLINDE</td>
 			<td class="titulosColumnas" campo-dato="articulos_btModi">MODIFICAR</td>
 			<td class="titulosColumnas" campo-dato="articulos_btModi">BAJA</td>
 			</tr>
@@ -49,7 +46,7 @@ include ('../manejoSesion.php')
 			
 			<td campo-dato="carreras_categoria">
 				<select id="fila_categoria" name="categoria"></select> 
-				<!--<input id="f_articulos_familia"></input>-->
+				
 			</td>
 			
 			
@@ -78,14 +75,6 @@ include ('../manejoSesion.php')
 	</div>
 
 
-
-
-
-
-
-
-
-	<!--Ventana modal alta-->
 	<div id="ventanaModalFormularioAlta" class="ventanaModalFormulario">
 
 		<header>
@@ -106,7 +95,7 @@ include ('../manejoSesion.php')
 				
 				<li>
 				<label>NOMBRE DE LA CARRERA: </label>
-				<input id="formArticulosEntUmAlta" name="identificador" required />
+				<input id="formCarrerasEntIdentificadorAlta" name="identificador" required />
 				</li>
 
 				<li>
@@ -159,7 +148,7 @@ include ('../manejoSesion.php')
 
 		<div id="contenidoModalFormularioModi" class="contenidoModal">
 
-			<form  id="formArticulosModi"  method="post" >
+			<form  id="formCarrerasModi"  method="post" >
 			<ul>
 
 			<li>

@@ -8,7 +8,7 @@ include('./libreria.php');
 echo infoDeSesion();
 
 ?>
-<button id="btAppMod1" >Ingrese al módulo 1 de la app</button>
+<button id="btAppMod1" >Ir a la APP</button>
 <button id="btAppFinSesion" >Terminar sesión</button>
 
 <script>

@@ -1,11 +1,11 @@
 //Primera accion 
 $(document).ready(function() {
 		objTbDatos=document.getElementById("tbDatos");
-		objCodArtAlta=document.getElementById("formCarrerasidCarreraAlta");
-		objFamiliaAlta=document.getElementById("formCarrerasEntCategoriaAlta");
+		objIdCarreraAlta=document.getElementById("formCarrerasidCarreraAlta");
+		objCategoriaAlta=document.getElementById("formCarrerasEntCategoriaAlta");
 		objDescripcionAlta=document.getElementById("formCarrerasEntDescripcionAlta");
-		objCodArtModi=document.getElementById("formCarrerasEntIdCarreraModi");
-		objFamiliaModi=document.getElementById("formCarrerasEntCategoriaModi");
+		objIdCarreraModi=document.getElementById("formCarrerasEntIdCarreraModi");
+		objCategoriaModi=document.getElementById("formCarrerasEntCategoriaModi");
 		objDescripcionModi=document.getElementById("formCarrerasEntDescripcionModi");
 		$("#orden").val("idCarrera"); 
 		$("#contenedorTablaCarreras").attr("className","contenedorActivo");
@@ -174,7 +174,7 @@ $(document).ready(function() {
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#formArticulosEntUmAlta").keyup(function() {
+	$("#formCarrerasEntIdentificadorAlta").keyup(function() {
 			todoListoParaAlta();
 		});
 }); //cierro ready
@@ -265,7 +265,7 @@ function todoListoParaAlta() { //Habilita/deshabilita boton de alta
 function todoListoParaModi() { //Habilita/deshabilita boton de modi
 	//alert("dentro de todoListo para modi");
 
-	if (document.getElementById("formArticulosModi").checkValidity()) {
+	if (document.getElementById("formCarrerasModi").checkValidity()) {
 		$("#btEnvioFormModi").attr("disabled",false);
 	}
 	else { 
@@ -414,7 +414,7 @@ function vaciaFormulario() {
 	$("#formCarrerasidCarreraAlta").val("");
 	$("#formCarrerasEntCategoriaAlta").val("");
 	$("#formCarrerasEntDescripcionAlta").val("");
-	$("#formArticulosEntUmAlta").val("");						
+	$("#formCarrerasEntIdentificadorAlta").val("");						
 	$("#formArticulosEntfechaAltaAlta").val("");
 	$("#formArticulosEntSaldoStockAlta").val("");
 }
@@ -532,7 +532,7 @@ function limpiaFiltros() {
 function modi() {
 	if(confirm("¿Está seguro de modificar registro? " + $("#formCarrerasEntIdCarreraModi").val())) {
 
-			var data = new FormData($("#formArticulosModi")[0]);
+			var data = new FormData($("#formCarrerasModi")[0]);
 			var objAjax = $.ajax({
 			type: 'post',
 			method: 'post',
