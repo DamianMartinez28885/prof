@@ -35,8 +35,8 @@ include ('../manejoSesion.php')
 			<td class="titulosColumnas" campo-dato="carreras_fechaEvento" id="th_fechaEvento">FECHA EVENTO</td>
 			<td class="titulosColumnas" campo-dato="carreras_distancia" id="th_distancia">DISTANCIA</td>
 			<td class="titulosColumnas" campo-dato="carreras_deslinde" id="th_deslinde">DESLINDE</td>
-			<td class="titulosColumnas" campo-dato="articulos_btModi">MODIFICAR</td>
-			<td class="titulosColumnas" campo-dato="articulos_btModi">BAJA</td>
+			<td class="titulosColumnas" campo-dato="carreras_btModi">MODIFICAR</td>
+			<td class="titulosColumnas" campo-dato="carreras_btModi">BAJA</td>
 			</tr>
 
 			<tr style="height:40%">
@@ -53,9 +53,9 @@ include ('../manejoSesion.php')
 			<td campo-dato="carreras_fechaEvento"><input id="fila_fechaEvento"></input></td>
 			<td campo-dato="carreras_distancia"></td>
 			<td campo-dato="carreras_deslinde"></td>
-			<td campo-dato="articulos_btC"></td>
-			<td campo-dato="articulos_btModi"></td>
-			<td campo-dato="articulos_btbaja"></td>
+			<td campo-dato="carreras_pdf"></td>
+			<td campo-dato="carreras_btModi"></td>
+			<td campo-dato="carreras_btBaja"></td>
 			</tr>
 			</thead>
 
@@ -84,7 +84,7 @@ include ('../manejoSesion.php')
 
 		<div id="contenidoModalFormularioAlta" class="contenidoModal">
 
-			<form  id="formArticulosAlta"  method="post" enctype="multipart/form-data">
+			<form  id="formCarrerasAlta"  method="post" enctype="multipart/form-data">
 
 				<ul>
 				<li>
@@ -113,17 +113,17 @@ include ('../manejoSesion.php')
 		
 				<li>
 				<label>FECHA DE LA CARRERA:</label>
-				<input type="date" id="formArticulosEntfechaAltaAlta" name="fechaEvento"  required />
+				<input type="date" id="formCarrerasEntfechaEventoAlta" name="fechaEvento"  required />
 				</li>
 
 				<li>
 				<label>DISTANCIA: </label>
-				<input type="number" min=0 id="formArticulosEntSaldoStockAlta" name="distancia" value="10" required />
+				<input type="number" min=0 id="formCarrerasEntDistanciaAlta" name="distancia" value="10" required />
 				</li>
 
 				<li>
 				<label>PDF: </label>
-				<input type="file" id="formArticulosEntDocumentoPdfAlta" name="deslinde" />
+				<input type="file" id="formCarrerasEntDeslindeAlta" name="deslinde" />
 				</li>
 
 
@@ -159,7 +159,7 @@ include ('../manejoSesion.php')
 
 			<li>
 			<label>NOMBRE DE LA CARRERA: </label>
-			<input id="formArticulosEntUmModi" name="identificador" required />
+			<input id="formCarrerasEntIdentificadorModi" name="identificador" required />
 			</li>
 
 			<li>
@@ -176,18 +176,18 @@ include ('../manejoSesion.php')
 	
 			<li>
 			<label>FECHA DE LA CARRERA:</label>
-			<input type="date" id="formArticulosEntfechaAltaModi" name="fechaEvento"  required />
+			<input type="date" id="formCarrerasEntfechaEventoModi" name="fechaEvento"  required />
 			</li>
 
 			<li>
 			<label>DISTANCIA: </label>
-			<input type="number" min=0 id="formArticulosEntSaldoStockModi" name="distancia" value="10" required />
+			<input type="number" min=0 id="formCarrerasEntDistanciaModi" name="distancia" value="10" required />
 			</li>
 
 		
 			<li>
 			<label>PDF: </label>
-			<input type="file" id="formArticulosEntDocumentoPdfModi" name="deslinde"  />
+			<input type="file" id="formCarrerasEntDeslindeModi" name="deslinde"  />
 			</li>
 			
 			</ul>

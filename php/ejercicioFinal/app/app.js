@@ -181,14 +181,14 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-	$("#formArticulosEntSaldoStockAlta").keyup(function() {
+	$("#formCarrerasEntDistanciaAlta").keyup(function() {
 			todoListoParaAlta();
 		});
 }); //cierro ready
 
 
 $(document).ready(function() {
-	$("#formArticulosEntFechaAltaAlta").change(function() {
+	$("#formCarrerasEntfechaEventoAlta").change(function() {
 			todoListoParaAlta();
 		});
 }); //cierro ready
@@ -222,19 +222,19 @@ $(document).ready(function() {
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#formArticulosEntUmModi").change(function() {
+	$("#formCarrerasEntIdentificadorModi").change(function() {
 			todoListoParaModi();
 		});
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#formArticulosEntFechaAltaModi").change(function() {
+	$("#formCarrerasEntfechaEventoModi").change(function() {
 			todoListoParaModi();
 		});
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#formArticulosEntSaldoStockModi").keyup(function() {
+	$("#formCarrerasEntDistanciaModi").keyup(function() {
 			todoListoParaModi();
 		});
 }); //cierro ready
@@ -253,7 +253,7 @@ $(document).ready(function() {
 
 function todoListoParaAlta() { //Habilita/deshabilita boton de alta
 	//alert("Dentro de todo listo para el alta");
-	if (document.getElementById("formArticulosAlta").checkValidity()) {
+	if (document.getElementById("formCarrerasAlta").checkValidity()) {
 		//alert("aquiTL");
 		$("#btEnvioFormAlta").attr("disabled",false);
 	}
@@ -349,7 +349,7 @@ function cargaTabla() {
 
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_btModi");
+						objTd.setAttribute("campo-dato","carreras_btModi");
 						objTd.innerHTML="<button class='btCelda'>Modi</button>";
 
 						objTd.addEventListener("click",function() {	
@@ -364,7 +364,7 @@ function cargaTabla() {
 
 
 						var objTd=document.createElement("td");
-						objTd.setAttribute("campo-dato","articulos_btBaja");
+						objTd.setAttribute("campo-dato","carreras_btBaja");
 						objTd.innerHTML="<button class='btCelda'>Borrar</button>";
 						objTd.addEventListener("click", function() {	
 						baja(argValor.idCarrera);
@@ -399,9 +399,9 @@ function CompletaFichaArticulo(argCarrera) {
 			$("#formCarrerasEntIdCarreraModi").val(objetoDato.idCarrera);
 			$("#formCarrerasEntCategoriaMod").val(objetoDato.categoria);
 			$("#formCarrerasEntDescripcionModi").val(objetoDato.descripcion);
-			$("#formArticulosEntUmModi").val(objetoDato.identificador);						
-			$("#formArticulosEntfechaAltaModi").val(objetoDato.fechaEvento);
-			$("#formArticulosEntSaldoStockModi").val(objetoDato.distancia);
+			$("#formCarrerasEntIdentificadorModi").val(objetoDato.identificador);						
+			$("#formCarrerasEntfechaEventoModi").val(objetoDato.fechaEvento);
+			$("#formCarrerasEntDistanciaModi").val(objetoDato.distancia);
 			todoListoParaModi();//habilitacion del boton de enviar modi si todo valida
 		} //cierra el success
 	}); //cierro ajax
@@ -415,8 +415,8 @@ function vaciaFormulario() {
 	$("#formCarrerasEntCategoriaAlta").val("");
 	$("#formCarrerasEntDescripcionAlta").val("");
 	$("#formCarrerasEntIdentificadorAlta").val("");						
-	$("#formArticulosEntfechaAltaAlta").val("");
-	$("#formArticulosEntSaldoStockAlta").val("");
+	$("#formCarrerasEntfechaEventoAlta").val("");
+	$("#formCarrerasEntDistanciaAlta").val("");
 }
 
 
@@ -562,13 +562,13 @@ function modi() {
 function alta() {
 	if(confirm("¿Está seguro de insertar registro? ")) {
 
-		var data = new FormData($("#formArticulosAlta")[0]);//Definimos un objeto data que es el form completo
+		var data = new FormData($("#formCarrerasAlta")[0]);
 		var objAjax = $.ajax({
 			type: 'post',
 			method: 'post',
 			enctype: 'multipart/form-data',
 			url: "./alta.php",
-			processData: false,  // Importante!
+			processData: false,  
 	    contentType: false,
 	    cache: false,
 			data: data,

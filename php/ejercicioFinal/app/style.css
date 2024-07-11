@@ -221,20 +221,20 @@ div.contenedorTabla th, td {
   
 }
 
-[campo-dato="articulos_btC"] {
+[campo-dato="carreras_pdf"] {
 	width: 11%;
 	height:100%;
 }
 
 
-[campo-dato="articulos_btModi"] {
+[campo-dato="carreras_btModi"] {
   width: 11%;
   height:100%;
  cursor:pointer;
 
 }
 
-[campo-dato="articulos_btBaja"] {
+[campo-dato="carreras_btBaja"] {
   width: 11%;
   height:100%;
   cursor:pointer;
