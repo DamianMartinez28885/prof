@@ -8,7 +8,7 @@ $descripcion = $_POST['descripcion'];
 $identificador = $_POST['identificador'];
 $fechaEvento = $_POST['fechaEvento'];
 $distancia = $_POST['distancia'];
-//$documentoPdf = $_POST['documentoPdf'];
+$deslinde = $_POST['deslinde'];
 
 
 $respuesta_estado = "";
