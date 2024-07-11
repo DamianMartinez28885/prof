@@ -163,12 +163,18 @@
 			<ul>
 
 			<li>
-			<label>INGRESAR ID: </label>
+			<label>INGRESAR ID DE CARRERA: </label>
 			<input id="formArticulosEntCodArtModi" name="idCarrera" required />
 			</li>
 
+
 			<li>
-			<label>DESCRIPCION CARRERA: </label>
+			<label>NOMBRE DE LA CARRERA: </label>
+			<input id="formArticulosEntUmModi" name="identificador" required />
+			</li>
+
+			<li>
+			<label>DESCRIPCION DE LA CARRERA: </label>
 			<input id="formArticulosEntDescripcionModi" name="descripcion" required />
 			</li>
 
@@ -177,14 +183,10 @@
 			<select id="formArticulosEntFamiliaModi" name="categoria" required></select> 
 			</li>
 
-
-			<li>
-			<label>NOMBRE CARRERA: </label>
-			<input id="formArticulosEntUmModi" name="identificador" required />
-			</li>
+			
 	
 			<li>
-			<label>FECHA EVENTO:</label>
+			<label>FECHA DE LA CARRERA:</label>
 			<input type="date" id="formArticulosEntfechaAltaModi" name="fechaEvento"  required />
 			</li>
 
@@ -195,7 +197,7 @@
 
 		
 			<li>
-			<label>Documento Pdf: </label>
+			<label>PDF: </label>
 			<input type="file" id="formArticulosEntDocumentoPdfModi" name="deslinde"  />
 			</li>
 			
