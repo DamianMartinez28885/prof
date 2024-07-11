@@ -1,15 +1,13 @@
-
-/*Evento de carga inicial*/
-
+//Primera accion 
 $(document).ready(function() {
-		objTbDatos=document.getElementById("tbDatos");//Para usar con java script
-		objCodArtAlta=document.getElementById("formArticulosEntCodArtAlta");
-		objFamiliaAlta=document.getElementById("formArticulosEntFamiliaAlta");
-		objDescripcionAlta=document.getElementById("formArticulosEntDescripcionAlta");
-		objCodArtModi=document.getElementById("formArticulosEntCodArtModi");
-		objFamiliaModi=document.getElementById("formArticulosEntFamiliaModi");
-		objDescripcionModi=document.getElementById("formArticulosEntDescripcionModi");
-		$("#orden").val("idCarrera"); //suponiendo que de entrada quisiera este orden
+		objTbDatos=document.getElementById("tbDatos");
+		objCodArtAlta=document.getElementById("formCarrerasidCarreraAlta");
+		objFamiliaAlta=document.getElementById("formCarrerasEntCategoriaAlta");
+		objDescripcionAlta=document.getElementById("formCarrerasEntDescripcionAlta");
+		objCodArtModi=document.getElementById("formCarrerasEntIdCarreraModi");
+		objFamiliaModi=document.getElementById("formCarrerasEntCategoriaModi");
+		objDescripcionModi=document.getElementById("formCarrerasEntDescripcionModi");
+		$("#orden").val("idCarrera"); 
 		$("#contenedorTablaCarreras").attr("className","contenedorActivo");
 		$("#ventanaModalFormularioAlta").css("visibility","hidden");
 		$("#ventanaModalFormularioModi").css("visibility","hidden");
@@ -20,7 +18,7 @@ $(document).ready(function() {
 });
 
 
-/*Eventos Modales*/
+//Cambiar las ventanas modales de visibles a invisible
 
 	$(document).ready(function() {
 		$("#btCruzFormularioAlta").click(function() {
@@ -61,8 +59,8 @@ $(document).ready(function() {
 
 
 
-/*Eventos de Tablas*/
 
+//boton de cargar tabla
 
 $(document).ready(function() {
 	$("#btAccionCarga").click(function() {
@@ -99,10 +97,10 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#th_idCarrera" ).click(function() {
-		$("#orden").val("idCarrera"); //solo cargo esta variable orden
+		$("#orden").val("idCarrera");
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+});
 
 
 $(document).ready(function() {
@@ -164,13 +162,13 @@ $(document).ready(function() {
 
 /*Validacion en formulario de alta*/
 $(document).ready(function() {
-	$("#formArticulosEntCodArtAlta").keyup(function() {
+	$("#formCarrerasidCarreraAlta").keyup(function() {
 			todoListoParaAlta();
 		});
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#formArticulosEntDescripcionAlta").keyup(function() {
+	$("#formCarrerasEntDescripcionAlta").keyup(function() {
 			todoListoParaAlta();
 		});
 }); //cierro ready
@@ -198,7 +196,7 @@ $(document).ready(function() {
 
 /*Validacion en formulario de modi*/
 $(document).ready(function() {
-	$("#formArticulosEntCodArtModi").keyup(function() {
+	$("#formCarrerasEntIdCarreraModi").keyup(function() {
 			todoListoParaModi();
 		});
 }); //cierro ready
@@ -206,13 +204,13 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-	$("#formArticulosEntDescripcionModi").keyup(function() {
+	$("#formCarrerasEntDescripcionModi").keyup(function() {
 			todoListoParaModi();
 		});
 }); //cierro ready
 
 $(document).ready(function() {
-	$("#formArticulosEntFamiliaModi").change(function() {
+	$("#formCarrerasEntCategoriaMod").change(function() {
 			todoListoParaModi();
 		});
 }); //cierro ready
@@ -390,7 +388,7 @@ function cargaTabla() {
 
 
 function CompletaFichaArticulo(argCarrera) {	
-	$("#formArticulosEntCodArtModi").val(argCarrera);
+	$("#formCarrerasEntIdCarreraModi").val(argCarrera);
 	var objAjax = $.ajax({
 		type:"get", 
 		url:"./salidaJsonCarrera.php",
@@ -398,9 +396,9 @@ function CompletaFichaArticulo(argCarrera) {
 		success: function(respuestaDelServer,estado) {  //La funcion de callback que se ejecutara cuando el req. sea completado.
 			//alert(respuestaDelServer);
 			objetoDato = JSON.parse(respuestaDelServer);
-			$("#formArticulosEntCodArtModi").val(objetoDato.idCarrera);
-			$("#formArticulosEntFamiliaModi").val(objetoDato.categoria);
-			$("#formArticulosEntDescripcionModi").val(objetoDato.descripcion);
+			$("#formCarrerasEntIdCarreraModi").val(objetoDato.idCarrera);
+			$("#formCarrerasEntCategoriaMod").val(objetoDato.categoria);
+			$("#formCarrerasEntDescripcionModi").val(objetoDato.descripcion);
 			$("#formArticulosEntUmModi").val(objetoDato.identificador);						
 			$("#formArticulosEntfechaAltaModi").val(objetoDato.fechaEvento);
 			$("#formArticulosEntSaldoStockModi").val(objetoDato.distancia);
@@ -413,9 +411,9 @@ function CompletaFichaArticulo(argCarrera) {
 
 
 function vaciaFormulario() {
-	$("#formArticulosEntCodArtAlta").val("");
-	$("#formArticulosEntFamiliaAlta").val("");
-	$("#formArticulosEntDescripcionAlta").val("");
+	$("#formCarrerasidCarreraAlta").val("");
+	$("#formCarrerasEntCategoriaAlta").val("");
+	$("#formCarrerasEntDescripcionAlta").val("");
 	$("#formArticulosEntUmAlta").val("");						
 	$("#formArticulosEntfechaAltaAlta").val("");
 	$("#formArticulosEntSaldoStockAlta").val("");
@@ -464,7 +462,7 @@ function llenaCategorias() { //el argumento corresponde al objeto que será llen
 
 
 function llenaCategoriasAlta() { //el argumento corresponde al objeto que será llenado
-			$("#formArticulosEntFamiliaAlta").empty();
+			$("#formCarrerasEntCategoriaAlta").empty();
 			var objAjax = $.ajax({
 			type:"get", 
 			url:"./salidaJsonCategorias.php",
@@ -480,7 +478,7 @@ function llenaCategoriasAlta() { //el argumento corresponde al objeto que será 
 							
 							objOption.innerHTML=argValor.codCategoria + argValor.descripcionCategoria;
 
-							document.getElementById("formArticulosEntFamiliaAlta").appendChild(objOption);
+							document.getElementById("formCarrerasEntCategoriaAlta").appendChild(objOption);
 							
 						});//cierra foreach
 						return true;
@@ -491,13 +489,8 @@ function llenaCategoriasAlta() { //el argumento corresponde al objeto que será 
 
 
 function llenaCategoriasModi() { 
-	//alert($("#formArticulosEntFamiliaModi").val());
-		$("#formArticulosEntFamiliaModi").empty(); //antes de llenar vacío para no duplicar elementos
-	//alert($("#formArticulosEntFamiliaModi").val());		
-			/*Este objeto del documento es un array de opciones que ya puede estar cargado de antes y hay
-			que vaciarlo si lo deseo recargar.
-			El value del select*/
-
+	
+		$("#formCarrerasEntCategoriaMod").empty(); 
 			var objAjax = $.ajax({
 			type:"get", 
 			url:"./salidaJsonCategorias.php",
@@ -515,11 +508,11 @@ function llenaCategoriasModi() {
 							//El formulario ya está cargado con los datos desde el momento en que 
 							//hizo click en el boton de modi del registro apuntado.
 							objOption.innerHTML=argValor.codCategoria + argValor.descripcionCategoria;
-							if(objOption.value == $("#formArticulosEntFamiliaModi").val()) {
+							if(objOption.value == $("#formCarrerasEntCategoriaMod").val()) {
 								objOption.setAttribute("selected","selected");
 							}
 
-							document.getElementById("formArticulosEntFamiliaModi").appendChild(objOption);
+							document.getElementById("formCarrerasEntCategoriaMod").appendChild(objOption);
 														
 						});//cierra foreach
 						return true;
@@ -536,73 +529,21 @@ function limpiaFiltros() {
 	$("#fila_fechaEvento").val("");
 }
 
-function consultaDatos(codArt) {
-		//primera funcion:
-		var promesaIsBloqueado = $.ajax({
-			dataType:"text",
-			type: "get",
-			url: "./isBloqueado.php",
-			data: {codArt:codArt}
-		}); //cierra ajax
-
-		// segunda funcion 
-		var promesaPrecio = $.ajax({
-			dataType:"text",
-			type: "get",
-			url: "./precio.php",
-			data: {codArt:codArt}
-		}); //cierra ajax
-
-		//Puedo ejecutar n requerimientos ajax y pretender ejecutar un handler cuando todos los requerimientos
-		//hayan recibido respuesta
-
-		$.when(promesaIsBloqueado, promesaPrecio).done(function(respuestaDelServerIsBloqueado,respuestaDelServerPrecio) {
-			//alert(respuestaDelServerIsBloqueado[0]);
-			$("#ventanaModalRespuesta").css("visibility","visible");
-			$("#encabezadoModalRespuesta").append("Respuestas del server");
-			$("#contenidoModalRespuesta").empty();
-			$("#contenidoModalRespuesta").append("<h2>Está bloqueado? "+respuestaDelServerIsBloqueado[0]+"<h2>");
-			
-			$("#contenidoModalRespuesta").append("<h2>Precio unitario: "+respuestaDelServerPrecio[0]+"</h2>");
-			
-
-		});//cierra el done
-
-
-}
-
-
-
-
 function modi() {
-	if(confirm("¿Está seguro de modificar registro? " + $("#formArticulosEntCodArtModi").val())) {
-/*
-		var objAjax = $.ajax({
-			type: "get",
-			//url:'./salidaJsonFamilias.php',
-			url: "./modi.php",
-			data: {
-				codArt:$("#formArticulosEntCodArtModi").val(),
-				familia:$("#formArticulosEntFamiliaModi").val(),
-				descripcion:$("#formArticulosEntDescripcionModi").val(),
-				um:$("#formArticulosEntUmModi").val(),
-				fechaAlta:$("#formArticulosEntfechaAltaModi").val(),
-				saldoStock:$("#formArticulosEntSaldoStockModi").val()
-			},
-*/
+	if(confirm("¿Está seguro de modificar registro? " + $("#formCarrerasEntIdCarreraModi").val())) {
+
 			var data = new FormData($("#formArticulosModi")[0]);
 			var objAjax = $.ajax({
 			type: 'post',
 			method: 'post',
 			enctype: 'multipart/form-data',
 			url: "./modi.php",
-			processData: false,  // Importante!
+			processData: false, 
       contentType: false,
       cache: false,
 			data: data,
 
 			success:function(respuestaDelServer) {
-				//alert(respuestaDelServer);
 				
 				$("#ventanaModalRespuesta").css("visibility","visible");
 				$("#contenidoModalRespuesta").empty();
@@ -610,14 +551,10 @@ function modi() {
 				$("#contenidoModalRespuesta").append(respuestaDelServer);
 
 				$("#ventanaModalFormulario").css("visibility","hidden");
-
-			} //cierra success
-
-		}); //cierra ajax
-		//cargaTabla();
-	} //cierra confirm
-	//cargaTabla();
-} //cierra modi()
+			} 
+		});
+	} 
+} 
 
 
 

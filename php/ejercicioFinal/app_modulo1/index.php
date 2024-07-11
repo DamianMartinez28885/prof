@@ -1,5 +1,5 @@
 <?php
-
+include ('../manejoSesion.php')
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -100,7 +100,7 @@
 				<ul>
 				<li>
 				<label>INGRESAR ID DE CARRERA: </label>
-				<input id="formArticulosEntCodArtAlta" name="idCarrera" required />
+				<input id="formCarrerasidCarreraAlta" name="idCarrera" required />
 				</li>
 				
 				
@@ -111,13 +111,13 @@
 
 				<li>
 				<label>DESCRIPCION DE LA CARRERA: </label>
-				<input id="formArticulosEntDescripcionAlta" name="descripcion" required />
+				<input id="formCarrerasEntDescripcionAlta" name="descripcion" required />
 				</li>
 
 
 				<li>
 				<label>CATEGORIA: </label>
-				<select id="formArticulosEntFamiliaAlta" name="categoria" required></select> 
+				<select id="formCarrerasEntCategoriaAlta" name="categoria" required></select> 
 				</li>
 
 
@@ -164,7 +164,7 @@
 
 			<li>
 			<label>INGRESAR ID DE CARRERA: </label>
-			<input id="formArticulosEntCodArtModi" name="idCarrera" required />
+			<input id="formCarrerasEntIdCarreraModi" name="idCarrera" required />
 			</li>
 
 
@@ -175,12 +175,12 @@
 
 			<li>
 			<label>DESCRIPCION DE LA CARRERA: </label>
-			<input id="formArticulosEntDescripcionModi" name="descripcion" required />
+			<input id="formCarrerasEntDescripcionModi" name="descripcion" required />
 			</li>
 
 			<li>
 			<label>CATEGORIA: </label>
-			<select id="formArticulosEntFamiliaModi" name="categoria" required></select> 
+			<select id="formCarrerasEntCategoriaMod" name="categoria" required></select> 
 			</li>
 
 			

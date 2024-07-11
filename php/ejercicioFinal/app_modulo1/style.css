@@ -467,6 +467,7 @@ div.ventanaModalRespuesta div.btCruz:hover {
 div.ventanaModalRespuesta div.contenidoModal {
 	background-color: beige;
 	width:100%;
+	height: 100%;
 	box-sizing: border-box;
 	overflow:auto;
 }
