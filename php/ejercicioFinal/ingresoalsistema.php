@@ -76,10 +76,6 @@ try {
 
 }
 
-//Aqui estamos si la sesión estaba iniciada con anterioridad
-
-//echo $salidaParaLog;
-
 infoDeSesion();
 ?>
 <button id="btAppMod1" style="background-color: #1877f2; color: #fff; border: none; padding: 10px 20px; border-radius: 7px; cursor: pointer;">INGRESAR AL PROGRAMA</button>
@@ -87,7 +83,7 @@ infoDeSesion();
 
 <script>
 document.getElementById("btAppMod1").onclick=function(){
-	location.href="./app_modulo1";
+	location.href="./app";
 }
 
 document.getElementById("btAppFinSesion").onclick=function(){
