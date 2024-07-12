@@ -1,14 +1,3 @@
-codArt pasado: 10
-Conexion exitosa!
-Preparacion exitosa!
-Binding exitoso!
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bvkbecdbl2l2s8fbc9h1.articulos' doesn't exist2024-07-08 20-28 
-codArt pasado: 
-Conexion exitosa!
-Preparacion exitosa!
-Binding exitoso!
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bvkbecdbl2l2s8fbc9h1.articulos' doesn't exist2024-07-10 17-25 
-idCarrera pasado: 
 Conexion exitosa!
 Preparacion exitosa!
 Binding exitoso!
@@ -58,3 +47,8 @@ Conexion exitosa!
 Preparacion exitosa!
 Binding exitoso!
 Ejecucion exitosa!2024-07-11 17-53 
+idCarrera pasado: 32
+Conexion exitosa!
+Preparacion exitosa!
+Binding exitoso!
+Ejecucion exitosa!2024-07-12 01-49 

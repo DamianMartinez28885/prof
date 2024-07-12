@@ -144,7 +144,7 @@ include ('../manejoSesion.php')
 		<header>
 			<p>FORMULARIO MODI</p>
 			<div id="btCruzFormularioModi" class="btCruz">X</div>
-		</header> <!--Cierra encabezado modal-->
+		</header> 
 
 		<div id="contenidoModalFormularioModi" class="contenidoModal">
 
@@ -193,26 +193,26 @@ include ('../manejoSesion.php')
 			</ul>
 
 			</form>
-		</div> <!--Cierra contenido Modal-->
+		</div> 
 
 		<footer>
 			<button id="btEnvioFormModi" class="btModi">Enviar Modi</button>
 		</footer>
 
-	</div> <!--Cierra ventana modal formulario-->
+	</div> 
 
-	<!--Ventana Modal para respuesta que debe estar fuera del contenedor-->
+	
 	<div id="ventanaModalRespuesta" class="ventanaModalRespuesta">
 
-		<!--<div id="encabezadoModalRespuesta" class="encabezadoModal" >Encabezado modal Respuesta-->
+		
 		<header>
 			<p>Respuesta del servidor</p>
 			<div id="btCruzRespuesta" class="btCruz">X</div>		
-		</header> <!--Cierra encabezado modal respuesta-->
+		</header> 
 
 		<div id="contenidoModalRespuesta" class="contenidoModal">
-		</div><!-- cierra contenidoModalRespuesta-->
+		</div>
 
-	</div> <!--Cierra ventana modal-->
+	</div> 
 </body>
 </html>

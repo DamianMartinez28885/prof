@@ -18,6 +18,64 @@ $(document).ready(function() {
 });
 
 
+function alta() {
+	if(confirm("¿Está seguro de ingresar esta carrera? ")) {
+
+		var data = new FormData($("#formCarrerasAlta")[0]);
+		var objAjax = $.ajax({
+			type: 'post',
+			method: 'post',
+			enctype: 'multipart/form-data',
+			url: "./alta.php",
+			processData: false,  
+	    contentType: false,
+	    cache: false,
+			data: data,
+
+			success:function(respuestaDelServer) {
+				
+				
+
+				$("#ventanaModalRespuesta").css("visibility","visible");
+				$("#contenidoModalRespuesta").empty();
+				$("#encabezadoModalRespuesta").append("Respuesta del server: ");
+				$("#contenidoModalRespuesta").append(respuestaDelServer);
+
+				$("#ventanaModalFormulario").css("visibility","hidden");
+
+			} 
+		
+		}); 
+		
+	} 
+	
+	
+} 
+
+
+
+function baja(argCarrera) {
+	if(confirm("¿Está seguro de borrar esta carrera? ")) {
+
+		var objAjax = $.ajax({
+			type: "get",
+			url: "./baja.php",
+			data: {
+				idCarrera:argCarrera
+			},
+			success:function(respuestaDelServer) { 
+				
+				$("#ventanaModalRespuesta").css("visibility","visible");
+				$("#contenidoModalRespuesta").empty();
+				$("#contenidoModalRespuesta").append(respuestaDelServer);
+				$("#ventanaModalFormulario").css("visibility","hidden");
+
+			} 
+		}); 
+	} 
+
+} 
+
 //Cambiar las ventanas modales de visibles a invisible
 
 	$(document).ready(function() {
@@ -56,10 +114,6 @@ $(document).ready(function() {
 	});
 
 
-
-
-
-
 //boton de cargar tabla
 
 $(document).ready(function() {
@@ -89,8 +143,8 @@ $(document).ready(function() {
 	$("#btAlta").click(function() {
 		$("#contenedorTablaCarreras").attr("className","contenedorPasivo");
 		$("#ventanaModalFormularioAlta").css("visibility","visible");
-		vaciaFormulario(); //carga valor vacío en todos los campos del form
-		llenaCategoriasAlta(); //completa familias del cuadro de lista
+		vaciaFormulario(); 
+		llenaCategoriasAlta(); 
 	});
 });
 
@@ -105,39 +159,39 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$("#th_identificador" ).click(function() {
-		$("#orden").val("identificador"); //solo cargo esta variable orden
+		$("#orden").val("identificador"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 
 $(document).ready(function() {
 	$("#th_categoria" ).click(function() {
-		$("#orden").val("categoria"); //solo cargo esta variable orden
+		$("#orden").val("categoria"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_descripcion" ).click(function() {
-		$("#orden").val("descripcion"); //solo cargo esta variable orden
+		$("#orden").val("descripcion"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_fechaEvento" ).click(function() {
-		$("#orden").val("fechaEvento"); //solo cargo esta variable orden
+		$("#orden").val("fechaEvento"); 
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 $(document).ready(function() {
 	$("#th_distancia" ).click(function() {
-		$("#orden").val("distancia"); //solo cargo esta variable orden
+		$("#orden").val("distancia");
 		cargaTabla();
-	});	//cierro click
-}); //cierro ready
+	});	
+}); 
 
 
 
@@ -156,42 +210,38 @@ $(document).ready(function() {
 });
 
 
-
-
-
-
 /*Validacion en formulario de alta*/
 $(document).ready(function() {
 	$("#formCarrerasidCarreraAlta").keyup(function() {
 			todoListoParaAlta();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
 	$("#formCarrerasEntDescripcionAlta").keyup(function() {
 			todoListoParaAlta();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
 	$("#formCarrerasEntIdentificadorAlta").keyup(function() {
 			todoListoParaAlta();
 		});
-}); //cierro ready
+});
 
 
 $(document).ready(function() {
 	$("#formCarrerasEntDistanciaAlta").keyup(function() {
 			todoListoParaAlta();
 		});
-}); //cierro ready
+}); 
 
 
 $(document).ready(function() {
 	$("#formCarrerasEntfechaEventoAlta").change(function() {
 			todoListoParaAlta();
 		});
-}); //cierro ready
+}); 
 
 
 /*Validacion en formulario de modi*/
@@ -199,7 +249,7 @@ $(document).ready(function() {
 	$("#formCarrerasEntIdCarreraModi").keyup(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 
 
@@ -207,37 +257,37 @@ $(document).ready(function() {
 	$("#formCarrerasEntDescripcionModi").keyup(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
 	$("#formCarrerasEntCategoriaMod").change(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
-	$("#formArticulosEntDescricionModi").change(function() {
+	$("#formaCarrerasEntDescricionModi").change(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
 	$("#formCarrerasEntIdentificadorModi").change(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
 	$("#formCarrerasEntfechaEventoModi").change(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 $(document).ready(function() {
 	$("#formCarrerasEntDistanciaModi").keyup(function() {
 			todoListoParaModi();
 		});
-}); //cierro ready
+}); 
 
 
 $(document).ready(function() {
@@ -251,10 +301,10 @@ $(document).ready(function() {
 
 /*Funciones*/
 
-function todoListoParaAlta() { //Habilita/deshabilita boton de alta
-	//alert("Dentro de todo listo para el alta");
+function todoListoParaAlta() { //visible o invicible
+	
 	if (document.getElementById("formCarrerasAlta").checkValidity()) {
-		//alert("aquiTL");
+		
 		$("#btEnvioFormAlta").attr("disabled",false);
 	}
 	else { 
@@ -262,8 +312,8 @@ function todoListoParaAlta() { //Habilita/deshabilita boton de alta
 	}
 }
 
-function todoListoParaModi() { //Habilita/deshabilita boton de modi
-	//alert("dentro de todoListo para modi");
+function todoListoParaModi() { //visible -
+	
 
 	if (document.getElementById("formCarrerasModi").checkValidity()) {
 		$("#btEnvioFormModi").attr("disabled",false);
@@ -272,9 +322,6 @@ function todoListoParaModi() { //Habilita/deshabilita boton de modi
 		$("#btEnvioFormModi").attr("disabled",true);
 	}
 }
-
-
-
 
 
 function cargaTabla() {
@@ -294,17 +341,15 @@ function cargaTabla() {
 			fila_fechaEvento:$("#fila_fechaEvento").val(),
 			fila_distancia:$("#fila_distancia").val(),
 		},
-		success: function(respuestaDelServer,estado) {  //La funcion de callback que se ejecutara cuando el req. sea completado.
-					//$("#tbDatos").html(respuestaDelServer)//para ver el json recibido dentro de tbDatos;
+		success: function(respuestaDelServer,estado) { 
+					
 					$("#tbDatos").empty();
 					alert(respuestaDelServer);
-					
 					objJson=JSON.parse(respuestaDelServer);
-					//Luego barre el objeto de datos leyendo sus datos copiandolos al cuerpo de la tabla.
 					objJson.carreras.forEach(function(argValor,argIndice) { 
 						var objTr= document.createElement("tr");
 						var objTd=document.createElement("td");
-						//objTd.setAttribute("classname","")
+						
 						objTd.setAttribute("campo-dato","carreras_idCarrera");
 						objTd.innerHTML=argValor.idCarrera;
 						objTr.appendChild(objTd);
@@ -355,9 +400,8 @@ function cargaTabla() {
 						objTd.addEventListener("click",function() {	
 							$("#contenedorTablaCarreras").attr("className","contenedorPasivo");
 							$("#ventanaModalFormularioModi").css("visibility","visible");
-							//alert();
 							llenaCategoriasModi();
-							CompletaFichaArticulo(argValor.idCarrera);
+							CompletaFichaCarrera(argValor.idCarrera);
 						});
 
 						objTr.appendChild(objTd);
@@ -374,20 +418,20 @@ function cargaTabla() {
 
 						objTbDatos.appendChild(objTr);
 				
-					});//cierra el forEach
+					});
 					$("#totalRegistros").html("Nro de registros: " + objJson.carreras.length);
 					
-				}//cierra funcion asignada al success
-			}); //cierra objeto de parametros y funcion ajax
+				}
+			}); 
 
-}//cierra funcion cargaTabla
-
-
+}
 
 
 
 
-function CompletaFichaArticulo(argCarrera) {	
+
+
+function CompletaFichaCarrera(argCarrera) {	
 	$("#formCarrerasEntIdCarreraModi").val(argCarrera);
 	var objAjax = $.ajax({
 		type:"get", 
@@ -559,85 +603,27 @@ function modi() {
 
 
 
-function alta() {
-	if(confirm("¿Está seguro de insertar registro? ")) {
-
-		var data = new FormData($("#formCarrerasAlta")[0]);
-		var objAjax = $.ajax({
-			type: 'post',
-			method: 'post',
-			enctype: 'multipart/form-data',
-			url: "./alta.php",
-			processData: false,  
-	    contentType: false,
-	    cache: false,
-			data: data,
-
-			success:function(respuestaDelServer) {
-				//alert(respuestaDelServer);
-				
-
-				$("#ventanaModalRespuesta").css("visibility","visible");
-				$("#contenidoModalRespuesta").empty();
-				$("#encabezadoModalRespuesta").append("Respuesta del server: ");
-				$("#contenidoModalRespuesta").append(respuestaDelServer);
-
-				$("#ventanaModalFormulario").css("visibility","hidden");
-
-			} //cierra success
-		
-		}); //cierra ajax
-		//cargaTabla();
-	} //cierra confirm
-	//cargaTabla();
-	
-} //cierra alta()
 
 
-
-function baja(argArticulo) {
-	if(confirm("¿Está seguro de borrar este registro? ")) {
-
-		var objAjax = $.ajax({
-			type: "get",
-			url: "./baja.php",
-			data: {
-				idCarrera:argArticulo
-			},
-			success:function(respuestaDelServer) { //datos es lo que catura ajax
-				//alert(respuestaDelServer);
-				
-				$("#ventanaModalRespuesta").css("visibility","visible");
-				$("#contenidoModalRespuesta").empty();
-				$("#contenidoModalRespuesta").append(respuestaDelServer);
-				$("#ventanaModalFormulario").css("visibility","hidden");
-
-			} //cierra success
-		}); //cierra ajax
-	} //cierra confirm
-//cargaTabla();
-} //cierra baja()
-
-
-function traeDoc(argArticulo) {
+function traeDoc(argCarrera) {
 	if(confirm("¿Está seguro de traer este dato? ")) {
 
 		var objAjax = $.ajax({
 			type: "get",
 			url: "./traeDoc.php",
 			data: {
-				idCarrera:argArticulo
+				idCarrera:argCarrera
 			},
-			success:function(respuestaDelServer) { //datos es lo que catura ajax
-				//alert("Respuesta del SERVER desde adentro del success:"+ respuestaDelServer);
+			success:function(respuestaDelServer) { 
+				
 				objetoDato = JSON.parse(respuestaDelServer);
 				$("#ventanaModalRespuesta").css("visibility","visible");
 				$("#contenidoModalRespuesta").empty();
 				$("#contenidoModalRespuesta").html("<iframe width='100%' height='300px' src='data:application/pdf;base64,"+objetoDato.deslinde+"'></iframe>");
 
-			} //cierra success
-		}); //cierra ajax
-	} //cierra confirm
+			} 
+		}); 
+	} 
 
 cargaTabla();
 

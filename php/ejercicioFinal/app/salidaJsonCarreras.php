@@ -25,8 +25,6 @@ try {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
 }
 
-//sentencia de la base de datos
-
 $sql="select * from carreras where ";
 
 $sql=$sql . "idCarrera LIKE CONCAT('%',:idCarrera,'%') and ";
@@ -38,10 +36,8 @@ $sql=$sql . " ORDER BY $orden";
 
 $respuesta_estado = $respuesta_estado . "\nsql string: " . $sql;
 
-//Preparacion de sentencia
 $stmt = $dbh->prepare($sql);
 
-//Vinculacion de sentencia:
 
 $stmt->bindParam(':idCarrera', $fila_id);
 $stmt->bindParam(':categoria', $fila_categoria);
@@ -76,7 +72,7 @@ $objCarreras->cuenta=count($carreras);
 
 $respuesta_estado = $respuesta_estado . "\nTotal de Carreras: " . $objCarreras->cuenta;
 $salidaJson = json_encode($objCarreras);
-$dbh = null; //cuando se cierra la sesion
+$dbh = null; 
 echo $salidaJson;
 
 ?>

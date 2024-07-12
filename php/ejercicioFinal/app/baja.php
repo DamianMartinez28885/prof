@@ -1,5 +1,5 @@
 <?php
-//include('../manejoSesion.inc');
+
 include("./datosConexionBase.php");
 
 $bindidCarrera = $_GET['idCarrera'];
@@ -9,7 +9,7 @@ $respuesta_estado = "idCarrera pasado: " . $bindidCarrera;
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
-	$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
+	$dbh = new PDO($dsn, $user, $password);	
 	$respuesta_estado = $respuesta_estado .  "\nConexion exitosa!";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();

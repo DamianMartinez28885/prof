@@ -1,5 +1,5 @@
 <?php
-//include('../manejoSesion.inc');
+
 include("./datosConexionBase.php");
 
 
@@ -9,7 +9,7 @@ $respuesta_estado= "idCarrera: " . $bindidCarrera;
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
-	$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
+	$dbh = new PDO($dsn, $user, $password);	
 	$respuesta_estado = $respuesta_estado .  "\n<br />conexion exitosa";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
@@ -54,19 +54,14 @@ try {
 
 $fila=$stmt->fetch();
 $objCarrera = new stdClass();
-//recordemos que $fila['documentoPdf'] es el elemento asociativo que contiene el documento en formato binario
-
-
 
 $objCarrera->deslinde=base64_encode($fila['deslinde']);
 
-//$objArticulo->documentoPdf=$fila['documentoPdf'];
-
 $salidaJson = json_encode($objCarrera,JSON_INVALID_UTF8_SUBSTITUTE);
-/*El parámetro adicionado como 2do argumento es para evitar que el codificador json agregue caracteres que esten fuera de los valores posibles para base64*/
-$dbh = null; /*para cerrar la conexion*/
+
+$dbh = null; 
 
 echo $salidaJson;
-//echo $respuesta;
+
 ?>
 
