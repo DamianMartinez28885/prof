@@ -1,13 +1,6 @@
 <?php
 function autenticacion($arg1,$arg2) {
-	/*Esta función evalua el login y la contraseña,lo compara con lo almacenado en el disco y
-	devuelve un true o un false si no autentica al usuario
-	ATENCION: Todo lo que escribe esta función en el navegador remoto es solo para el ejercicio.
-	Comentar todas estas salidas cuando se trate de un sistema en produción.
-	*/
 	
-	/*La clave en el servidor esta encriptada en sha512. O sea que equivale a 64 octetos o 32 pares hexadecimales de 16 bits*/
-
 	$loginDeUsuario = $arg1;
 	$clave = $arg2;
 	$claveEncriptada = hash("sha256",trim($_POST['clave']));
