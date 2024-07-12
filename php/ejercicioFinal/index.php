@@ -4,7 +4,7 @@ if (!isset($_SESSION['identificativo'])) {
     	header('Location:./formularioDeLogin.html');
     	exit; 
 }
-include('./libreria.inc');
+include('./libreria.');
 echo infoDeSesion();
 
 ?>
@@ -13,7 +13,7 @@ echo infoDeSesion();
 
 <script>
 document.getElementById("btAppMod1").onclick=function(){
-	location.href="./app_modulo1";
+	location.href="./app";
 }
 
 document.getElementById("btAppFinSesion").onclick=function(){
