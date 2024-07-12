@@ -2,38 +2,32 @@
 include("./datosConexionBase.php");
 
 $orden=$_GET['orden'];
-$f_articulos_codArt=$_GET['f_articulos_codArt'];
-$f_articulos_familia=$_GET['f_articulos_familia'];
-$f_articulos_descripcion=$_GET['f_articulos_descripcion'];
-$f_articulos_um=$_GET['f_articulos_um'];
-$f_articulos_fechaAlta=$_GET['f_articulos_fechaAlta'];
+$fila_id=$_GET['fila_id'];
+$fila_categoria=$_GET['fila_categoria'];
+$fila_identificador=$_GET['fila_identificador'];
+$fila_descripcion=$_GET['fila_descripcion'];
+$fila_fechaEvento=$_GET['fila_fechaEvento'];
 
 
 $respuesta_estado = "Parámetros de entrada del requerimiento HTTP:";
 $respuesta_estado = $respuesta_estado . "<h4>Orden: " . $orden . "</h4>"; 
-$respuesta_estado = $respuesta_estado . "<h4> f_articulos_codArt: " . $f_articulos_codArt . "</h4>";
-$respuesta_estado = $respuesta_estado . "<h4> f_articulos_familia: " . $f_articulos_familia . "</h4>";
-$respuesta_estado = $respuesta_estado . "<h4> f_articulos_descripcion: " . $f_articulos_descripcion . "</h4>";
-$respuesta_estado = $respuesta_estado . "<h4> f_articulos_um: " . $f_articulos_um . "</h4>";
-$respuesta_estado = $respuesta_estado . "<h4> f_articulos_fechaAlta: " . $f_articulos_fechaAlta . "</h4>";
-
-#include("./datosConexionBase.php");//Abre conexion con el motor de base de datos
-
-
+$respuesta_estado = $respuesta_estado . "<h4> fila_id: " . $fila_id . "</h4>";
+$respuesta_estado = $respuesta_estado . "<h4> fila_categoria: " . $fila_categoria . "</h4>";
+$respuesta_estado = $respuesta_estado . "<h4> fila_identificador: " . $fila_identificador . "</h4>";
+$respuesta_estado = $respuesta_estado . "<h4> fila_descripcion: " . $fila_descripcion . "</h4>";
+$respuesta_estado = $respuesta_estado . "<h4> fila_fechaEvento: " . $fila_fechaEvento . "</h4>";
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
-	$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
+	$dbh = new PDO($dsn, $user, $password);	
 	$respuesta_estado = $respuesta_estado .  "\nCONECTADA";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
 }
 
-//Carga de sentencia en crudo
-
 $sql="select * from carreras where ";
 
-$sql=$sql . "idCarrera LIKE CONCAT('%',:idCarrera,'%') and ";//ojo con espacios antes y despues del and
+$sql=$sql . "idCarrera LIKE CONCAT('%',:idCarrera,'%') and ";
 $sql=$sql . "categoria LIKE CONCAT('%',:categoria,'%') and ";
 $sql=$sql . "descripcion LIKE CONCAT('%',:descripcion,'%') and ";
 $sql=$sql . "identificador LIKE CONCAT('%',:identificador,'%') and ";
@@ -42,65 +36,43 @@ $sql=$sql . " ORDER BY $orden";
 
 $respuesta_estado = $respuesta_estado . "\nsql string: " . $sql;
 
-//Preparacion de sentencia
 $stmt = $dbh->prepare($sql);
 
 
-//Vinculacion de sentencia:
+$stmt->bindParam(':idCarrera', $fila_id);
+$stmt->bindParam(':categoria', $fila_categoria);
+$stmt->bindParam(':descripcion', $fila_descripcion);
+$stmt->bindParam(':identificador', $fila_identificador);
+$stmt->bindParam(':fechaEvento', $fila_fechaEvento);
 
-$stmt->bindParam(':idCarrera', $f_articulos_codArt);
-$stmt->bindParam(':categoria', $f_articulos_familia);
-$stmt->bindParam(':descripcion', $f_articulos_descripcion);
-$stmt->bindParam(':identificador', $f_articulos_um);
-$stmt->bindParam(':fechaEvento', $f_articulos_fechaAlta);
-/*$stmt->bindParam(':ordenamiento', $orden);  El bindParam no aplica a la clausulo order by*/ 
 //Ejecucion de sentencia
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 
-//Declaracion de arreglo vacio para almacenar la respuesta a la consulta
-$articulos=[];
+
+$carreras=[];
 
 //Carga del arreglo
 While($fila = $stmt->fetch()) {
-	$objArticulo = new stdClass();
-	$objArticulo->codArt=$fila['idCarrera'];
-	$objArticulo->um=$fila['identificador'];
-	$objArticulo->descripcion=$fila['descripcion'];
-	$objArticulo->familia=$fila['categoria'];
+	$objCarrera = new stdClass();
+	$objCarrera->idCarrera=$fila['idCarrera'];
+	$objCarrera->identificador=$fila['identificador'];
+	$objCarrera->descripcion=$fila['descripcion'];
+	$objCarrera->categoria=$fila['categoria'];
+	$objCarrera->distancia=$fila['distancia'];
+	$objCarrera->fechaEvento=$fila['fechaEvento'];
 	
-	$objArticulo->saldoStock=$fila['distancia'];
-	$objArticulo->fechaAlta=$fila['fechaEvento'];
-	
-	$respuesta_estado = $respuesta_estado . "\n" . $objArticulo->codArt;
-	array_push($articulos,$objArticulo);
-
+	$respuesta_estado = $respuesta_estado . "\n" . $objCarrera->idCarrera;
+	array_push($carreras,$objCarrera);
 }
 
+$objCarreras = new stdClass();
+$objCarreras->carreras=$carreras;
+$objCarreras->cuenta=count($carreras);
 
-
-
-//$respuesta_estado = $respuesta_estado .  "\nAqui: " . $articulos[1]->codArt;
-
-
-$objArticulos = new stdClass();
-$objArticulos->articulos=$articulos;
-$objArticulos->cuenta=count($articulos);
-
-$respuesta_estado = $respuesta_estado . "\ncantidad de articulos de la consulta: " . $objArticulos->cuenta;
-
-$salidaJson = json_encode($objArticulos);
-
-
-
-$dbh = null; /*para cerrar la conexion*/
-
-
-
-$respuesta_estado = $respuesta_estado . "\nFIN";
-
-
+$respuesta_estado = $respuesta_estado . "\nTotal de Carreras: " . $objCarreras->cuenta;
+$salidaJson = json_encode($objCarreras);
+$dbh = null; 
 echo $salidaJson;
 
-//echo $respuesta_estado;
 ?>

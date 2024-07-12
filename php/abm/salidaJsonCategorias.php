@@ -1,5 +1,5 @@
 <?php
-//sleep(1);
+
 include("./datosConexionBase.php");
 
 $respuesta_estado="";
@@ -10,7 +10,7 @@ $sql="select * from categorias";
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
-	$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
+	$dbh = new PDO($dsn, $user, $password);	
 	$respuesta_estado = $respuesta_estado .  "\nconexion exitosa";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
@@ -25,9 +25,6 @@ try {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
 }
 
-
-
-//$fila=$stmt->fetch();
 
 
 $categorias=[];
@@ -47,7 +44,7 @@ $objCategorias->categorias=$categorias;
 
 $salidaJson=json_encode($objCategorias,JSON_INVALID_UTF8_SUBSTITUTE);
 
-$dbh = null; /*para cerrar la conexion*/
+$dbh = null; 
 
 echo $salidaJson;
 ?>

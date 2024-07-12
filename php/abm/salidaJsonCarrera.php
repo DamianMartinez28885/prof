@@ -2,10 +2,10 @@
 
 include("./datosConexionBase.php");
 
+$hoy = date("Y-m-d H:i:s");
+$respuesta_estado=$hoy . "\n";
 
-$bindidCarrera = $_GET['idCarrera'];
-
-$respuesta_estado= "idCarrera: " . $bindidCarrera;
+$idCarrera=$_GET['idCarrera'];
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
@@ -15,15 +15,7 @@ try {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
 }
 
-
-
-
-
-$sql="select deslinde from carreras where idCarrera = :idCarrera";
-
-$respuesta_estado = $respuesta_estado . $sql . "<br />";
-
-
+$sql = "select * from carreras where idCarrera=:bindidCarrera";
 
 try {
 	$stmt = $dbh->prepare($sql);	
@@ -32,16 +24,14 @@ try {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
 }
 
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
 
 try {
-	$stmt->bindParam(':idCarrera', $bindidCarrera);
-	
+	$stmt->bindParam(':bindidCarrera', $idCarrera);
 	$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
 }
-
-
 
 try {
 	$stmt->execute();	
@@ -50,12 +40,15 @@ try {
 	$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
 }
 
+$fila = $stmt->fetch();
 
-
-$fila=$stmt->fetch();
 $objCarrera = new stdClass();
-
-$objCarrera->deslinde=base64_encode($fila['deslinde']);
+	$objCarrera->idCarrera=$fila['idCarrera'];
+	$objCarrera->categoria=$fila['categoria'];
+	$objCarrera->descripcion=$fila['descripcion'];
+	$objCarrera->um=$fila['identificador'];
+	$objCarrera->fechaAlta=$fila['fechaEvento'];
+	$objCarrera->saldoStock=$fila['distancia'];
 
 $salidaJson = json_encode($objCarrera,JSON_INVALID_UTF8_SUBSTITUTE);
 
@@ -63,5 +56,5 @@ $dbh = null;
 
 echo $salidaJson;
 
-?>
 
+?>

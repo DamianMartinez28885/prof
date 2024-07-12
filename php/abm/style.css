@@ -1,8 +1,9 @@
-/*Estilo global*/
+
 * {
 	margin:0;
 	box-sizing: border-box;
 	padding:0;
+	font-size:14px;
 }
 html {
 	height:100%;
@@ -12,191 +13,450 @@ html {
 body {
 	height:100%;
 	width:100%;
-	font-size:14px;
 }
 
-
-
+h1{
+	font-size: 40px;
+}
 
 
 div.contenedorTabla {
 	width:100%;
 	height:100%;
-	background-color: gray;
+	background-color: rgb(225, 253, 123);
 	/*overflow: auto;*/
 }
 
+div.contenedorTabla header {
+	width:100%;
+	height:10%;
+	background-color: #222651;
+	overflow:hidden;
+	display: flex; 
+	color: white;
+	align-items: center;
+	justify-content: center;
+    align-items: center;
+}
 
-
-div.contenedorTabla button {
+div.contenedorTabla header label { 
+	width:30%;
 	height:80%;
-	width:20%;
-	margin-right:0;
+	margin:1%;
+	padding:1%;
+	font-weight:bold;
+	font-size: 1.1em;
+	
+}
+
+div.contenedorTabla header input { 
+	width:30%;
+	height:60%;
+	margin:1%;
+	padding:1%;
+	margin-right: 40%;
+	margin-left: 0;
+}
+
+
+div.contenedorTabla header button { 
+	height:60%;
+	width:40%;
 	cursor:pointer;
 }
 
-
-div.contenedorTabla h1 {
+div.contenedorTabla table h1 { 
 	width:100%;
 	text-align: center;
-	padding:1%;
 }
 
-div.contenedorTabla input {
+div.contenedorTabla table input { 
 	height:100%;
 	width:100%;
 }
 
-
-div.contenedorTabla Select {
+div.contenedorTabla table select { 
 	height:100%;
 	width:100%;
 }
 
 div.contenedorTabla td.titulosColumnas {
-	font-size: 1.1em;
+	font-size:1em;
 	cursor:pointer;
 	font-weight: bold;
 	display: flex; 
-	justify-content: center; 
+	justify-content:left; 
 	align-items: center; 
+	color: white;
 }
-
 
 div.contenedorTabla td.totalizador {
-	font-weight: bold;
 	display: flex; 
-	justify-content: center; 
+	justify-content:left; 
 	align-items: center; 
-}
-
-
-
-div.contenedorTabla header {
-	display:flex;
-	width:100%;
-	height:10%;
-	background-color: beige;
-	overflow-y:hidden;
-	display: flex; 
-	justify-content:center;
-	align-items: center;
-	padding:0;
+	width: 11;
 }
 
 div.contenedorTabla footer {
 	display:block;
 	width:100%;
 	height:10%;
-	background-color: beige;
+	background-color: #222651;
+	overflow: hidden;
+	color: white;
+
 }
 
 div.contenedorTabla footer div.totalRegistros {
-	font-size:1.1em;
+	font-size:1.2em;
 	height:100%;
 	width:20%;
-	float: left;
+	float:left;
+	font-weight:bold;
 }
 
 
 div.contenedorTabla footer div.textoPie {
-	font-size:1.1em;
+	font-size:large;
 	height:100%;
 	width:70%;
 	display: flex; 
 	justify-content:center;
 	align-items: center;
-	float: left;
 }
-
-
 
 div.contenedorTabla table {
   width:100%;
   height:80%;
   border-collapse: collapse;
-  
-}
+  }
 
 div.contenedorTabla thead {
-  display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
-  background-color: #FF7361;
+  display: block; 
+  background-color: #0078b7;
+  color: while;
   text-align: center;
-  height: 20%;
-  overflow-y: scroll;
-}
-
-
-div.contenedorTabla tfoot {
-  display: block; /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
-  background-color: #FF7361;
   height: 10%;
   overflow-y: scroll;
-  text-align: left;
 }
 
 
-div.contenedorTabla tbody { /*todos los elementos que contendrá se renderizaran en este grupo de lineas */
+div.contenedorTabla tbody { 
   display: block;
   overflow-y: scroll;
-  color: #000;
-  height:70%;
+  /*color: #000;*/
+  color: black;
+  height:90%;
 }
 
 
 div.contenedorTabla tr {
-  display: block; /*todos los elementos que contendrá se renderizaran en esta linea */
+  display: block; 
   overflow: hidden;
   height:60px;
 }
 
 
 div.contenedorTabla tbody tr:nth-child(odd) {
-  background: rgba(0,0,0,.2);
-  color: white;
+  background: beige;
 }
 
 
 div.contenedorTabla tbody tr:nth-child(even) {
-  background: rgba(0,0,0,.3);
-  color: white;
+  background: white;
 }
 
 div.contenedorTabla th, td {
-  float:left; /*todos flotan respetando sus anchos pero dentro de los limites el contenedor
-                que debera presentarse como display:block;*/
-  width:100%;
+	float:left; 
+	display:flex;
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+	width:100%;
+	height:100%;
+}
+
+
+
+[campo-dato="carreras_idCarrera"] {
+	width:11%;
+	height:100%;
+  }
+  [campo-dato="carreras_identificador"] {
+	width: 11%;
+	height:100%;
+  }
+  [campo-dato="carreras_descripcion"] {
+	width: 11%;
+	height:100%;
+  }
+  [campo-dato="carreras_categoria"] {
+	width:11%;
+	height:100%;
+  }
+  [campo-dato="carreras_fechaEvento"] {
+	width: 11%;
+	height:100%;
+  }
+  [campo-dato="carreras_distancia"] {
+	width: 11%;
+	height:100%;
+	text-align:right;
+  }
+
+
+[campo-dato="carreras_deslinde"] {
+  width: 11%;
   height:100%;
+  
+}
+
+[campo-dato="carreras_pdf"] {
+	width: 11%;
+	height:100%;
+}
+
+
+[campo-dato="carreras_btModi"] {
+  width: 11%;
+  height:100%;
+ cursor:pointer;
+
+}
+
+[campo-dato="carreras_btBaja"] {
+  width: 11%;
+  height:100%;
+  cursor:pointer;
 }
 
 
 
 
-/*Estilo para tabla de articulos*/
+div.contenedorActivo {
+opacity:1;
+pointer-events: auto;
+}
 
-[campo-dato="articulos_codArt"] {
-  width: 10%;
-  height:100%;
+div.contenedorPasivo {
+opacity:0.3;
+pointer-events: none;
 }
-[campo-dato="articulos_familia"] {
-  width: 10%;
-  height:100%;
+
+
+div.ventanaModalFormularioApagado {
+	visibility:hidden;
 }
-[campo-dato="articulos_descripcion"] {
-  width: 20%;
-  height:100%;
+
+div.ventanaModalFormularioPrendido {
+	visibility:visible;
 }
-[campo-dato="articulos_um"] {
-  width: 10%;
-  height:100%;
+
+
+div.ventanaModalRespuestaApagado {
+	visibility:hidden;
 }
-[campo-dato="articulos_fechaAlta"] {
-  width: 10%;
-  height:100%;
+
+div.ventanaModalRespuestaPrendido {
+	visibility:visible;
 }
-[campo-dato="articulos_saldoStock"] {
-  width: 10%;
-  height:100%;
-  text-align:right;
+
+
+/*Ventana Modal Formulario*/
+
+
+div.ventanaModalFormulario {
+	position:fixed;
+	left:50%;
+	top:50%;
+	width:40%;
+	height:40%;
+	color:black;
+	z-index:10;
+	transform: translate(-50%, -50%);
 }
+
+div.ventanaModalFormulario header {
+	width:100%;
+	height:10%;
+	background-color:#222651;
+	display:block;
+	overflow:hidden;
+}
+
+div.ventanaModalFormulario p {
+	font-size: 1.2em;
+	background-color: #222651;
+	width:90%;
+	height:100%;
+	float: left; 
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+div.ventanaModalFormulario div.btCruz {
+	color:red;
+	background-color: gray;
+	width:8%;
+	height:100%;
+	cursor:pointer;
+	display: flex;
+	justify-content: center; 
+	align-items: center; 
+}
+
+div.ventanaModalFormulario div.btCruz:hover {
+	background-color:white;
+}
+
+
+
+div.ventanaModalFormulario div.contenidoModal {
+	background-color: beige;
+	width:100%;
+	height:80%;
+	padding: 2%;
+}
+
+
+div.ventanaModalFormulario footer {
+	background-color: #222651;
+	height:10%;
+	display: flex;
+	justify-content: center; 
+	align-items: center; 
+}
+
+div.ventanaModalFormulario button.btModi {
+	height:100%;
+	width:30%;
+}
+
+div.ventanaModalFormulario button.btAlta {
+	height:100%;
+	width:30%;
+}
+
+div.ventanaModalFormulario div.contenidoModal ul {
+	list-style: none;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	clear:both;
+}
+
+div.ventanaModalFormulario div.contenidoModal li {
+	
+	width:50%;
+	height:30%;
+	float:left;
+}
+
+@media(max-width:600px) {
+	div.ventanaModalFormulario div.contenidoModal li {
+		width:100%;
+		font-size:1.2em;
+	}
+}
+
+div.ventanaModalFormulario div.contenidoModal label {
+	font-size:1.4em;
+	width:80%;
+	height:50%;
+	display: flex; 
+	align-items: center; 
+}
+
+div.ventanaModalFormulario div.contenidoModal input {
+	width:80%;
+	height:50%;
+	font-size:1em;
+}
+
+div.ventanaModalFormulario div.contenidoModal select {
+	width:80%;
+	height:50%;
+	font-size: 1em;
+}
+
+
+div.ventanaModalFormulario option.elementoOptionSelect {
+	background-color:beige;
+	font-size: 1em;
+}
+
+/*Ventana Modal respuesta*/
+
+div.ventanaModalRespuesta {
+	position:fixed;
+	left:20%;
+	top:0%;
+	width:50%;
+	height:50%;
+	color:red;
+	z-index:20;
+	border: 10px solid black;
+	
+}
+
+
+div.ventanaModalRespuesta header {
+	width:100%;
+	height:10%;
+	background-color: black;
+	
+	overflow:hidden;
+}
+
+
+div.ventanaModalRespuesta header p {
+	font-size:1.5em;
+	background-color: #222651;
+	width:90%;
+	height:100%;
+	float: left; 
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+}
+
+div.ventanaModalRespuesta div.btCruz {
+	background-color: gray;
+	color:red;
+	width:10%;
+	height:100%;
+	float:right;
+	cursor:pointer;
+	display: flex; 
+	justify-content: center; 
+	align-items: center; 
+}
+
+
+
+div.ventanaModalRespuesta div.btCruz:hover {
+	background-color:gray;
+}
+
+
+div.ventanaModalRespuesta div.contenidoModal {
+	background-color: beige;
+	width:100%;
+	height: 100%;
+	box-sizing: border-box;
+	overflow:auto;
+}
+
+div.ventanaModalRespuesta div.contenidoModal p {
+	text-align:left;
+	font-size:1.5em;
+}
+
+
+
+
+
+
 

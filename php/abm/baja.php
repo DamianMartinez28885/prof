@@ -1,29 +1,53 @@
 <?php
+
 include("./datosConexionBase.php");
 
-$bindCodArt = $_GET['codArt'];
+$bindidCarrera = $_GET['idCarrera'];
 
-$respuesta_estado = "codArt pasado: " . $bindCodArt;
+$respuesta_estado = "idCarrera pasado: " . $bindidCarrera;
 
 
 try {
 	$dsn = "mysql:host=$host;dbname=$dbname";
-	$dbh = new PDO($dsn, $user, $password);	/*Database Handle*/
+	$dbh = new PDO($dsn, $user, $password);	
 	$respuesta_estado = $respuesta_estado .  "\nConexion exitosa!";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
 }
 
-$sql = "delete from articulos where codArt=:codArt;";
 
-$stmt = $dbh->prepare($sql);
-$respuesta_estado = $respuesta_estado . "\nPreparacion exitosa!";
 
-$stmt->bindParam(':codArt', $bindCodArt);
-$respuesta_estado = $respuesta_estado . "\nBinding exitoso!";
 
-$stmt->execute();
-$respuesta_estado = $respuesta_estado . "\nEjecucion exitosa!";
+$sql = "delete from carreras where idCarrera=:idCarrera;";
+
+
+try {
+	$stmt = $dbh->prepare($sql);
+	$respuesta_estado = $respuesta_estado . "\nPreparacion exitosa!";
+	try {
+		$stmt->bindParam(':idCarrera', $bindidCarrera);
+		$respuesta_estado = $respuesta_estado . "\nBinding exitoso!";
+		try {
+			$stmt->execute();
+			$respuesta_estado = $respuesta_estado . "\nEjecucion exitosa!";
+		} catch (PDOException $e) {
+			$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
+		}
+
+	} catch (PDOException $e) {
+		$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
+	}
+
+} catch (PDOException $e) {
+	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
+}
+
+
+
+
+
+
+
 
 $puntero = fopen("./errores.log","a");
 fwrite($puntero, $respuesta_estado);
@@ -34,6 +58,9 @@ fclose($puntero);
 
 $dbh = null; /*para cerrar la conexion*/
 
+
 echo $respuesta_estado;
 
+
 ?>
+

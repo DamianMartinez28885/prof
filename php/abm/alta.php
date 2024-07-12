@@ -1,100 +1,90 @@
 <?php
+
 include("./datosConexionBase.php");
 
-$codArt = $_POST['codArt'];
-$familia = $_POST['familia'];
+$idCarrera = $_POST['idCarrera'];
+$categoria = $_POST['categoria'];
 $descripcion = $_POST['descripcion'];
-$um = $_POST['um'];
-$fechaAlta = $_POST['fechaAlta'];
-$saldoStock = $_POST['saldoStock'];
-//$documentoPdf = $_POST['documentoPdf'];
-
+$identificador = $_POST['identificador'];
+$fechaEvento = $_POST['fechaEvento'];
+$distancia = $_POST['distancia'];
 
 $respuesta_estado = "";
 
-
-$respuesta_estado=$respuesta_estado . "\nRespuesta del servidor al alta. Entradas recibidas en el req http:";
-$respuesta_estado=$respuesta_estado . "\ncodArt: " . $codArt;
-$respuesta_estado=$respuesta_estado . "\nfamilia: " . $familia;
-$respuesta_estado=$respuesta_estado . "\ndescripcion: " . $descripcion;
-$respuesta_estado=$respuesta_estado . "\num: " . $um;
-$respuesta_estado=$respuesta_estado . "\nfechaAlta: " . $fechaAlta;
-$respuesta_estado=$respuesta_estado . "\nsaldoStock: " . $saldoStock;
-
-
-
-try { //El metodo constructor PDO() puede generar excepciones (por eso usamos try)
-	$dsn = "mysql:host=$host;dbname=$dbname"; /*dsn es una variable de tipo texto que contiene toda la información necesaria para conectarse a una fuente de datos  */
-
-	$dbh = new PDO($dsn, $user, $password);	/*el metodo constructor PDO crea una instancia de conexión a una fuente de datos tambien llamada Database Handle*/
-
+try {
+	$dsn = "mysql:host=$host;dbname=$dbname";
+	$dbh = new PDO($dsn, $user, $password);	
 	$respuesta_estado = $respuesta_estado .  "\nconexion exitosa";
 } catch (PDOException $e) {
 	$respuesta_estado = $respuesta_estado . "\n" . $e->getMessage();
 }
 
+$respuesta_estado=$respuesta_estado . "\nRespuesta del servidor. Entradas recibidas ";
+$respuesta_estado=$respuesta_estado . "\nidCarrera: " . $idCarrera;
+$respuesta_estado=$respuesta_estado . "\ncategoria: " . $categoria;
+$respuesta_estado=$respuesta_estado . "\ndescripcion: " . $descripcion;
+$respuesta_estado=$respuesta_estado . "\nidentificador: " . $identificador;
+$respuesta_estado=$respuesta_estado . "\nfechaEvento: " . $fechaEvento;
+$respuesta_estado=$respuesta_estado . "\ndistancia: " . $distancia;
 
-$sql="insert into articulos (codArt,familia,descripcion,um,fechaAlta,saldoStock) values (:codArt,:familia,:descripcion,:um,:fechaAlta,:saldoStock);";
+
+$sql="insert into carreras (idCarrera,categoria,descripcion,identificador,fechaEvento,distancia) values (:idCarrera,:categoria,:descripcion,:identificador,:fechaEvento,:distancia);";
 
 
-$stmt = $dbh->prepare($sql); //El metodo prepare() devuelve un objeto que en este caso llamo sentencia
+$stmt = $dbh->prepare($sql);
 
-$stmt->bindParam(':codArt', $codArt);
-$stmt->bindParam(':familia', $familia);
+$stmt->bindParam(':idCarrera', $idCarrera);
+$stmt->bindParam(':categoria', $categoria);
 $stmt->bindParam(':descripcion', $descripcion);
-$stmt->bindParam(':um', $um);
-$stmt->bindParam(':fechaAlta', $fechaAlta);
-$stmt->bindParam(':saldoStock', $saldoStock);
+$stmt->bindParam(':identificador', $identificador);
+$stmt->bindParam(':fechaEvento', $fechaEvento);
+$stmt->bindParam(':distancia', $distancia);
 
-//$stmt->setFetchMode(PDO::FETCH_ASSOC);
 $stmt->execute();
 
-
-//Si viene documento! Sigue abajo
-
-	$codArt = $dbh->lastInsertId(); //Para el caso de una tabla de movimientos donde la clave primaria sea autoincremental.
-
-
-	if (empty($_FILES['documentoPdf']['name'])) {
-		$respuesta_estado = $respuesta_estado . "<br />No ha sido seleccionado ningun file para enviar!";		
+	if (empty($_FILES['deslinde']['name'])) {
+		$respuesta_estado = $respuesta_estado . "<br />No hay PDF de deslinde";		
 	}
 	else {
-		$respuesta_estado=$respuesta_estado . "Trae documentoPdf asociado a codArt: " . $codArt;
+		$respuesta_estado=$respuesta_estado . "Trae deslinde de idCarrera: " . $idCarrera;
 		
-		$contenidoPdf = file_get_contents($_FILES['documentoPdf']['tmp_name']);	
-		//EL type de $_FILES['documentoPdf'] no es
-		//una variable simple que contiene el nombre
-		//del archivo subido desde el input de java script con nombre documentoPdf sino un array (para verlo se 
-		//puede usar var_dump(). El elemento name en la 2da dimension de $_FILES si contiene el nombre de archivo 
-	 	//original)	
+		$deslinde = file_get_contents($_FILES['deslinde']['tmp_name']);	
+		
+		$sql="update carreras set deslinde=:deslinde where idCarrera=:idCarrera;";
+
+		try {
+			$stmt = $dbh->prepare($sql);	
+			$respuesta_estado = $respuesta_estado .  "\n<br />preparacion exitosa";
+		} 
+		catch (PDOException $e) {
+			$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
+		}
 
 
-		$sql="update articulos set documentoPdf=:contenidoPdf where codArt=:codArt;";
 
-
-		$stmt = $dbh->prepare($sql);	
-		$respuesta_estado = $respuesta_estado .  "\n<br />preparacion exitosa";
-
-			$stmt->bindParam(':codArt', $codArt);
-			$stmt->bindParam(':contenidoPdf', $contenidoPdf);
+		try {
+			$stmt->bindParam(':idCarrera', $idCarrera);
+			$stmt->bindParam(':deslinde', $deslinde);
 	
 			$respuesta_estado = $respuesta_estado .  "\n<br /> bind exitosa";
+		} catch (PDOException $e) {
+			$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
+		}
 
+
+
+		try {
 			$stmt->execute();	
 			$respuesta_estado = $respuesta_estado .  "\n<br /> ejecucion exitosa";
+		} catch (PDOException $e) {
+			$respuesta_estado = $respuesta_estado . "\n<br />" . $e->getMessage();
+		}
+}
 
-	}
-
-
-/*
-$salidaJson = json_encode($respuesta_estado,JSON_INVALID_UTF8_SUBSTITUTE);
-//El segundo parametro es para que la función no falle con los caracteres utf8 como acentos y ñ's'
-echo $salidaJson;
-*/
-
-
-$dbh = null; /*para cerrar la conexion*/
-
+$dbh = null;
 
 echo $respuesta_estado;
 ?>
+
+
+
