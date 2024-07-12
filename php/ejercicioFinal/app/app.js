@@ -437,8 +437,8 @@ function CompletaFichaCarrera(argCarrera) {
 		type:"get", 
 		url:"./salidaJsonCarrera.php",
 		data: { idCarrera:argCarrera },
-		success: function(respuestaDelServer,estado) {  //La funcion de callback que se ejecutara cuando el req. sea completado.
-			//alert(respuestaDelServer);
+		success: function(respuestaDelServer,estado) {  
+			
 			objetoDato = JSON.parse(respuestaDelServer);
 			$("#formCarrerasEntIdCarreraModi").val(objetoDato.idCarrera);
 			$("#formCarrerasEntCategoriaMod").val(objetoDato.categoria);
@@ -446,9 +446,9 @@ function CompletaFichaCarrera(argCarrera) {
 			$("#formCarrerasEntIdentificadorModi").val(objetoDato.identificador);						
 			$("#formCarrerasEntfechaEventoModi").val(objetoDato.fechaEvento);
 			$("#formCarrerasEntDistanciaModi").val(objetoDato.distancia);
-			todoListoParaModi();//habilitacion del boton de enviar modi si todo valida
-		} //cierra el success
-	}); //cierro ajax
+			todoListoParaModi();
+		} 
+	}); 
 }
 
 
@@ -466,7 +466,7 @@ function vaciaFormulario() {
 
 
 
-function llenaCategorias() { //el argumento corresponde al objeto que será llenado
+function llenaCategorias() { 
 			$("#fila_categoria").empty();
 			var objAjax = $.ajax({
 			type:"get", 
@@ -475,27 +475,27 @@ function llenaCategorias() { //el argumento corresponde al objeto que será llen
 			success: function(respuestaDelServer,estado) {
 						alert(respuestaDelServer);
 						listaDeObjetos = JSON.parse(respuestaDelServer);
-						/*Agrega la opcion vacia*/
+						
 						var objOption= document.createElement("option");
-						/*objOption.setAttribute("class","elementoOptionSelect");*/
+						
 						objOption.setAttribute("value", ""); 
 						objOption.innerHTML="";
 						document.getElementById("fila_categoria").appendChild(objOption);
 
-						/*Barre el array de lista de Objetos para agregar opciones*/
+						
 						listaDeObjetos.categorias.forEach(function(argValor,argIndice) { 
 												
 							var objOption= document.createElement("option");
 							objOption.setAttribute("value", argValor.codCategoria); 
-							//alert(argValor.codFamilia);
+							
 							objOption.innerHTML=argValor.descripcionCategoria;
 
 							document.getElementById("fila_categoria").appendChild(objOption);
 							
-						});//cierra foreach
+						});
 						return true;
-			} //cierra el success
-	}); //cierro ajax
+			} 
+	}); 
 }
 
 
@@ -512,7 +512,7 @@ function llenaCategoriasAlta() { //el argumento corresponde al objeto que será 
 			url:"./salidaJsonCategorias.php",
 			
 			success: function(respuestaDelServer,estado) {
-						//alert(respuestaDelServer);
+						
 						listaDeObjetos = JSON.parse(respuestaDelServer);
 						listaDeObjetos.categorias.forEach(function(argValor,argIndice) { 
 												
@@ -524,10 +524,10 @@ function llenaCategoriasAlta() { //el argumento corresponde al objeto que será 
 
 							document.getElementById("formCarrerasEntCategoriaAlta").appendChild(objOption);
 							
-						});//cierra foreach
+						});
 						return true;
-			} //cierra el success
-	}); //cierro ajax
+			} 
+	}); 
 }
 
 
@@ -549,8 +549,6 @@ function llenaCategoriasModi() {
 							objOption.setAttribute("class","elementoOptionSelect");
 							objOption.setAttribute("value", argValor.codCategoria); 
 
-							//El formulario ya está cargado con los datos desde el momento en que 
-							//hizo click en el boton de modi del registro apuntado.
 							objOption.innerHTML=argValor.codCategoria + argValor.descripcionCategoria;
 							if(objOption.value == $("#formCarrerasEntCategoriaMod").val()) {
 								objOption.setAttribute("selected","selected");
@@ -558,10 +556,10 @@ function llenaCategoriasModi() {
 
 							document.getElementById("formCarrerasEntCategoriaMod").appendChild(objOption);
 														
-						});//cierra foreach
+						});
 						return true;
-			} //cierra el success
-	}); //cierro ajax
+			} 
+	}); 
 }
 
 
