@@ -4,7 +4,7 @@ if (!isset($_SESSION['identificativo'])) {
     	header('Location:./formularioDeLogin.html');
     	exit; 
 }
-include('./libreria.');
+include('./libreria.inc');
 echo infoDeSesion();
 
 ?>
